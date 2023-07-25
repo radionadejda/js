@@ -1,0 +1,44 @@
+.body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(239, 235, 230);
+}
+
+.gallery {
+  display: flex;
+  width: 50vw;
+  margin: 0 auto;
+  justify-content: center;
+  flex-direction: column;
+}
+
+img {
+  width: 40vw;
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 10vh 0 5vh;
+  margin: 0 auto;
+}
+
+.gallery__buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button {
+  font-family: Tahoma, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.8rem 3rem;
+  border-radius: 50px;
+  background-color: #866BAE;
+  border: none;
+}
+.button:hover {
+  background-color: #866BAE;
+  opacity: 80%;
+}
+.button:active {
+  background-color: #F38230;
+}/*# sourceMappingURL=gallery.css.map */
