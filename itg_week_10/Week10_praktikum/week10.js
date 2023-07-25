@@ -192,7 +192,7 @@ myYearOfBirth = 1992;
 let calculateMyAge = (currentYear, myYearOfBirth) =>{
 	return currentYear - myYearOfBirth;
 }
-console.log('мне сейчас ' + calculateAge(currentYear, myYearOfBirth));
+console.log('мне сейчас ' + calculateMyAge(currentYear, myYearOfBirth));
 
 //Задание 18
 // Напишите функцию, которая должна возводить число в заданную степень. Результат должен выводить в консоль в формате: console.log("Результат: " + result);
