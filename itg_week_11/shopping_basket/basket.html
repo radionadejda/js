@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>shopping basket</title>
+		<style>
+			.basket {
+				display: flex;
+				flex-direction: column;
+				margin: 0 auto;
+                width: 60vw;
+			}
+
+			.card {
+                display: flex;
+				box-sizing: border-box;
+                width: 60vw;
+                justify-content: space-between;
+                align-items: center;
+
+			}
+
+			.card__title {
+				text-transform: uppercase;
+			}
+
+            .basket__total{
+                display: flex;
+                justify-content: space-between;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="basket">
+			<h1>Корзина</h1>
+			<div class="basket__cards">
+				<div class="card">
+					<h2 class="card__title">тарелочка</h2>
+					<p class="card__text">фарфоровая</p>
+					<p class="card__price" id="platePrice">1000</p>
+                    <p class="card__text">рублей</p>
+
+				</div>
+				<div class="card">
+					<h2 class="card__title">ягуарчик</h2>
+					<p class="card__text">плюшевый</p>
+					<p class="card__price" id="jaguarPrice">1000</p>
+                    <p class="card__text">рублей</p>
+				</div>
+				<div class="card">
+					<h2 class="card__title">тумбочка</h2>
+					<p class="card__text">с ящичком</p>
+					<p class="card__price" id="cabinetPrice">1000</p>
+                    <p class="card__text">рублей</p>
+
+				</div>
+				<div class="card">
+					<h2 class="card__title">чайничек</h2>
+					<p class="card__text">для чаечек</p>
+					<p class="card__price" id="teapotPrice">1000</p>
+                    <p class="card__text">рублей</p>
+
+				</div>
+			</div>
+            <div class="basket__total">
+                <button class="discount" id="discount">использовать купон на 20%</button>
+                <p class="sum" id="sum"></p>
+            </div>
+		</div>
+		<script src="./basket.js"></script>
+	</body>
+</html>

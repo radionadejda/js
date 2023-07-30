@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ToDo List</title>
+		<style>
+
+			.todo {
+				width: 50vw;
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				margin: 0 auto;
+			}
+
+			.button-add {
+				background-color: aqua;
+				padding: 1vw;
+				border-radius: 35px;
+			}
+
+			.task {
+				padding: 1vw;
+				width:70%;
+			}
+
+			.done {
+				text-decoration: line-through;
+			}
+
+			.new-task {
+				cursor: pointer;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class = "todo">
+		<h1>ToDo List</h1>
+		<div class="todo__input">
+			<h2>Добавить задачу</h2>
+			<div>
+			<input type="text" id="task" class="task" placeholder="Погладить котика" />
+			<button class="button-add" id="button-add">добавить</button>
+			</div>
+		</div>
+		<div class="todo__list" id="todo__list">
+			<h2>Список дел</h2>
+		</div>
+		</div>
+		<script src="./todo.js"></script>
+	</body>
+</html>

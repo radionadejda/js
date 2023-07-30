@@ -1,0 +1,17 @@
+body.light {
+    background-color: #f9f9f9;
+    color:#003366;
+}
+
+body.dark {
+    background-color: #333;
+    color:antiquewhite;
+}
+
+body.blue {
+    background-color: #cce0ff;
+    color: #096d58;
+}
+/* .body {
+    background-image: url(../Снимок\ экрана\ 2023-07-27\ 124223.png);
+} */

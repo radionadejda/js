@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./registration.css" />
+		<title>registration</title>
+	</head>
+	<body id="body" class="body">
+		<div id="registration" class="registration">
+			<h1 id="h1" class="h1">регистрация</h1>
+			<p id="p">для регистрации заполните форму</p>
+			<form id="form" novalidate>
+				<div class="form__top">
+					<label for="first_name" id="first_name-label">Введите имя</label>
+					<input type="text" id="first_name" required placeholder="Маша" />
+					<label for="last_name" id="last_name-label">Введите фамилию</label>
+					<input type="text" id="last_name" required placeholder="Иванова" />
+					<label for="email" id="email-label">введите email</label>
+					<input type="email" id="email" required placeholder="Mary@itgirls.org" />
+					<label for="phone" id="phone-label">введите номер телефона</label>
+					<input type="tel" id="phone" placeholder="+7 1234567890" />
+				</div>
+				<fieldset id="sex" class="fieldset">
+					<legend>укажите ваш пол</legend>
+					<label><input id="sex__female" type="radio" name="sex" value="female" />женский</label>
+					<label><input id="sex__male" type="radio" name="sex" value="male" />мужской</label>
+					<label><input id="sex__other" type="radio" name="sex" value="other" />другой</label>
+					<label><input id="sex__unspecified" type="radio" name="sex" value="unspecified" checked />не указан</label>
+				</fieldset>
+				<fieldset id="terms" class="fieldset">
+					<legend>я прочитал(а) <a href="#">пользователькое соглашение</a> и принимаю его условия</legend>
+					<label><input id="terms__yes" type="radio" name="terms" required/>да</label>
+					<label><input id="terms__no" type="radio" name="terms" />нет</label>
+				</fieldset>
+                <input type="submit" id="submit" class="submit" value="зарегистрироваться"></input>
+			</form>
+            <div id="message" class="message"></div>
+		</div>
+		<script src="./registration.js"></script>
+	</body>
+</html>
