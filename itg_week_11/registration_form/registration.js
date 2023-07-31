@@ -31,6 +31,6 @@ form.addEventListener("submit", function(event) {
 	}
 });
 
-let showMessage = (text) => {
+const showMessage = (text) => {
 	messageDiv.textContent = text;
 };

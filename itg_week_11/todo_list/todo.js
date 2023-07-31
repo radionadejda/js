@@ -2,7 +2,7 @@
 const list = document.querySelector("#todo__list");
 const input = document.querySelector("#task");
 
-let addTask = () => {
+const addTask = () => {
 	const newTask = document.createElement("p");
 	newTask.classList.add("new-task");
 	newTask.textContent = input.value;

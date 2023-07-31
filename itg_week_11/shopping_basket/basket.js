@@ -1,5 +1,5 @@
 
-let calcTotal = () => {
+const calcTotal = () => {
     const itemPrice = document.querySelectorAll('.card__price');
     let totalSum = 0;
     itemPrice.forEach(function(priceElem) {
@@ -15,7 +15,7 @@ calcTotal();
 
 discount.addEventListener('click', calcDiscount);
 
-let calcDiscount = () => {
+const calcDiscount = () => {
     const itemPrice = document.querySelectorAll('.card__price');
     let discount = 0.2;
     itemPrice.forEach(function(priceElem) {

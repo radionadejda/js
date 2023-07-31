@@ -1,6 +1,6 @@
 let image = document.getElementById("gallery__img");
 
-let nextImage = () => {
+const nextImage = () => {
 	if (image.src.match("cat1.jpg")) {
 		image.src = "./assets/img/cat2.jpg";
 	} else if (image.src.match("cat2.jpg")) {
@@ -18,7 +18,7 @@ let nextImage = () => {
 	}
 };
 
-let previousImage = () => {
+const previousImage = () => {
 	if (image.src.match("cat1.jpg")) {
 		image.src = "./assets/img/cat7.jpg";
 	} else if (image.src.match("cat7.jpg")) {

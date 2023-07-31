@@ -1,4 +1,4 @@
-let sum = function() {
+const sum = function() {
 	let number1 = Number(prompt("введите первое слагаемое", 1));
 	let number2 = Number(prompt("введите второе слагаемое", 1));
 	let result = number1 + number2;
@@ -11,7 +11,7 @@ let sum = function() {
 	}
 };
 
-let subtract = function() {
+const subtract = function() {
 	let number1 = Number(prompt("введите уменьшаемое", 1));
 	let number2 = Number(prompt("введите вычитаемое", 1));
 	let result = number1 - number2;
@@ -24,7 +24,7 @@ let subtract = function() {
 	}
 };
 
-let multiply = function() {
+const multiply = function() {
 	let number1 = Number(prompt("введите первый множитель", 1));
 	let number2 = Number(prompt("введите второй множитель", 1));
 	let result = number1 * number2;
@@ -37,7 +37,7 @@ let multiply = function() {
 	}
 };
 
-let divide = function() {
+const divide = function() {
 	let number1 = Number(prompt("введите делимое", 1));
 	let number2 = Number(prompt("введите делитель", 1));
 	let result = number1 / number2;

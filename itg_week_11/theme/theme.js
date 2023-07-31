@@ -8,7 +8,7 @@
 // });
 
 // Вариант 2
-let setTheme = (theme) => {
+const setTheme = (theme) => {
 	const body = document.querySelector("#body");
 	if (theme === "light") {
 		body.style.backgroundColor = "#f9f9f9";

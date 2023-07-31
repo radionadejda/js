@@ -1,4 +1,4 @@
-let sum = function() {
+const sum = function() {
   let number1 = Number(document.getElementById("number1").value);
   let number2 = Number(document.getElementById("number2").value);
   let result = Number(number1) + Number(number2);
@@ -9,7 +9,7 @@ let sum = function() {
 };
 document.querySelector("#sum").onclick = sum;
 
-let subtract = function() {
+const subtract = function() {
   let number1 = Number(document.getElementById("number1").value);
   let number2 = Number(document.getElementById("number2").value);
   let result = number1 - number2;
@@ -20,7 +20,7 @@ let subtract = function() {
 };
 document.querySelector("#subtract").onclick = subtract;
 
-let multiply = function() {
+const multiply = function() {
   let number1 = Number(document.getElementById("number1").value);
   let number2 = Number(document.getElementById("number2").value);
   let result = number1 * number2;
@@ -31,7 +31,7 @@ let multiply = function() {
 };
 document.querySelector("#multiply").onclick = multiply;
 
-let divide = function() {
+const divide = function() {
   let number1 = Number(document.getElementById("number1").value);
   let number2 = Number(document.getElementById("number2").value);
   let result;
@@ -47,7 +47,7 @@ let divide = function() {
 };
 document.querySelector("#divide").onclick = divide;
 
-let clear = () => {
+const clear = () => {
   location.reload();
 };
 document.querySelector('#clear').onclick = clear;

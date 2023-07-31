@@ -1,6 +1,6 @@
 // вариант со значениями по умолчанию
 
-// let calculateTotalPrice = (quantity = 2, price = 15000000) => {
+// const calculateTotalPrice = (quantity = 2, price = 15000000) => {
 //     let result = quantity*price;
 //     let local = result.toLocaleString();
 //     // alert("Стоимость покупки: "+ local +" рублей");
@@ -12,7 +12,7 @@
 
 // Вариант со значениями, введенными пользователем
 
-let calculateTotalPrice = () => {
+const calculateTotalPrice = () => {
     let quantity = Number(prompt('введите количество', 2));
     let price = Number(prompt('введите стоимость', 15000000));
     let result = quantity*price;
