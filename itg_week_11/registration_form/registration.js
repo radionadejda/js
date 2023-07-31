@@ -1,10 +1,3 @@
-//
-//     console.log(hasNumber.test(firstName));
-//     console.log((/^[a-zA-Z]+$/.test(firstName)));
-
-// else
-// console.log('Форма отправлена');
-
 const submit = document.getElementById("submit");
 const form = document.getElementById("form");
 const messageDiv = document.getElementById("message");
@@ -38,6 +31,6 @@ form.addEventListener("submit", function(event) {
 	}
 });
 
-function showMessage(text) {
+let showMessage = (text) => {
 	messageDiv.textContent = text;
-}
+};

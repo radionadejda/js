@@ -8,7 +8,7 @@
 //     div.className = "total";
 //     div.innerHTML = "Стоимость покупки: "+ local +" рублей";
 //     document.body.append(div);
-// }
+// };
 
 // Вариант со значениями, введенными пользователем
 
@@ -30,4 +30,4 @@ let calculateTotalPrice = () => {
         div.innerHTML = "Стоимость покупки: "+ local +" рублей";
         document.body.append(div);
     }
-}
+};

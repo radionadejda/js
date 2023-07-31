@@ -1,4 +1,4 @@
-function sum() {
+let sum = function() {
   let number1 = Number(document.getElementById("number1").value);
   let number2 = Number(document.getElementById("number2").value);
   let result = Number(number1) + Number(number2);
@@ -6,10 +6,10 @@ function sum() {
   let calcResult = document.createElement("p");
   calcResult.innerHTML = result;
   calc.append(calcResult);
-}
+};
 document.querySelector("#sum").onclick = sum;
 
-function subtract() {
+let subtract = function() {
   let number1 = Number(document.getElementById("number1").value);
   let number2 = Number(document.getElementById("number2").value);
   let result = number1 - number2;
@@ -17,10 +17,10 @@ function subtract() {
   let calcResult = document.createElement("p");
   calcResult.innerHTML = result;
   calc.append(calcResult);
-}
+};
 document.querySelector("#subtract").onclick = subtract;
 
-function multiply() {
+let multiply = function() {
   let number1 = Number(document.getElementById("number1").value);
   let number2 = Number(document.getElementById("number2").value);
   let result = number1 * number2;
@@ -28,10 +28,10 @@ function multiply() {
   let calcResult = document.createElement("p");
   calcResult.innerHTML = result;
   calc.append(calcResult);
-}
+};
 document.querySelector("#multiply").onclick = multiply;
 
-function divide() {
+let divide = function() {
   let number1 = Number(document.getElementById("number1").value);
   let number2 = Number(document.getElementById("number2").value);
   let result;
@@ -44,10 +44,10 @@ function divide() {
   let calcResult = document.createElement("p");
   calcResult.innerHTML = result;
   calc.append(calcResult);
-}
+};
 document.querySelector("#divide").onclick = divide;
 
-function clear() {
+let clear = () => {
   location.reload();
-}
+};
 document.querySelector('#clear').onclick = clear;
