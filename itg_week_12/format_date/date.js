@@ -24,6 +24,7 @@ const formatDate = (inputDate) => {
     let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
     resultDate.innerHTML = message + days + " дней, " + hours + " часов, " + minutes + " минут, " + seconds + " секунд.";
+    input.value = "";
 };
 
 button.addEventListener("click", formatDate);

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./spam.css" />
+		<title>Сервис</title>
+	</head>
+	<body>
+		<h1 class="h1">Сервис комментариев со спам фильтром</h1>
+		<div class="form">
+			<label for="name">введите имя: </label>
+			<input type="text" id="name" class="input" maxlength = "20" placeholder="Введите ваше имя" value="Маша"/>
+			<label for="avatar">введите ссылку на аватар: </label>
+			<input type="url" class="input" id="avatar" value="./cat1.jpg" placeholder="Введите ссылку на аватар" />
+			<label for="message">Сообщение: </label>
+			<textarea id="message" class="input message" maxlength = "200" placeholder="Введите ваше сообщение"></textarea>
+			<button id="button" class="button">Добавить комментарий</button>
+        </div>
+		<div class="comments" id="comments">
+			<h2 class="h2">Комментарии</h2>
+            <div class="comment">
+                <img src="./cat1.jpg" class="comment__avatar">
+                <p class="comment__name">Admin</p>
+                <p class="comment__text">первый комментарий </p>
+            </div>
+		</div>
+
+		<script src="./spam.js"></script>
+	</body>
+</html>

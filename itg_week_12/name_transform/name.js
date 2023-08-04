@@ -10,8 +10,6 @@ let print = () => {
     let result = input.value.trim();
     result = result.replace(/\s\s+/g, ' ');
     const patternName = /^([а-яА-Я- ])+$/;
-    // const patternDouble = /^([а-яА-Я-])+$/;
-    // дефис в паттерне нужен, чтобы учитывать двойные имена (Анна-Мария), сложные отчества ( ...-оглы), двойные фамилии (Салтыков-Щедрин), но как учесть имена с пробелом без дефиса это вопрос
     if (!patternName.test(result)) {
         message.innerHTML = "вводимые данные могут содержать только буквы кириллицы и дефис";
     } else {
@@ -27,7 +25,14 @@ let print = () => {
             resultMiddleName.textContent += " " + result[2];
             input.value = "";
         }
-        //здесь может быть else if !patternDouble.test(result[i]) и код на капитализацию имен без дефисов
+    }
+};
+
+button.addEventListener("click", print);
+
+
+ // const patternDouble = /^([а-яА-Я-])+$/;
+    // дефис в паттерне нужен, чтобы учитывать двойные имена (Анна-Мария), сложные отчества ( ...-оглы), двойные фамилии (Салтыков-Щедрин), но как учесть имена с пробелом без дефиса это вопросздесь может быть else if !patternDouble.test(result[i]) и код на капитализацию имен без дефисов
         //if (patternDouble.test(result[0])) {
         //         let firstName = result[0];
         //         firstName = firstName.split("-");
@@ -38,7 +43,3 @@ let print = () => {
         //             return firstLetter + rest;
         //             });
         //         test.innerHTML = firstName.join("-");
-    }
-};
-
-button.addEventListener("click", print);
