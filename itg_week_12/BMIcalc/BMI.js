@@ -4,9 +4,9 @@ const result = document.querySelector('#result');
 
 
 
-const calculateBMI = () => {
-    const weight = document.querySelector('#weight').value;
-    const height = document.querySelector('#height').value;
+const calculateBMI = (weight, height) => {
+    weight = document.querySelector('#weight').value;
+    height = document.querySelector('#height').value;
     if (weight <= 0 || weight >= 600) {
         result.innerHTML = "пожалуйста, введите вес в килограммах";
     } else if (height <=0 || height >=3) {

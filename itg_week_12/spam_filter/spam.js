@@ -1,6 +1,6 @@
 const button = document.querySelector('#button');
 const comments = document.querySelector("#comments");
-const name = document.querySelector("#name");
+const userName = document.querySelector("#name");
 const avatar = document.querySelector("#avatar");
 const message = document.querySelector("#message");
 
@@ -10,13 +10,13 @@ let addComment = () => {
     const spamFilter = /viagra|xxx|otherbadword/gi;
     let newName = document.createElement("p");
     newName.classList.add("comment__name");
-    let nameTransform = name.value;
+    let nameTransform = userName.value;
     if (nameTransform.indexOf(' ') !==-1) {
         alert(`поле "имя" не может содержать пробел`);
         return;
     } else if (nameTransform === "") {
         alert(`поле "имя" не может быть пустым`);
-        name.value = "Маша";
+        userName.value = "Маша";
         return;
     } else if (spamFilter.test(nameTransform)) {
         nameTransform = nameTransform.replace (spamFilter, "***");
@@ -47,7 +47,7 @@ let addComment = () => {
 
 	newComment.append(newAvatar, newName, newMessage);
 	comments.append(newComment);
-	name.value = "Маша";
+	userName.value = "Маша";
     message.value = ""
 }
 

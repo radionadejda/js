@@ -2,7 +2,7 @@ $bg-color:rgb(14, 14, 30);
 $basic-color: antiquewhite;
 $accent1-color: rgb(247, 105, 54);
 $accent2-color: blueviolet;
-$padding-left: 5vw;
+$padding: 5vw;
 
 *{
     padding: 0;
@@ -15,7 +15,7 @@ $padding-left: 5vw;
 .h1 {
     font-size: 1.5rem;
     margin: 2vh auto;
-    padding-left: $padding-left;
+    padding: 1vh $padding;
     text-align: center;
 }
 
@@ -24,7 +24,7 @@ $padding-left: 5vw;
     flex-direction: column;
     width: 60vw;
     gap: 1.5vh;
-    padding-left: $padding-left;
+    padding: 1vh $padding;
     margin: 0 auto;
 }
 
@@ -48,9 +48,9 @@ padding: 1vw;
 .comments {
     display:flex;
     flex-direction: column;
-    width: 90vw;
+    width: 80vw;
     gap: 1vh;
-    padding-left: $padding-left;
+    padding: 2vh $padding;
     margin: 2vh auto;
     text-align: center;
 }
@@ -65,8 +65,7 @@ padding: 1vw;
 
 .comment__avatar {
     padding: 0;
-    width: 100%;
-    height: 100%;
+    width: 70%;
     object-fit: cover;
     grid-column: 1/2;
 }
