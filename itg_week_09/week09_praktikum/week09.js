@@ -64,8 +64,8 @@ const name = "Кот";
  //(fahrenheit - 32) / 1.8;</p>
  //Применив переменные и шаблонные строки, выведи в консоль строку, где _fahrenheit_и _celsius_ — это значения соответствующих переменных:
 //  //'_fahrenheit_ градуса по Фаренгейту — это _celsius_ градуса по Цельсию.'
-let fahrenheit = 451;
-let celsius = (fahrenheit-32)/1.8;
+const fahrenheit = 451;
+const celsius = (fahrenheit-32)/1.8;
 console.log(`${fahrenheit} градуса по Фаренгейту - это ${celsius} градуса по Цельсию.`);
 
 //  вариант 2
@@ -76,8 +76,8 @@ console.log(fahrenheit + ' градуса по Фаренгейту - это ' +
  //Затем преобразуй эту переменную в число и выведи ее как число.</p>
  //Проверь себя с помощью typeof.</p>
 
-let l='15';
-let m=+l;
+const l='15';
+const m=+l;
 console.log(l);
 console.log(typeof(l));
 console.log(m);
