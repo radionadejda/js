@@ -19,6 +19,9 @@ const setTheme = (theme) => {
 	} else if (theme === "blue") {
 		body.style.backgroundColor = "#cce0ff";
 		body.style.color = "#096d58";
+	} else {
+		body.style.backgroundColor = "#333";
+		body.style.color = "#faebd7";
 	}
 };
 document.getElementById("switcher").addEventListener("change", function() {
