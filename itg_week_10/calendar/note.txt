@@ -1,3 +1,0 @@
-check calendar on liveserver
-check calc2 with variables outside function(s). if works change them all and calendar as well.
-theme is ok. just needed a default else style
