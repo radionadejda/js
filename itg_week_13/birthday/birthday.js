@@ -15,7 +15,7 @@ const formatDate = (inputDate) => {
         message = "после события прошло ";
     } else {
         message = "прямо сейчас";
-        resultDate.innerHTML = message;
+        resultDate.textContent = message;
         return;
     }
     let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
@@ -23,8 +23,8 @@ const formatDate = (inputDate) => {
     let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-    resultDate.innerHTML = message + days + " дней, " + hours + " часов, " + minutes + " минут, " + seconds + " секунд.";
-    input.value = "";
+    resultDate.textContent = message + days + " дней, " + hours + " часов, " + minutes + " минут, " + seconds + " секунд.";
+    input.value = "2023-08-04T14:00";
 };
 
 button.addEventListener("click", formatDate);
