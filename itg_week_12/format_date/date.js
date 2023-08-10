@@ -1,6 +1,5 @@
 const button = document.querySelector('#button');
 const resultDate = document.querySelector('#formatted');
-const test = document.querySelector('#test');
 const input = document.querySelector('#datetime');
 
 const formatDate = (inputDate) => {
