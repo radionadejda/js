@@ -6,7 +6,7 @@
 //     // alert("Стоимость покупки: "+ local +" рублей");
 //     let div = document.createElement('div');
 //     div.className = "total";
-//     div.innerHTML = "Стоимость покупки: "+ local +" рублей";
+//     div.textContent = "Стоимость покупки: "+ local +" рублей";
 //     document.body.append(div);
 // };
 
@@ -20,14 +20,14 @@ const calculateTotalPrice = () => {
         // alert("что-то пошло не так ☹, попробуйте ввести положительное число");
         let div = document.createElement('div');
         div.className = "error";
-        div.innerHTML = "что-то пошло не так ☹, попробуйте ввести положительное число";
+        div.textContent = "что-то пошло не так ☹, попробуйте ввести положительное число";
         document.body.append(div);
     } else {
         let local = result.toLocaleString();
         // alert("Стоимость покупки: "+ local +" рублей");
         let div = document.createElement('div');
         div.className = "total";
-        div.innerHTML = "Стоимость покупки: "+ local +" рублей";
+        div.textContent = "Стоимость покупки: "+ local +" рублей";
         document.body.append(div);
     }
 };

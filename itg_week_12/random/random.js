@@ -29,10 +29,10 @@ numbers.forEach (num => {
 
 	let average = sum / numbers.length;
 
-	resultNumbers.innerHTML = "Сгенерированные числа: " + numbers.join(", ");
-	resultMin.innerHTML = "Минимальное число: " + min;
-	resultMax.innerHTML = "Максимальное число: " + max;
-	resultSum.innerHTML = "Сумма чисел: " + sum;
-	resultProduct.innerHTML = "Произведение чисел: " + product;
-	resultAverage.innerHTML = "Среднее арифметическое: " + average.toFixed(2);
+	resultNumbers.textContent = "Сгенерированные числа: " + numbers.join(", ");
+	resultMin.textContent = "Минимальное число: " + min;
+	resultMax.textContent = "Максимальное число: " + max;
+	resultSum.textContent = "Сумма чисел: " + sum;
+	resultProduct.textContent = "Произведение чисел: " + product;
+	resultAverage.textContent = "Среднее арифметическое: " + average.toFixed(2);
 });

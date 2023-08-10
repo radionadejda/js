@@ -9,11 +9,11 @@ let print = () => {
     result = result.replace(/\s\s+/g, ' ');
     const patternName = /^([а-яА-Я ])+$/;
     if (!patternName.test(result)) {
-        message.innerHTML = "вводимые данные могут содержать только буквы кириллицы";
+        message.textContent = "вводимые данные могут содержать только буквы кириллицы";
     } else {
         result = result.split(" ");
         if (result.length != 3) {
-            message.innerHTML = "введите фамилию, имя и отчество через пробел";
+            message.textContent = "введите фамилию, имя и отчество через пробел";
         } else {
             for (let i = 0; i <= result.lenth; i++) {
                 result[i] =  result[i].charAt(0).toUpperCase() + result[i].slice(1).toLowerCase();

@@ -17,7 +17,7 @@ const isLeapYear = () => {
 	} else {
 		message = `${year} - не високосный год и в нем 365 дней`;
 	}
-	answer.innerHTML = message;
+	answer.textContent = message;
 };
 
 button.addEventListener("click", isLeapYear);

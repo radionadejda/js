@@ -4,7 +4,7 @@
   let result = number1 + number2;
   let calc = document.getElementById("calc");
   let calcResult = document.createElement("p");
-  calcResult.innerHTML = result;
+  calcResult.textContent = result;
   calc.append(calcResult);
 };
 document.querySelector("#sum").onclick = sum;
@@ -15,7 +15,7 @@ const subtract = function() {
   let result = number1 - number2;
   let calc = document.getElementById("calc");
   let calcResult = document.createElement("p");
-  calcResult.innerHTML = result;
+  calcResult.textContent = result;
   calc.append(calcResult);
 };
 document.querySelector("#subtract").onclick = subtract;
@@ -26,7 +26,7 @@ const multiply = function() {
   let result = number1 * number2;
   let calc = document.getElementById("calc");
   let calcResult = document.createElement("p");
-  calcResult.innerHTML = result;
+  calcResult.textContent = result;
   calc.append(calcResult);
 };
 document.querySelector("#multiply").onclick = multiply;
@@ -42,7 +42,7 @@ const divide = function() {
   };
   let calc = document.getElementById("calc");
   let calcResult = document.createElement("p");
-  calcResult.innerHTML = result;
+  calcResult.textContent = result;
   calc.append(calcResult);
 };
 document.querySelector("#divide").onclick = divide;

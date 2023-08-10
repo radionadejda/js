@@ -21,10 +21,10 @@ let addComment = () => {
     } else if (spamFilter.test(nameTransform)) {
         nameTransform = nameTransform.replace (spamFilter, "***");
         nameTransform = nameTransform.charAt(0).toUpperCase() + nameTransform.slice(1).toLowerCase();
-        newName.innerHTML=nameTransform;
+        newName.textContent = nameTransform;
     } else {
         nameTransform = nameTransform.charAt(0).toUpperCase() + nameTransform.slice(1).toLowerCase();
-        newName.innerHTML=nameTransform;
+        newName.textContent = nameTransform;
     };
 
     let newAvatar = document.createElement("img");
@@ -39,10 +39,10 @@ let addComment = () => {
     } else if (spamFilter.test(messageText)) {
         messageText = messageText.replace (spamFilter, "***");
         newMessage.classList.add("comment__text");
-        newMessage.innerHTML=messageText;
+        newMessage.textContent = messageText;
     } else {
         newMessage.classList.add("comment__text");
-        newMessage.innerHTML=messageText;
+        newMessage.textContent = messageText;
     };
 
 	newComment.append(newAvatar, newName, newMessage);
