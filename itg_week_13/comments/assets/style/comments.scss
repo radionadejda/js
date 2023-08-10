@@ -1,0 +1,87 @@
+$bg-color:rgb(14, 14, 30);
+$basic-color: antiquewhite;
+$accent1-color: rgb(247, 105, 54);
+$accent2-color: blueviolet;
+$padding: 5vw;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: $bg-color;
+    color: $basic-color;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.h1 {
+    font-size: 1.5rem;
+    margin: 2vh auto;
+    padding: 1vh $padding;
+    text-align: center;
+}
+
+.form {
+    display:flex;
+    flex-direction: column;
+    width: 60vw;
+    gap: 1.5vh;
+    padding: 1vh $padding;
+    margin: 0 auto;
+}
+
+.message {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.input {
+padding: 1vw;
+}
+.button {
+    background-color: $accent1-color;
+    padding: 2vh 2vw;
+    border-radius: 50px;
+    color: $basic-color;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.comments {
+    display:flex;
+    flex-direction: column;
+    width: 80vw;
+    gap: 1vh;
+    padding: 2vh $padding;
+    margin: 2vh auto;
+    text-align: center;
+}
+
+.comment {
+    border: 1px solid $accent2-color;
+    padding: 1vw;
+    display: grid;
+    grid-template-columns: 20% 20% 57%;
+    gap: 1%;
+}
+
+.comment__avatar {
+    padding: 0;
+    width: 70%;
+    object-fit: cover;
+    grid-column: 1/2;
+}
+
+.comment__name {
+    font-weight: bold;
+    align-self: center;
+    justify-self: center;
+    padding: 0;
+    width:100%;
+    color:  rgb(247, 105, 54);
+    grid-column: 2/3;
+    word-wrap: break-word;
+}
+
+.comment__text {
+    grid-column: 3/4;
+    align-self: center;
+}

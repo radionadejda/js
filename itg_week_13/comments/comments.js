@@ -52,3 +52,9 @@ let addComment = () => {
 }
 
 button.addEventListener('click', addComment);
+
+
+// file.addEventListener('change', function(){
+// image.src = URL.createObjectURL(avatar.files[0]);
+// image.style.display = "block";
+// });
