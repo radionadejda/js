@@ -7,12 +7,13 @@
 	</head>
 	<body>
 		<h1>до дня рождения</h1>
-		<label for="dateInput">Введите день вашего рождения </label>
-		<input  type="datetime-local" step="1" id="datetime" value="2023-08-04T14:00" required/>
+		<label for="birthdayInput">Введите день вашего рождения </label>
+		<input  type="date" step="1" id="birthday" min="2023-01-01" max="2023-12-31" required/>
 		<button id="button">Сформировать</button>
+		<button id="clear">очистить</button>
     <h2>результат</h2>
-		<p id="formatted"></p>
-    <p id="test"></p>
+		<div id="formatted"></div>
+		<p id="error"></p>
 		<script src="./birthday.js"></script>
 	</body>
 </html>
