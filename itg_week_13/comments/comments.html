@@ -8,25 +8,41 @@
 	</head>
 	<body>
 		<h1 class="h1">Сервис комментариев со спам фильтром и котиками</h1>
+	<div class="chat">
 		<div class="form">
+			<h2 class="h2">оставьте комментарий</h2>
 			<label for="name">введите имя: </label>
-			<input type="text" id="name" class="input" maxlength = "20" placeholder="Введите ваше имя" value="Маша"/>
+			<input type="text" id="name" class="input" maxlength="20" placeholder="Введите ваше имя"  />
+			<div class="name-checkbox">
+			<p>показывать Ваше имя?</p>
+				<label for="name__yes">Да</label>
+				<input type="checkbox" id="name_yes" name="nameCheckbox" value="name_yes" checked />
+				<label for="name__no">Нет</label>
+				<input type="checkbox" id="name_no" name="nameCheckbox" value="name_no"/>
+			</div>
+			<!-- это радиокнопки, еще они есть в стиле
+			<div class="name-radiobutton">
+				<p>показывать Ваше имя?</p>
+				<label><input id="name__yes" type="radio" name="nameRadio" checked/>да</label>
+				<label><input id="name__no" type="radio" name="nameRadio" />нет</label>
+			</div> -->
 			<label for="avatar">введите ссылку на аватар: </label>
-			<input type="url" class="input" id="avatar" value="./cat1.jpg" placeholder="Введите ссылку на аватар" />
+			<input type="url" class="input" id="avatar" value="" placeholder="Введите ссылку на аватар" />
 			<label for="message">Сообщение: </label>
-			<textarea id="message" class="input message" maxlength = "200" placeholder="Введите ваше сообщение"></textarea>
+			<textarea id="message" class="input message" maxlength="200" placeholder="Введите ваше сообщение"></textarea>
 			<button id="button" class="button">Добавить комментарий</button>
-        </div>
-		<div class="comments" id="comments">
-			<h2 class="h2">Комментарии</h2>
-            <div class="comment">
-                <img src="./cat1.jpg" class="comment__avatar">
-                <p class="comment__name">Admin</p>
-                <p class="comment__text">Первый комментарий. Спам фильтр работает только на указанные в задании слова: *** и ***! Все остальные можно использовать!</p>
-				<p class="comment__date">[Дата и время]</p>
-            </div>
+			<!-- <p class="error"></p> -->
 		</div>
-
+		<div class="comments" id="comments">
+			<h2 class="h2">комментарии</h2>
+			<div class="comment">
+				<img src="./assets/img/cat1.jpg" class="comment__avatar" />
+				<p class="comment__name">Admin</p>
+				<p class="comment__date">[Дата и время]</p>
+				<p class="comment__text">Первый комментарий. Спам фильтр работает только на указанные в задании слова: *** и ***! Все остальные можно использовать!</p>
+			</div>
+		</div>
+	</div>
 		<script src="./comments.js"></script>
 	</body>
 </html>

@@ -10,26 +10,56 @@
 .h1 {
   font-size: 1.5rem;
   margin: 2vh auto;
-  padding: 1vh 5vw;
+  padding: 1vh 3vw;
   text-align: center;
+}
+
+.h2 {
+  padding-bottom: 2vh;
+}
+
+.chat {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  width: 60vw;
+  width: 45vw;
   gap: 1.5vh;
-  padding: 1vh 5vw;
+  padding: 1vh 3vw;
   margin: 0 auto;
+}
+
+.name-checkbox {
+  display: flex;
+  gap: 1vw;
+}
+.name-checkbox input {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 2px solid #333;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5vw;
+}
+.name-checkbox input:checked {
+  background: rgb(247, 105, 54);
 }
 
 .message {
   max-width: 100%;
   min-width: 100%;
+  border: 1px solid blueviolet;
 }
 
 .input {
   padding: 1vw;
+  border: 1px solid blueviolet;
 }
 
 .button {
@@ -44,27 +74,33 @@
 .comments {
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 55vw;
   gap: 1vh;
-  padding: 2vh 5vw;
-  margin: 2vh auto;
-  text-align: center;
+  padding: 1vh 3vw;
+  margin: 0 auto;
+  align-items: center;
 }
 
 .comment {
   border: 1px solid blueviolet;
   padding: 1vw;
   display: grid;
-  grid-template-columns: 20% 20% 57%;
-  gap: 1%;
+  grid-template-columns: 120px 1fr 3fr;
+  grid-template-rows: 50% 50%;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
 }
 
 .comment__avatar {
   padding: 0;
-  width: 70%;
+  width: 100px;
+  height: 100px;
   -o-object-fit: cover;
      object-fit: cover;
   grid-column: 1/2;
+  grid-row: 1/3;
+  align-self: center;
 }
 
 .comment__name {
@@ -75,10 +111,21 @@
   width: 100%;
   color: rgb(247, 105, 54);
   grid-column: 2/3;
+  grid-row: 1/2;
   word-wrap: break-word;
+}
+
+.comment__date {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  align-self: center;
+  word-wrap: break-word;
+  font-size: small;
 }
 
 .comment__text {
   grid-column: 3/4;
+  grid-row: 1/3;
   align-self: center;
+  padding-left: 1vw;
 }/*# sourceMappingURL=comments.css.map */
