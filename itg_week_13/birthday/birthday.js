@@ -59,10 +59,10 @@ const formatDate = () => {
 	resultDate.textContent = message + formatDay;
 
     // добавляет новый параграф с каждым новым результатом
-// const newResult = document.createElement("p");
-// newResult.textContent = input.value;
-// resultDate.append(newResult);
-// newResult.textContent = message + days + " дней ";
+    // const newResult = document.createElement("p");
+    // newResult.textContent = input.value;
+    // resultDate.append(newResult);
+    // newResult.textContent = message + formatDay;
 };
 
 button.addEventListener("click", formatDate);
