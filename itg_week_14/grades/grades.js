@@ -21,10 +21,16 @@ document.getElementById("showResults").addEventListener("click", function() {
 
 	const resultsDiv = document.getElementById("results");
 	resultsDiv.innerHTML =
-    `<p>Средняя оценка: ${averageGrade.toFixed(2)}</p>
+    `<p>результаты: ${grades.join(", ")}</p>
+    <p>Средняя оценка: ${averageGrade.toFixed(2)}</p>
     <p>Максимальная оценка: ${maxGrade}</p>
     <p>Минимальная оценка: ${minGrade}</p>
     <p>Количество положительных отметок: ${positiveGradesCount}</p>
     <p>Количество отрицательных отметок: ${negativeGradesCount}</p>
     <p>Буквенные обозначения отметок: ${letterGrades.join(", ")}</p>`;
 });
+
+const clear = () => {
+	location.reload();
+};
+document.querySelector("#removeResults").onclick = clear;
