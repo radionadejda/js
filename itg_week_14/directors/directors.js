@@ -45,11 +45,35 @@ const directors = [
     top_rated_film: "Далласский клуб покупателей",
   },
 ];
-const directorsDiv = document.getElementById("directors");
+
+const topDirectors = document.getElementById("topDirectors");
+const topFilms = document.getElementById("topFilms");
 directors.forEach((director) => {
-  let directorElement = document.createElement("div");
+// создаем и наполняем элементы с именем, карьерой и ссылкой на фильмографию
   let directorName = document.createElement("h2");
+  directorName.textContent = director.name;
   let directorCareer = document.createElement("p");
+  directorCareer.textContent = director.career;
   let directorFilmsLink = document.createElement("a");
-  let directorTopFilm = document.createElement("p");
-  
+  directorFilmsLink.textContent = "фильмография";
+  directorFilmsLink.href = director.films;
+// создаем и наполняет див, в котором будут элементы, созданные раньше
+  let directorElement = document.createElement("div");
+  directorElement.append(directorName, directorCareer, directorFilmsLink);
+  // directorElement.classList.add("director");
+// добавляем нового режиссера на страницу
+  topDirectors.append(directorElement);
+
+});
+
+// заполняем лучшие фильмы
+// создаем заголовок
+let topFilmsTitle = document.createElement("h2");
+topFilmsTitle.textContent = "Лучшие фильмы этих режиссёров";
+// создаем див, в котором будут лучшие фильмы
+  let moviesElement = document.createElement("div");
+// создаем массив с лучшими фильмами и помещаем его в див
+  const topFilmsList = directors.map((director) => director.top_rated_film);
+  moviesElement.textContent = `${topFilmsList.join(",  ")}`;
+// добавляем загловок и список фильмов на станицу
+  topFilms.append(topFilmsTitle, moviesElement);
