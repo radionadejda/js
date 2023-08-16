@@ -5,6 +5,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "javascript"
+		"liveServer.settings.multiRootWorkspaceName": "javascript",
+		"liveServer.settings.CustomBrowser": "chrome"
 	}
 }
