@@ -49,18 +49,25 @@ const directors = [
 const topDirectors = document.getElementById("topDirectors");
 const topFilms = document.getElementById("topFilms");
 directors.forEach((director) => {
-// создаем и наполняем элементы с именем, карьерой и ссылкой на фильмографию
+// создаем и задаем имя режиссера
   let directorName = document.createElement("h2");
+  directorName.style.textTransform = "uppercase";
   directorName.textContent = director.name;
+// создаем и задаем навыки режиссера
   let directorCareer = document.createElement("p");
   directorCareer.textContent = director.career;
+// создаем и задаем ссылку на фильмографию режиссера
   let directorFilmsLink = document.createElement("a");
   directorFilmsLink.textContent = "фильмография";
   directorFilmsLink.href = director.films;
-// создаем и наполняет див, в котором будут элементы, созданные раньше
+  directorFilmsLink.style.textDecoration = "none";
+  directorFilmsLink.style.fontWeight = "bold";
+// создаем и наполняет див, в котором будут элементы, с именем, навыками и фильмографией
   let directorElement = document.createElement("div");
-  directorElement.append(directorName, directorCareer, directorFilmsLink);
-  // directorElement.classList.add("director");
+  let directorWorks = document.createElement("div");
+  directorElement.append(directorName, directorWorks);
+  directorWorks.append(directorCareer, directorFilmsLink)
+  directorWorks.classList.add("director__works");
 // добавляем нового режиссера на страницу
   topDirectors.append(directorElement);
 

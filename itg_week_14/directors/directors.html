@@ -5,14 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
-            background-color: bisque;
+        .body {
+            position: relative;
+            height: 100%;
+            background-image: url(./background.jpg);
+            background-size: cover;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .body::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        height:100%;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-color: rgba(217, 186, 135, 0.2);
+        }
+
+        .title {
+            margin: 2vw auto;
+            text-transform: uppercase;
+        }
+
+        .director__works {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .directors {
+            padding: 2vw 4vw;
+        }
+
+        .films {
+            padding: 2vw 4vw;
         }
     </style>
 </head>
-<body>
-    <div id="topDirectors"></div>
-    <div id="topFilms"></div>
+<body class = "body">
+    <h1 class="title">режиссеры из массива объектов</h1>
+    <div id="topDirectors" class="directors"></div>
+    <div id="topFilms" class="films"></div>
     <script src="./directors.js"></script>
 </body>
 </html>
