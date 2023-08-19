@@ -2,7 +2,7 @@
 //Используйте метод querySelector, чтобы найти элемент <p>. При нажатии на кнопку измените его текст на "Ты нашёл элемент и изменил его текст!"
 //Подсказка: Используйте метод для изменения текстового содержимого элемента (innerHTML/innerText/textContent)
 
-const paragraph = document.getElementById('practicum0');
+const paragraph = document.querySelector('#practicum0');
 
 function makeZero() {
 	paragraph.innerText = 'Ты нашёл элемент и изменил его текст!';
@@ -37,7 +37,7 @@ document.querySelector('.b-2').onclick = makeTwo;
 //Подсказка: Используйте метод для изменения текстового содержимого элемента (innerHTML/innerText/textContent)
 
 function makeThree() {
-	document.getElementById('practicum3').innerText = 'Заголовок изменен!';
+	document.querySelector('#practicum3').innerText = 'Заголовок изменен!';
 }
 
 document.querySelector('.b-3').onclick = makeThree;
@@ -47,7 +47,7 @@ document.querySelector('.b-3').onclick = makeThree;
 //Подсказка: Используйте свойство style для изменения стилей элемента
 
 function makeFour() {
-	const div = document.getElementById('practicum4');
+	const div = document.querySelector('#practicum4');
 	div.style.background = 'red';
 }
 
