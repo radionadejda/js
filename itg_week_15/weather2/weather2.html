@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>weather</title>
+        <style>
+            .input {
+                display: flex;
+                flex-direction: column;
+                width: 50vw;
+                padding-bottom: 2vh;
+                gap: 1vh;
+            }
+        </style>
+	</head>
+	<body>
+		<h1>Температура в разных городах</h1>
+        <div class="input">
+        <label for="moscow">Введите температуру в городе <span class = "city">Москва</span>: </label>
+        <input type="number" id="moscow">
+        <label for="yakutsk">Введите температуру в городе <span class = "city">Якутск</span>: </label>
+        <input type="number" id="yakutsk" >
+        <label for="karaganda">Введите температуру в городе <span class = "city">Караганда</span>: </label>
+        <input type="number" id="karaganda">
+        <label for="voronezh">Введите температуру в городе <span class = "city">Воронеж</span>: </label>
+        <input type="number" id="voronezh">
+        </div>
+        <button id="button">узнать</button>
+        <button id="remove">очистить</button>
+		<div id="weather">
+        </div>
+		<p id="maxTemperature"></p>
+		<p id="minTemperature"></p>
+		<script src="./weather2.js"></script>
+	</body>
+</html>
