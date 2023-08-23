@@ -3,47 +3,55 @@ const weather = document.querySelector("#weather");
 const maxTemperature = document.querySelector("#maxTemperature");
 const minTemperature = document.querySelector("#minTemperature");
 
-let citiesCollection = document.getElementsByClassName("city");
+
 let cities = [];
 let listItems = [];
-//цикл добавляет города в массив
+// получаем все города по классу, добавляем их в массив cities
+let citiesCollection = document.getElementsByClassName("city");
 for (let city of citiesCollection) {
     cities.push(city.textContent);
+	// создаем параграфы для вывода температур
 	let listItem = document.createElement("p");
-	listItem.classList.add('resultCity');
-	listItem.textContent = `${city.textContent}: `;
+	// пока прячем
 	listItem.style.display = "none";
+	// добавляем в родительский див
 	weather.appendChild(listItem);
+	// добавляем в массив для последующего вывода
 	listItems.push(listItem);
 }
 
+// проверяем, что получилось
 // console.log(cities);
-// console.log(listItems[0]);
 
 let getTemp = () => {
-	//вот этот участок обнуляет сначала введенные данные
+//обнуляем ранее введенные данные
 	for (let listItem of listItems) {
         listItem.textContent = "";
     }
-//
+//получаем введенные показатели температуры и добавляем их в массив temperatures
 	let temperaturesCollection = document.querySelectorAll("input");
 	let temperatures = [];
 	for (let temperature of temperaturesCollection) temperatures.push(temperature.value);
-	console.log(temperatures);
-//массивы с температурой и городами и проверки на валидность
+	// проверяем, что получилось
+	// console.log(temperatures);
+
 	let validTemperatures = [];
 	let validCities = [];
+	//проверяем введенные данные на валидность, добавляем их в массив
 	for (let i = 0; i < cities.length; i++) {
 		if (temperatures[i] !== "" && temperatures[i] !== null && temperatures[i] !== undefined) {
 			validTemperatures.push(temperatures[i]);
+			// добавляем в массив города, которым введены валидные температуры
 			validCities.push(cities[i]);
+			// выводим на станицу валидные города и температуры
 			listItems[i].textContent += `${cities[i]}: ${temperatures[i]}; `;
 			listItems[i].style.display = "block";
-		} else {
-			listItems[i].style.display = "none";
 		}
 	}
+
+	// проверяем, что получилось
 	// console.log(validTemperatures, validCities);
+
 //проверка и вывод макс и мин температур
 	if (validTemperatures.length > 0) {
 		let maxTemp = Math.max(...validTemperatures);
@@ -59,6 +67,7 @@ let getTemp = () => {
 };
 
 button.addEventListener("click", getTemp);
+
 //очистка всего по кнопке
 const clear = () => {
 	weather.innerHTML="";
