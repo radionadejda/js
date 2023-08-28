@@ -152,7 +152,7 @@ const resultTen = document.querySelector('#resultTen');
 const makeTen = () => {
 	const str = 'Hello';
 	result = str.charAt(2);
-    resultTen.innerText = resultTen.innerText = "символ по индексу 2 в строке Hello: " + result;
+    resultTen.innerText = "символ по индексу 2 в строке Hello: " + result;
 };
 
 buttonTen.addEventListener('click', makeTen);
@@ -164,8 +164,8 @@ const buttonEleven = document.querySelector('.b-11');
 const resultEleven = document.querySelector('#resultEleven');
 
 const makeEleven = () => {
-	num1 = 5;
-	num2 = 2;
+	let num1 = 5;
+	let num2 = 2;
 	result = num1%num2;
 	resultEleven.innerText = "результат операции 5 взятое по модулю 2 равен " + result;
 };
