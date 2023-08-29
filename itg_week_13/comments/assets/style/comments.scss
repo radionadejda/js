@@ -56,24 +56,6 @@ $padding: 3vw;
 	}
 }
 
-// .name-radiobutton {
-// 	display: flex;
-// 	gap: 1vw;
-
-// 	input {
-// 		box-sizing: border-box;
-// 		appearance: none;
-// 		outline: 2px solid #333;
-// 		width: 16px;
-// 		height: 16px;
-// 		margin-right: 0.5vw;
-// 	}
-
-// 	input:checked {
-// 		background: $accent1-color;
-// 	}
-// }
-
 .message {
 	max-width: 100%;
 	min-width: 100%;
@@ -92,13 +74,6 @@ $padding: 3vw;
 	font-weight: bold;
 	text-transform: uppercase;
 }
-
-// .error {
-// 	// visibility: hidden;
-// 	color: $accent1-color;
-// 	padding: 2vh 2vw;
-// 	text-align: center;
-// }
 
 .comments {
 	display: flex;

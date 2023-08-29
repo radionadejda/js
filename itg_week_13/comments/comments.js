@@ -59,12 +59,9 @@ let addComment = () => {
         './assets/img/cat4.jpg',
         './assets/img/cat5.jpg',
         './assets/img/cat6.jpg',
-      ];
-    //   const avatarElement = document.getElementById('avatar');
-      
+];
         const randomIndex = Math.floor(Math.random() * avatars.length);
         const randomAvatar = avatars[randomIndex];
-        // avatarElement.src = randomAvatar;
         newAvatar.setAttribute("src", randomAvatar);
     }
 
