@@ -1,0 +1,113 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	/* margin: 0.5vw; */
+}
+
+.body {
+	background-image: url(./background.jpg);
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+	margin: 0;
+}
+
+.body::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	height: 100%;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background-color: rgba(147, 135, 217, 0.4);
+}
+
+.registration {
+	width: 70vw;
+	margin: auto auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1vw;
+}
+
+.form {
+	margin: 0 auto;
+}
+
+.form input {
+	width: 100%;
+	padding: 0.5vw;
+	margin-bottom: 1vh;
+	background-color: rgb(187, 178, 240)
+}
+
+.fieldset {
+	width: 97%;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 1vh;
+    border: none;
+	padding-bottom: 1vh;
+	padding-top: 1vh;
+}
+
+.fieldset input {
+	box-sizing: border-box;
+	appearance: none;
+	outline: 1px solid #333;
+	width: 16px;
+	height: 16px;
+	margin: auto 1vh;
+	border-radius: 50px;
+}
+.fieldset input:checked {
+	background: rgb(42, 30, 108);
+}
+
+.job {
+	width: 100%;
+	padding: 0.5vw;
+	background-color: rgb(187, 178, 240)
+}
+
+.submit {
+	padding: 1vw;
+	width: 100%;
+	background-color: rgba(147, 135, 217);
+	border-radius: 50px;
+}
+
+.submit:hover {
+	background-color: rgb(114, 101, 191);
+}
+
+.h1 {
+	text-transform: uppercase;
+}
+
+.h2 {
+	font-weight: lighter;
+	font-size: medium;
+	padding-bottom: 2vh;
+}
+
+.label {
+	font-weight: bold;
+	font-size: large;
+}
+
+.message {
+	margin: 1vw;
+	color: rgb(95, 22, 43);
+	font-weight: bold;
+}
+
+.hint {
+	color: rgb(35, 20, 88);
+	font-size: small;
+}

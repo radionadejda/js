@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./registration.css" />
+		<title>registration</title>
+	</head>
+	<body class="body">
+		<div id="registration" class="registration">
+			<h1 class="h1">регистрация</h1>
+			<h2 class="h2">для регистрации заполните форму</h2>
+			<form id="form" class="form" novalidate>
+				<!-- поле ввода имени -->
+				<label for="firstname" id="firstname-label" class="label">Введите имя</label>
+				<p class="hint">поле может содержать только буквы и дефис</p>
+				<input type="text" id="firstname" minlength="2" maxlength="20" required placeholder="Маша" />
+				<!-- поле ввода фамилии -->
+				<label for="lastname" id="lastname-label" class="label">Введите фамилию</label>
+				<p class="hint">поле может содержать только буквы и дефис</p>
+				<input type="text" id="lastname" required placeholder="Иванова" />
+				<!-- поле ввода email -->
+				<label for="email" id="email-label" class="label">введите email</label>
+				<p class="hint">поле должно содержать знак @ и точку</p>
+				<input type="email" id="email" required placeholder="Mary@itgirls.org" />
+				<!-- поле ввода возраста -->
+				<label for="age" id="age-label" class="label">введите возраст</label>
+				<p class="hint">поле должно содержать только числа</p>
+				<input type="number" id="age" min="18" max="130" required placeholder="30" />
+				<!-- поле ввода телефона -->
+				<label for="phone" id="phone-label" class="label">введите номер телефона</label>
+				<p class="hint">номер телефона в формате +7 1234567890</p>
+				<input type="tel" id="phone" placeholder="+7 1234567890" />
+				<!-- поле ввода пола -->
+				<fieldset id="sex" class="fieldset">
+					<legend class="label">укажите ваш пол</legend>
+					<label><input id="sex__female" type="radio" name="sex" value="female" />женский</label>
+					<label><input id="sex__male" type="radio" name="sex" value="male" />мужской</label>
+					<label><input id="sex__other" type="radio" name="sex" value="other" />другой</label>
+					<label><input id="sex__unspecified" type="radio" name="sex" value="unspecified" checked />не указан</label>
+				</fieldset>
+				<!-- поле ввода профессии -->
+				<fieldset id="jobselector" class="fieldset">
+					<legend class="label">укажите вашу профессию</legend>
+					<select id="job" class="job" required placeholder="Программист">
+						<option value="" id="job__empty">Выберите профессию</option>
+						<option value="doctor" id="job__doctor">Врач</option>
+						<option value="programmer" id="job__programmer">Программист</option>
+						<option value="teacher" id="job__teacher">Учитель</option>
+						<option value="designer" id="job__designer">Дизайнер</option>
+						<option value="engineer" id="job__engineer">Инженер</option>
+						<option value="seller" id="job__seller">Продавец</option>
+						<option value="other" id="job__other">Другое</option>
+					</select>
+				</fieldset>
+				<!-- поле ввода пароля -->
+				<label for="password" class="label">введите пароль:</label>
+				<p class="hint">пароль должен быть не менее 8 символов длиной и содержать как минимум одну заглавную букву, одну строчную букву и одну цифру</p>
+				<input type="password" id="password" minlength="8" placeholder="Passw0rd" required />
+				<!-- поле повтора пароля -->
+				<label for="password_repeat" class="label">повторите пароль:</label>
+				<p class="hint">пароль должен быть не менее 8 символов длиной и содержать как минимум одну заглавную букву, одну строчную букву и одну цифру</p>
+				<input type="password" id="password_repeat" minlength="8" placeholder="Passw0rd" required />
+				<!-- поле ввода согласия с условиями -->
+				<fieldset id="terms" class="fieldset">
+					<legend class="label">я прочитал(а) <a href="#">пользователькое соглашение</a> и принимаю его условия</legend>
+					<label><input id="terms__yes" type="radio" name="terms" required />да</label>
+					<label><input id="terms__no" type="radio" name="terms" />нет</label>
+				</fieldset>
+				<!-- кнопка регистрации -->
+				<input type="submit" id="submit" class="submit" value="зарегистрироваться" />
+			</form>
+			<!-- сообщение об ошибке -->
+			<div id="message" class="message"></div>
+		</div>
+		<script src="./registration.js"></script>
+	</body>
+</html>
