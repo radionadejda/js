@@ -35,6 +35,7 @@ function checkName() {
 		firstName.classList.add("error");
 		firstNameError.textContent = `поле "имя" не может быть пустым`;
 	} else {
+		firstNameError.textContent = "";
 		firstName.classList.remove("error");
 		console.log(firstNameValue);
 		return firstNameValue;
@@ -65,6 +66,7 @@ function checkLastName() {
 		lastName.classList.add("error");
 		lastNameError.textContent = message;
 	} else {
+		lastNameError.textContent = "";
 		lastName.classList.remove("error");
 		console.log(lastNameValue);
 		return lastNameValue;
@@ -86,6 +88,7 @@ function checkEmail() {
 		email.classList.add("error");
 		emailError.textContent = `Поле email должно иметь формат mary@itgirls.org`;
 	} else {
+		emailError.textContent = "";
 		email.classList.remove("error");
 		console.log(emailValue);
 		return emailValue;
@@ -117,6 +120,7 @@ function checkAge() {
 		age.classList.add("error");
 		ageError.textContent = message;
 	} else {
+		ageError.textContent = "";
 		age.classList.remove("error");
 		console.log(ageValue);
 		return ageValue;
@@ -136,6 +140,7 @@ function checkPhone() {
 		phone.classList.add("error");
 		phoneError.textContent = `Поле "номер телефона" должно иметь формат +7 1234567890`;
 	} else {
+		phoneError.textContent = "";
 		phone.classList.remove("error");
 		console.log(phoneValue);
 		return phoneValue;
@@ -151,6 +156,7 @@ function checkJob() {
 		job.classList.add("error");
 		jobError.textContent = `поле "профессия" не может быть пустым`;
 	} else {
+		jobError.textContent = "";
 		job.classList.remove("error");
 		console.log(jobValue);
 		return jobValue;
@@ -170,6 +176,7 @@ function checkPassword() {
 		password.classList.add("error");
 		passwordError.textContent = `поле должно содержать не менее 8 символов, как минимум одну заглавную букву, одну строчную букву и одну цифру`;
 	} else {
+		passwordError.textContent = "";
 		password.classList.remove("error");
 		console.log(passwordValue);
 		return passwordValue;
@@ -193,6 +200,7 @@ function checkPasswordRepeat() {
 		passwordRepeat.classList.add("error");
 		passwordRepeatError.textContent = `введенные пароли должны совпадать`;
 	} else {
+		passwordRepeatError.textContent = "";
 		passwordRepeat.classList.remove("error");
 		console.log(passwordRepeatValue);
 		return passwordRepeatValue;
