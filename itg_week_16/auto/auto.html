@@ -8,62 +8,62 @@
 	</head>
 	<body class="body">
 		<div class="calc">
-		<h1>Калькулятор стоимости автомобиля</h1>
+		<h1 class="h1">Калькулятор стоимости автомобиля</h1>
 		<!-- марка -->
-		<label for="brand">Марка автомобиля:</label>
-		<p class="error" id="brandError">Выберите марку</p>
-		<select id="brand">
-			<option value="">Выберите марку авто</option>
+		<label for="brand" class="label">Марка автомобиля:</label>
+		<p class="error" id="brandError"></p>
+		<select id="brand" class="inputfield">
+			<option value="">Выберите марку</option>
 			<option value="Renault">Renault</option>
 			<option value="Opel">Opel</option>
 			<option value="Mazda">Mazda</option>
 			<option value="Jaguar">Jaguar</option>
 		</select>
 		<!-- модель -->
-		<label for="model">Модель автомобиля:</label>
-		<p class="error" id="modelError">Выберите модель</p>
-		<select id="model"
-			><option value="">выберите модель машины</option>
+		<label for="model" class="label">Модель автомобиля:</label>
+		<p class="error" id="modelError"></p>
+		<select id="model" class="inputfield"
+			><option value="">Выберите модель</option>
 		</select>
 		<!-- топливо -->
 		<fieldset class="fieldset" id="fuelFieldset">
 			<legend class="label">Тип топлива:</legend>
-			<p class="error" id="fuelError">Выберите тип топлива</p>
+			<p class="error" id="fuelError"></p>
 			<label for="fuelPetrol">
-				<input type="radio" id="fuelPetrol" name="fuel" value="petrol" />Бензин</label
+				<input type="radio" id="fuelPetrol" name="fuel" value="petrol" class="inputradio"/>Бензин</label
 			>
 			<label for="fuelDiesel">
-				<input type="radio" id="fuelDiesel" name="fuel" value="diesel" />Дизель</label
+				<input type="radio" id="fuelDiesel" name="fuel" value="diesel" class="inputradio"/>Дизель</label
 			>
-			<label for="fuelGas"> <input type="radio" id="fuelGas" name="fuel" value="gas" />Газ</label>
-			<label for="fuelElectric"> <input type="radio" id="fuelElectric" name="fuel" value="electric" />Электричество</label>
-			<label for="fuelHybrid"> <input type="radio" id="fuelHybrid" name="fuel" value="hybrid" />Гибрид</label>
+			<label for="fuelGas"> <input type="radio" id="fuelGas" name="fuel" value="gas" class="inputradio"/>Газ</label>
+			<label for="fuelElectric"> <input type="radio" id="fuelElectric" name="fuel" value="electric" class="inputradio"/>Электричество</label>
+			<label for="fuelHybrid"> <input type="radio" id="fuelHybrid" name="fuel" value="hybrid" class="inputradio"/>Гибрид</label>
 		</fieldset>
 		<!-- двигатель -->
-		<label for="engineVolume">Объем двигателя (литры):</label>
-		<p class="error" id="engineError">Выберите объем двигателя от 1,1 до 3,5 литра</p>
-		<input type="number" id="engineVolume" min="1.1" max="3.5" step="0.1" />
+		<label for="engineVolume" class="label">Объем двигателя (литры):</label>
+		<p class="error" id="engineError"></p>
+		<input type="number" id="engineVolume" class="inputfield" min="1.1" max="3.5" step="0.1" />
 		<!-- состояние -->
 		<fieldset class="fieldset" id="condition">
 			<legend class="label">Состояние автомобиля:</legend>
-			<p class="error" id="conditionError">Выберите состояние</p>
-			<label for="conditionNew"> <input type="radio" id="conditionNew" name="condition" value="new" />Новый</label>
-			<label for="conditionUsed"> <input type="radio" id="conditionUsed" name="condition" value="used" />Подержанный</label>
+			<p class="error" id="conditionError"></p>
+			<label for="conditionNew"> <input type="radio" id="conditionNew" name="condition" value="new" class="inputradio"/>Новый</label>
+			<label for="conditionUsed"> <input type="radio" id="conditionUsed" name="condition" value="used" class="inputradio"/>Подержанный</label>
 		</fieldset>
 		<!-- владельцы -->
 		<fieldset class="fieldset hidden" id="ownersFieldset">
 			<legend class="label">Количество владельцев:</legend>
-			<p class="error" id="ownersError">Выберите число владельцев</p>
-			<label for="fewOwners"> <input type="radio" id="fewOwners" name="owners" value="few" />1-2 владельца</label>
-			<label for="manyOwners"> <input type="radio" id="manyOwners" name="owners" value="many" />Более 3 владельцев</label>
+			<p class="error" id="ownersError"></p>
+			<label for="fewOwners"> <input type="radio" id="fewOwners" name="owners" value="few" class="inputradio"/>1-2 владельца</label>
+			<label for="manyOwners"> <input type="radio" id="manyOwners" name="owners" value="many" class="inputradio"/>Более 3 владельцев</label>
 		</fieldset>
 		<!-- оплата -->
 		<fieldset class="fieldset" id="payment">
 			<legend class="label">Способ оплаты:</legend>
-			<p class="error" id="paymentError">Выберите способ оплаты</p>
-			<label for="paymentCard"> <input type="radio" id="paymentCard" name="payment" value="card" />картой</label>
-			<label for="paymentCash"> <input type="radio" id="paymentCash" name="payment" value="cash" />наличными</label>
-			<label for="paymentInvoice"> <input type="radio" id="paymentInvoice" name="payment" value="invoice" />по счету</label>
+			<p class="error" id="paymentError"></p>
+			<label for="paymentCard"> <input type="radio" id="paymentCard" name="payment" value="card" class="inputradio"/>картой</label>
+			<label for="paymentCash"> <input type="radio" id="paymentCash" name="payment" value="cash" class="inputradio"/>наличными</label>
+			<label for="paymentInvoice"> <input type="radio" id="paymentInvoice" name="payment" value="invoice" class="inputradio"/>по счету</label>
 		</fieldset>
 		<!-- кнопки -->
 		<button id="calculateButton" class="button">Рассчитать стоимость</button>

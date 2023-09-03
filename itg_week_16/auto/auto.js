@@ -26,6 +26,8 @@ function updateModels() {
 // get brand function
 let brandPrice = 0;
 let selectedBrand = "";
+// brand.addEventListener("change", getBrand);
+brand.addEventListener("change", calculatePrice)
 function getBrand () {
 selectedBrand = brand.value;
 	if (selectedBrand === "Renault") {
@@ -38,18 +40,24 @@ selectedBrand = brand.value;
 		brandPrice = 4000000;
     } else {
         brandPrice = 0;
-		brandError.style.visibility = "visible";
+		// brandError.textContent = "Выберите марку";
+		selectedBrand.textContent = "Выберите марку";
+		brand.classList.add("errorhighlight");
 	}
     brand.addEventListener("change", function() {
-        brandError.style.visibility = "hidden";
+		brandError.textContent = "";
+		brand.classList.remove("errorhighlight");
     });
+// console.log(brandPrice)
 return brandPrice
 }
 
 // get model function
 let modelPrice = 0;
 let selectedModel = "";
-let modelMultiplier = 1;
+let modelMultiplier = 0;
+// model.addEventListener("input", getModel);
+model.addEventListener("change", calculatePrice)
 function getModel () {
     selectedModel = model.value;
         if (selectedModel === "Clio") {
@@ -70,19 +78,31 @@ function getModel () {
             modelMultiplier = 1.7;
         } else if (selectedModel === ""){
             modelMultiplier = 0;
-            modelError.style.visibility = "visible";
+            // modelError.textContent = "Выберите модель";
+			selectedModel.textContent = "Выберите модель";
+			model.classList.add("errorhighlight");
         }
         model.addEventListener("change", function() {
-            modelError.style.visibility = "hidden";
+            modelError.textContent = "";
+			model.classList.remove("errorhighlight");
         });
+	// console.log(brandPrice*modelMultiplier)
     return modelMultiplier
     }
 
 // get fuel type function
 let fuel = document.getElementsByName("fuel");
 const fuelError = document.getElementById("fuelError");
-let fuelMultiplier = 1;
+fuelFieldset = document.getElementById("fuelFieldset");
+let fuelMultiplier = 0;
 let fuelValue = "";
+// could have done with an array and a loop, but why
+fuelFieldset.addEventListener('change', function (event) {
+    if (event.target && event.target.matches("input[type='radio']")) {
+        // getFuel()
+		calculatePrice()
+    }
+});
 function getFuel() {
 	for (let i = 0; i < fuel.length; i++) {
 		if (fuel[i].checked) {
@@ -102,56 +122,83 @@ function getFuel() {
 		fuelMultiplier = 2;
 	} else {
 		fuelMultiplier = 0;
-		fuelError.style.visibility = "visible";
+		// fuelError.style.visibility = "visible";
+		fuelError.textContent = "Выберите тип топлива";
+		fuelFieldset.classList.add("errorhighlight");
 	}
 	for (let i = 0; i < fuel.length; i++) {
 		fuel[i].addEventListener("change", function() {
-			fuelError.style.visibility = "hidden";
+			// fuelError.style.visibility = "hidden";
+			fuelError.textContent = "";
+			fuelFieldset.classList.remove("errorhighlight");
 		});
 	}
+	// console.log(brandPrice*modelMultiplier*fuelMultiplier)
 	return fuelMultiplier;
 }
 
 // get engine function
 let engine = document.getElementById("engineVolume");
-let engineMultiplier = 1;
+let engineMultiplier = 0;
 let engineValue = "";
+// engine.addEventListener("input", getEngine);
+engine.addEventListener("input", calculatePrice)
 function getEngine() {
 	engineValue = engine.value;
 	if (engineValue !== "" && engineValue >= 1.1 && engineValue <= 3.5) {
 		engineMultiplier = +engineValue;
 	} else {
         engineMultiplier = 0;
-		engineError.style.visibility = "visible";
+		// engineError.style.visibility = "visible";
+		engineError.textContent = "Выберите объем двигателя от 1,1 до 3,5 литра";
+		engine.classList.add("errorhighlight");
 	}
     engine.addEventListener("input", function() {
-        engineError.style.visibility = "hidden";
+        // engineError.style.visibility = "hidden";
+		engineError.textContent = "";
+		engine.classList.remove("errorhighlight");
     });
+	// console.log(brandPrice*modelMultiplier*fuelMultiplier*engineMultiplier)
 	return engineMultiplier;
 }
 
 // get condition and owners function
 let condition = document.getElementsByName("condition");
 const conditionError = document.getElementById("conditionError");
-let conditionMultiplier = 1;
+let conditionMultiplier = 0;
 let conditionValue = "";
 let owners = document.getElementsByName("owners");
 const ownersError = document.getElementById("ownersError");
-let ownersMultiplier = 1;
+let ownersMultiplier = 0;
 let ownersValue = "";
-
-let ownersFieldset = document.getElementById("ownersFieldset")
+let conditionFieldset = document.getElementById("condition")
+let ownersFieldset = document.getElementById("ownersFieldset");
 let conditionUsed = document.getElementById("conditionUsed");
 let conditionNew = document.getElementById("conditionNew");
+
 conditionUsed.addEventListener("change", function() {
     ownersFieldset.disabled = false;
 	ownersFieldset.classList.remove("hidden");
+	ownersError.textContent = "";
 })
 conditionNew.addEventListener("change", function() {
 	ownersFieldset.disabled = true;
     ownersFieldset.classList.add("hidden");
-    ownersError.style.visibility = "hidden";
+    ownersError.textContent = "";
 })
+
+conditionFieldset.addEventListener('change', function (event) {
+    if (event.target && event.target.matches("input[type='radio']")) {
+        // getCondition()
+		calculatePrice()
+    }
+});
+ownersFieldset.addEventListener('change', function (event) {
+    if (event.target && event.target.matches("input[type='radio']")) {
+        // getCondition()
+		calculatePrice()
+    }
+});
 
 function getCondition() {
 	for (let i = 0; i < condition.length; i++) {
@@ -172,7 +219,7 @@ function getCondition() {
                 break;
             }
         }
-    
+
         if (ownersValue === "few") {
             conditionMultiplier = 0.8;
         } else if (ownersValue === "many") {
@@ -180,33 +227,47 @@ function getCondition() {
         } else {
             ownersMultiplier = 0;
             conditionMultiplier = 0;
-            ownersError.style.visibility = "visible";
+            // ownersError.style.visibility = "visible";
+			ownersError.textContent = "Выберите число владельцев";
+			ownersFieldset.classList.add("errorhighlight");
         }
-    
+
         for (let i = 0; i < owners.length; i++) {
             owners[i].addEventListener("change", function() {
-                ownersError.style.visibility = "hidden";
+                // ownersError.style.visibility = "hidden";
+				ownersError.textContent = "";
+				ownersFieldset.classList.remove("errorhighlight");
             });
         }
 	} else {
 		conditionMultiplier = 0;
-		conditionError.style.visibility = "visible";
+		// conditionError.style.visibility = "visible";
+		conditionError.textContent = "Выберите состояние";
+		conditionFieldset.classList.add("errorhighlight");
 	}
 	for (let i = 0; i < condition.length; i++) {
 		condition[i].addEventListener("change", function() {
-			conditionError.style.visibility = "hidden";
+			// conditionError.style.visibility = "hidden";
+			conditionError.textContent = "";
+			conditionFieldset.classList.remove("errorhighlight");
 		});
 	}
+	// console.log(brandPrice*modelMultiplier*fuelMultiplier*engineMultiplier*conditionMultiplier)
 	return conditionMultiplier;
 }
-
-
 
 // get payment method function
 let payment = document.getElementsByName("payment");
 const paymentError = document.getElementById("paymentError");
+const paymentFieldset = document.getElementById("payment");
 let paymentMultiplier = 1;
 let paymentValue = "";
+document.getElementById("payment").addEventListener('change', function (event) {
+    if (event.target && event.target.matches("input[type='radio']")) {
+        // getPayment()
+		calculatePrice()
+    }
+});
 function getPayment() {
 	for (let i = 0; i < payment.length; i++) {
 		if (payment[i].checked) {
@@ -222,13 +283,18 @@ function getPayment() {
 		paymentMultiplier = 1.3;
 	} else {
 		paymentMultiplier = 0;
-		paymentError.style.visibility = "visible";
+		// paymentError.style.visibility = "visible";
+		paymentError.textContent = "Выберите способ оплаты";
+		paymentFieldset.classList.add("errorhighlight");
 	}
 	for (let i = 0; i < payment.length; i++) {
 		payment[i].addEventListener("change", function() {
-			paymentError.style.visibility = "hidden";
+			// paymentError.style.visibility = "hidden";
+			paymentError.textContent = "";
+			paymentFieldset.classList.remove("errorhighlight");
 		});
 	}
+	// console.log(Math.floor(brandPrice*modelMultiplier*fuelMultiplier*engineMultiplier*conditionMultiplier*paymentMultiplier))
 	return paymentMultiplier;
 }
 
@@ -239,7 +305,7 @@ let price = 0;
 function calculatePrice() {
     result.style.visibility = "hidden";
     price = Math.floor(getBrand()*getModel()*getFuel()*getEngine()*getCondition()*getPayment());
-    console.log(price, getBrand(),getModel(),getFuel(),getEngine(),getCondition(),getPayment());
+    // console.log(price, getBrand(),getModel(),getFuel(),getEngine(),getCondition(),getPayment());
 
     if (price !== 0) {
     result.style.visibility = "visible";
@@ -254,15 +320,3 @@ const resetButton = document.getElementById("resetButton");
 resetButton.addEventListener("click", () => {
 	document.location.reload();
 });
-
-
-// // this works if we don't have to display error message and make any of radio buttons checked by default in html
-// function getCondition() {
-// 	let condition = document.querySelector('input[name="condition"]:checked').value;
-// 	if (condition === "new") {
-// 		conditionMultiplier = 1;
-// 	} else {
-// 		conditionMultiplier = 0.5;
-// 	}
-// 	return conditionMultiplier;
-// }

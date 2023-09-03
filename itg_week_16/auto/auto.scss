@@ -1,53 +1,112 @@
 $font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+$blue: rgb(1, 1, 133);
+$purple: rgb(13, 1, 32);
+$orange: rgb(222, 112, 33);
+$orange2: rgb(241, 150, 84);
+$grey: rgb(187, 182, 204);
+$red: rgb(195, 46, 19);
 
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    // border: 1px solid red;
 }
 .body {
     height: 100vh;
 	font-family: $font;
 	margin: 0;
 	display: flex;
+    background-color: rgba($purple, 0.8);
+}
+
+.h1 {
+    font-size: 1.5rem;
+    color: $orange;
 }
 
 .calc {
     display: flex;
     flex-direction: column;
-    gap:0.5vw;
     width: 60vw;
     margin: auto auto;
+    gap:0.5vw;
+    padding: 1vw;
+    background-color: rgba($purple, 0.6);
+    border-radius: 20px;
+    color: $grey
 }
 
+.label {
+    color: $orange;
+}
+
+.inputfield {
+    background-color: $orange2;
+    border-radius: 5px;
+    padding: 0.4vh;
+    font-size: medium;
+}
+
+.inputradio {
+    background-color: $grey;
+    appearance: none;
+	outline: 1px solid #333;
+    border-radius: 2px;
+	width: 14px;
+	height: 14px;
+	margin: auto 1vh;
+}
+.inputradio:checked {
+        background: $orange;
+    }
+
 .button {
-    margin: 0.5vw auto;
+    margin: 0.2vw auto;
     padding: 1vw;
-    width: 40%;
-    border-radius: 50px;
+    width: 60%;
+    border-radius: 12px;
+    font-size: medium;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgba($orange, 0.3);;
 }
 
 .fieldset {
     display: flex;
     flex-direction: column;
+    background-color: rgba($purple, 0.6);
+    border-radius: 10px;
+    border: 2px solid $grey;
+    padding: 1vw;
 }
 
 #calculateButton {
-    background-color: rgb(163, 237, 237);
+    background-color: $orange;
 }
 
 .error {
-    visibility: hidden;
-    color: red;
+    color: $red;
     padding: 0;
     margin: 0;
     font-size: smaller;
 }
 
+.errorhighlight {
+    border-color: $red;
+    border-width: 2px;
+    // color: red;
+}
+
 #result {
 visibility: hidden;
+font-size: larger;
+font-weight: bold;
+margin: 1vw auto;
+color: $orange;
 }
 
 .hidden {
-    color: gray;
+    color: $grey;
+    background-color: rgba($grey, 0.2);
 }

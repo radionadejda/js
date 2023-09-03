@@ -170,7 +170,7 @@ function getCondition() {
                 break;
             }
         }
-    
+
         if (ownersValue === "few") {
             conditionMultiplier = 0.8;
         } else if (ownersValue === "many") {
