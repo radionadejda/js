@@ -3,48 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./auto.css" />
 		<title>Калькулятор стоимости автомобиля</title>
-		<style>
-			.body {
-				display: flex;
-				flex-direction: column;
-				gap: 2vw;
-			}
-
-			.button {
-				margin: 1vw auto;
-				padding: 2vw;
-				width: 50%;
-				border-radius: 50px;
-			}
-
-			.fieldset {
-				display: flex;
-				flex-direction: column;
-			}
-
-			#calculateButton {
-				background-color: rgb(163, 237, 237);
-			}
-
-			.error {
-				visibility: hidden;
-				color: red;
-				padding: 0;
-				margin: 0;
-				font-size: smaller;
-			}
-
-			#result {
-			visibility: hidden;
-			}
-
-			.hidden {
-				visibility: hidden;
-			}
-		</style>
 	</head>
 	<body class="body">
+		<div class="calc">
 		<h1>Калькулятор стоимости автомобиля</h1>
 		<!-- марка -->
 		<label for="brand">Марка автомобиля:</label>
@@ -107,7 +70,7 @@
 		<button id="resetButton" class="button">Сбросить</button>
 		<!-- результат -->
 		<div id="result">Стоимость автомобиля: <span id="totalPrice">0 рублей</span></div>
-
+		</div>
 		<script src="./auto.js"></script>
 	</body>
 </html>

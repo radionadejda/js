@@ -25,6 +25,9 @@ function checkName() {
 		let maxlength = firstName.getAttribute("maxlength");
 		firstName.classList.add("error");
 		firstNameError.textContent = `Максимальное значение не может быть больше, чем ${maxlength}`;
+	} else if (firstName.validity.typeMismatch) {
+		firstName.classList.add("error");
+		firstNameError.textContent = 'поле "имя" может содержать только буквы и дефис';
 	} else if (firstName.validity.patternMismatch) {
 		firstName.classList.add("error");
 		firstNameError.textContent = 'поле "имя" может содержать только буквы и дефис';
@@ -50,6 +53,8 @@ function checkLastName() {
 		message = `Минимальное значение не может быть меньше, чем  ${minlength}`;
 	} else if (lastName.validity.tooLong) {
 		message = `Максимальное значение не может быть больше, чем ${maxlength}`;
+	} else if (lastName.validity.typeMismatch) {
+		lastNameError.textContent = 'поле "фамилия" может содержать только буквы и дефис';
 	} else if (lastName.validity.patternMismatch) {
 		message = 'поле "фамилия" может содержать только буквы и дефис';
 	} else if (lastName.validity.valueMissing) {
@@ -100,6 +105,10 @@ function checkAge() {
 	} else if (age.validity.rangeOverflow) {
 		let max = age.getAttribute("max");
 		message = `Максимальный возраст не может быть больше, чем ${max}`;
+	} else if (age.validity.typeMismatch) {
+		age.textContent = 'поле "возраст" может содержать только число';
+	} else if (age.validity.stepMismatch) {
+		message = `Введите количество полных лет`;
 	} else if (age.validity.valueMissing) {
 		message = `поле "возраст" не может быть пустым`;
 	}

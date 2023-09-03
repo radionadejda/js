@@ -124,7 +124,7 @@ function getEngine() {
         engineMultiplier = 0;
 		engineError.style.visibility = "visible";
 	}
-    engine.addEventListener("change", function() {
+    engine.addEventListener("input", function() {
         engineError.style.visibility = "hidden";
     });
 	return engineMultiplier;
@@ -144,10 +144,12 @@ let ownersFieldset = document.getElementById("ownersFieldset")
 let conditionUsed = document.getElementById("conditionUsed");
 let conditionNew = document.getElementById("conditionNew");
 conditionUsed.addEventListener("change", function() {
-    ownersFieldset.style.visibility = "visible";
+    ownersFieldset.disabled = false;
+	ownersFieldset.classList.remove("hidden");
 })
 conditionNew.addEventListener("change", function() {
-    ownersFieldset.style.visibility = "hidden";
+	ownersFieldset.disabled = true;
+    ownersFieldset.classList.add("hidden");
     ownersError.style.visibility = "hidden";
 })
 
