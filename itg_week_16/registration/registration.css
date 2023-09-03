@@ -1,113 +1,132 @@
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	/* margin: 0.5vw; */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .body {
-	background-image: url(./background.jpg);
-	background-size: cover;
-	height: 100vh;
-	position: relative;
-	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-	margin: 0;
+  background-image: url(./background.jpg);
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  margin: 0;
+  display: flex;
 }
 
 .body::before {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	height: 100%;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	left: 0px;
-	background-color: rgba(147, 135, 217, 0.4);
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(200, 193, 240, 0.3);
 }
 
 .registration {
-	width: 70vw;
-	margin: auto auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 1vw;
+  width: 70vw;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid rgb(200, 193, 240);
+  border-radius: 10px;
+  padding: 2vw;
+  background-color: rgba(200, 193, 240, 0.4);
 }
 
 .form {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
-.form input {
-	width: 100%;
-	padding: 0.5vw;
-	margin-bottom: 1vh;
-	background-color: rgb(187, 178, 240)
+.form .inputfield {
+  width: 100%;
+  padding: 0.5vw;
+  margin-bottom: 0.5vh;
+  background-color: rgba(200, 193, 240, 0.7);
+  border-radius: 5px;
 }
 
 .fieldset {
-	width: 97%;
-	display: flex;
-	justify-content: space-around;
-	margin-bottom: 1vh;
-    border: none;
-	padding-bottom: 1vh;
-	padding-top: 1vh;
+  border: none;
+  padding-top: 1vh;
+  padding-bottom: 0.5vh;
 }
 
 .fieldset input {
-	box-sizing: border-box;
-	appearance: none;
-	outline: 1px solid #333;
-	width: 16px;
-	height: 16px;
-	margin: auto 1vh;
-	border-radius: 50px;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 1px solid #333;
+  background-color: rgba(200, 193, 240, 0.7);
+  width: 14px;
+  height: 14px;
+  margin: auto 1vh;
+  border-radius: 50px;
 }
+
 .fieldset input:checked {
-	background: rgb(42, 30, 108);
+  background: rgb(114, 101, 191);
 }
 
 .job {
-	width: 100%;
-	padding: 0.5vw;
-	background-color: rgb(187, 178, 240)
+  width: 100%;
+  background-color: rgba(200, 193, 240, 0.7);
+  border-width: 2px;
+  border-radius: 5px;
+}
+
+.jobselector {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .submit {
-	padding: 1vw;
-	width: 100%;
-	background-color: rgba(147, 135, 217);
-	border-radius: 50px;
+  padding: 1vw;
+  width: 100%;
+  background-color: rgb(200, 193, 240);
+  border-radius: 50px;
+  margin: 0.5vh auto;
 }
 
 .submit:hover {
-	background-color: rgb(114, 101, 191);
+  background-color: rgb(114, 101, 191);
 }
 
 .h1 {
-	text-transform: uppercase;
-}
-
-.h2 {
-	font-weight: lighter;
-	font-size: medium;
-	padding-bottom: 2vh;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  padding-bottom: 0.5vh;
 }
 
 .label {
-	font-weight: bold;
-	font-size: large;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 
-.message {
-	margin: 1vw;
-	color: rgb(95, 22, 43);
-	font-weight: bold;
+.radiolabel {
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.radio {
+  vertical-align: middle;
 }
 
 .hint {
-	color: rgb(35, 20, 88);
-	font-size: small;
+  color: rgb(35, 20, 88);
+  font-size: 0.8rem;
 }
+
+.error {
+  border-color: rgb(95, 22, 43);
+}
+
+.errormessage {
+  color: rgb(95, 22, 43);
+  font-size: 0.8rem;
+}/*# sourceMappingURL=registration.css.map */

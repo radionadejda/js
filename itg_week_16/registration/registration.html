@@ -7,71 +7,80 @@
 		<title>registration</title>
 	</head>
 	<body class="body">
+		<!-- make error spans, change js to put error messages into respective spans and add error class to bad inputs -->
+
 		<div id="registration" class="registration">
-			<h1 class="h1">регистрация</h1>
-			<h2 class="h2">для регистрации заполните форму</h2>
+			<h1 class="h1">для регистрации заполните форму</h1>
 			<form id="form" class="form" novalidate>
 				<!-- поле ввода имени -->
 				<label for="firstname" id="firstname-label" class="label">Введите имя</label>
-				<p class="hint">поле может содержать только буквы и дефис</p>
-				<input type="text" id="firstname" minlength="2" maxlength="20" required placeholder="Маша" />
+				<p class="hint">поле должно содержать от 2 до 20 символов(только буквы и дефис)</p>
+				<p class="errormessage" id="firstNameError"></p>
+				<input type="text" id="firstname" class="inputfield" pattern="^([a-zA-Zа-яА-Я]+-)?[a-zA-Zа-яА-Я]{2,20}$" minlength="2" maxlength="20" required placeholder="Маша" />
 				<!-- поле ввода фамилии -->
 				<label for="lastname" id="lastname-label" class="label">Введите фамилию</label>
 				<p class="hint">поле может содержать только буквы и дефис</p>
-				<input type="text" id="lastname" required placeholder="Иванова" />
+				<p class="errormessage" id="lastNameError"></p>
+				<input type="text" id="lastname" class="inputfield" pattern="^([a-zA-Zа-яА-Я]+-)?[a-zA-Zа-яА-Я]{2,20}$" minlength="2" maxlength="20" required placeholder="Иванова" />
 				<!-- поле ввода email -->
 				<label for="email" id="email-label" class="label">введите email</label>
 				<p class="hint">поле должно содержать знак @ и точку</p>
-				<input type="email" id="email" required placeholder="Mary@itgirls.org" />
+				<p class="errormessage" id="emailError"></p>
+				<input type="email" id="email" autocomplete="Mary@itgirls.org" class="inputfield" required placeholder="Mary@itgirls.org" />
 				<!-- поле ввода возраста -->
 				<label for="age" id="age-label" class="label">введите возраст</label>
 				<p class="hint">поле должно содержать только числа</p>
-				<input type="number" id="age" min="18" max="130" required placeholder="30" />
+				<p class="errormessage" id="ageError"></p>
+				<input type="number" id="age" min="18" max="130" class="inputfield" required placeholder="30" />
 				<!-- поле ввода телефона -->
 				<label for="phone" id="phone-label" class="label">введите номер телефона</label>
 				<p class="hint">номер телефона в формате +7 1234567890</p>
-				<input type="tel" id="phone" placeholder="+7 1234567890" />
+				<p class="errormessage" id="phoneError"></p>
+				<input type="tel" id="phone" class="inputfield" autocomplete="off" placeholder="+7 1234567890" />
 				<!-- поле ввода пола -->
 				<fieldset id="sex" class="fieldset">
 					<legend class="label">укажите ваш пол</legend>
-					<label><input id="sex__female" type="radio" name="sex" value="female" />женский</label>
-					<label><input id="sex__male" type="radio" name="sex" value="male" />мужской</label>
-					<label><input id="sex__other" type="radio" name="sex" value="other" />другой</label>
-					<label><input id="sex__unspecified" type="radio" name="sex" value="unspecified" checked />не указан</label>
+					<label class="radiolabel" for="sex__female"><input id="sex__female" type="radio" name="sex" value="female" class="radio" />женский</label>
+					<label class="radiolabel" for="sex__male"><input id="sex__male" type="radio" name="sex" value="male" class="radio"/>мужской</label>
+					<label class="radiolabel" for="sex__other"><input id="sex__other" type="radio" name="sex" value="other" class="radio"/>другой</label>
+					<label class="radiolabel" for="sex__unspecified"><input id="sex__unspecified" type="radio" name="sex" value="unspecified" class="radio" checked />не указан</label>
 				</fieldset>
 				<!-- поле ввода профессии -->
 				<fieldset id="jobselector" class="fieldset">
 					<legend class="label">укажите вашу профессию</legend>
+					<p class="errormessage" id="jobError"></p>
 					<select id="job" class="job" required placeholder="Программист">
 						<option value="" id="job__empty">Выберите профессию</option>
-						<option value="doctor" id="job__doctor">Врач</option>
-						<option value="programmer" id="job__programmer">Программист</option>
-						<option value="teacher" id="job__teacher">Учитель</option>
-						<option value="designer" id="job__designer">Дизайнер</option>
-						<option value="engineer" id="job__engineer">Инженер</option>
-						<option value="seller" id="job__seller">Продавец</option>
-						<option value="other" id="job__other">Другое</option>
+						<option value="Врач" id="job__doctor">Врач</option>
+						<option value="Программист" id="job__programmer">Программист</option>
+						<option value="Учитель" id="job__teacher">Учитель</option>
+						<option value="Дизайнер" id="job__designer">Дизайнер</option>
+						<option value="Инженер" id="job__engineer">Инженер</option>
+						<option value="Продавец" id="job__seller">Продавец</option>
+						<option value="Другое" id="job__other">Другое</option>
 					</select>
 				</fieldset>
-				<!-- поле ввода пароля -->
+				<!-- поле ввода пароля (pattern в JS)-->
 				<label for="password" class="label">введите пароль:</label>
-				<p class="hint">пароль должен быть не менее 8 символов длиной и содержать как минимум одну заглавную букву, одну строчную букву и одну цифру</p>
-				<input type="password" id="password" minlength="8" placeholder="Passw0rd" required />
-				<!-- поле повтора пароля -->
+				<p class="errormessage" id="passwordError"></p>
+				<p class="hint">поле должно содержать не менее 8 символов, как минимум одну заглавную букву, одну строчную букву и одну цифру</p>
+				<input type="password" id="password" class="inputfield" autocomplete="Passw0rd" minlength="8" placeholder="Passw0rd" required />
+				<!-- поле повтора пароля (pattern в JS) -->
 				<label for="password_repeat" class="label">повторите пароль:</label>
-				<p class="hint">пароль должен быть не менее 8 символов длиной и содержать как минимум одну заглавную букву, одну строчную букву и одну цифру</p>
-				<input type="password" id="password_repeat" minlength="8" placeholder="Passw0rd" required />
+				<p class="hint">должен совпадать с введенным выше паролем</p>
+				<p class="errormessage" id="passwordRepeatError"></p>
+				<input type="password" id="password_repeat" class="inputfield" autocomplete="Passw0rd" minlength="8" placeholder="Passw0rd" required />
 				<!-- поле ввода согласия с условиями -->
 				<fieldset id="terms" class="fieldset">
 					<legend class="label">я прочитал(а) <a href="#">пользователькое соглашение</a> и принимаю его условия</legend>
-					<label><input id="terms__yes" type="radio" name="terms" required />да</label>
-					<label><input id="terms__no" type="radio" name="terms" />нет</label>
+					<label class="radiolabel"><input  id="terms__yes" type="radio" name="terms" class="radio" required />да</label>
+					<label class="radiolabel"><input id="terms__no" type="radio" name="terms" class="radio"/>нет</label>
 				</fieldset>
 				<!-- кнопка регистрации -->
 				<input type="submit" id="submit" class="submit" value="зарегистрироваться" />
 			</form>
 			<!-- сообщение об ошибке -->
-			<div id="message" class="message"></div>
+			<div id="message" class="errormessage"></div>
 		</div>
 		<script src="./registration.js"></script>
 	</body>

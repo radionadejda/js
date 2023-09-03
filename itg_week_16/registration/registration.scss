@@ -1,0 +1,134 @@
+$font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+$checked: rgb(114, 101, 191);
+$bg:  rgb(200, 193, 240);
+$error: rgb(95, 22, 43);
+$hint: rgb(35, 20, 88);
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.body {
+	background-image: url(./background.jpg);
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+	font-family: $font;
+	margin: 0;
+	display: flex;
+}
+
+.body::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	height: 100vh;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background-color: rgba($bg, 0.3);
+}
+
+.registration {
+	width: 70vw;
+	margin: auto auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 2px solid $bg;
+	border-radius: 10px;
+	padding: 2vw;
+	background-color: rgba($bg, 0.4);
+}
+
+.form {
+	margin: 0 auto;
+}
+
+.form .inputfield {
+	width: 100%;
+	padding: 0.5vw;
+	margin-bottom: 0.5vh;
+	background-color: rgba($bg, 0.7);
+	border-radius: 5px;
+}
+
+.fieldset {
+    border: none;
+	padding-top: 1vh;
+	padding-bottom: 0.5vh;
+}
+
+.fieldset input {
+	box-sizing: border-box;
+	appearance: none;
+	outline: 1px solid #333;
+	background-color: rgba($bg, 0.7);
+	width: 14px;
+	height: 14px;
+	margin: auto 1vh;
+	border-radius: 50px;
+}
+.fieldset input:checked {
+	background: $checked;
+}
+
+.job {
+	width: 100%;
+	background-color: rgba($bg, 0.7);
+	border-width: 2px;
+	border-radius: 5px;
+}
+.jobselector {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.submit {
+	padding: 1vw;
+	width: 100%;
+	background-color: $bg;
+	border-radius: 50px;
+	margin: 0.5vh auto;
+}
+
+.submit:hover {
+	background-color: $checked;
+}
+
+.h1 {
+	text-transform: uppercase;
+	font-size: 1.1rem;
+	padding-bottom: 0.5vh;
+}
+
+.label {
+	font-weight: bold;
+	font-size: 0.9rem;
+}
+
+.radiolabel{
+	font-size: 0.8rem;
+	white-space: nowrap;
+}
+
+.radio {
+	vertical-align: middle;
+}
+
+.hint {
+	color: $hint;
+	font-size: 0.8rem;
+}
+
+.error {
+	border-color: $error;
+}
+
+.errormessage {
+	color: $error;
+	font-size: 0.8rem;
+}
