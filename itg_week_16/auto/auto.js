@@ -26,6 +26,7 @@ function updateModels() {
 // get brand function
 let brandPrice = 0;
 let selectedBrand = "";
+// const brandError = document.getElementById("brandError");
 // brand.addEventListener("change", getBrand);
 brand.addEventListener("change", calculatePrice)
 function getBrand () {
@@ -45,7 +46,7 @@ selectedBrand = brand.value;
 		brand.classList.add("errorhighlight");
 	}
     brand.addEventListener("change", function() {
-		brandError.textContent = "";
+		// brandError.textContent = "";
 		brand.classList.remove("errorhighlight");
     });
 // console.log(brandPrice)
@@ -56,6 +57,7 @@ return brandPrice
 let modelPrice = 0;
 let selectedModel = "";
 let modelMultiplier = 0;
+// const modelError = document.getElementById("modelError");
 // model.addEventListener("input", getModel);
 model.addEventListener("change", calculatePrice)
 function getModel () {
@@ -83,7 +85,7 @@ function getModel () {
 			model.classList.add("errorhighlight");
         }
         model.addEventListener("change", function() {
-            modelError.textContent = "";
+            // modelError.textContent = "";
 			model.classList.remove("errorhighlight");
         });
 	// console.log(brandPrice*modelMultiplier)
@@ -141,6 +143,7 @@ function getFuel() {
 let engine = document.getElementById("engineVolume");
 let engineMultiplier = 0;
 let engineValue = "";
+const engineError = document.getElementById("engineError");
 // engine.addEventListener("input", getEngine);
 engine.addEventListener("input", calculatePrice)
 function getEngine() {
