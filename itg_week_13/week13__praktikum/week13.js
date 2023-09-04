@@ -30,7 +30,8 @@ console.log(birthday);
 //Задание 6
 // Создайте переменную futureDate и присвойте ей будущую дату (например, через 1 месяц и 10 дней от текущей даты). Значение выведите в консоль.
 
-const futureDate = new Date(2023, 10, 19)
+let futureDate = new Date();
+futureDate.setDate(futureDate.getDate() + 41);
 console.log(futureDate);
 
 //Задание 7
@@ -41,7 +42,8 @@ console.log(Math.floor((futureDate - currentDate)/1000/3600/24));
 //Задание 8
 // Создайте переменную pastDate и присвойте ей прошедшую дату (например, 5 дней назад от текущей даты). Значение выведите в консоль.
 
-let pastDate = new Date(2023, 7, 4);
+let pastDate = new Date();
+pastDate.setDate(pastDate.getDate() - 5);
 console.log(pastDate);
 
 //Задание 9
@@ -52,7 +54,8 @@ console.log(Math.floor((currentDate - pastDate)/1000/3600/24));
 //Задание 10
 // Создайте переменную nextWeek и присвойте ей дату следующей недели. Значение выведите в консоль.
 
-const nextWeek = new Date(2023, 8, 7);
+const nextWeek = new Date();
+nextWeek.setDate(nextWeek.getDate() + 7);
 console.log(nextWeek);
 
 //Задание 11

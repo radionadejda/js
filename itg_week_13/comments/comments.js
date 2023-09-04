@@ -27,6 +27,7 @@ let addComment = () => {
 		newName.textContent = nameTransform;
 	} else if (nameCheckboxYes.checked) {
 		if (nameTransform.indexOf(" ") !== -1) {
+		// if (nameTransform.includes(" ")) {
 			alert(`поле "имя" не может содержать пробел`);
 			return;
 		} else if (nameTransform === "") {

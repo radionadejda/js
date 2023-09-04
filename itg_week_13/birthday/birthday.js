@@ -23,7 +23,7 @@ const formatDate = () => {
 		timeDifference = inputDate - currentDate;
 		let days = Math.floor(timeDifference / oneDay);
 		message = "до дня рождения ";
-		last_num = days % 10;
+		let last_num = days % 10;
 		days = Math.abs(days);
 		if (days > 10 && [11, 12, 13, 14].includes(days % 100)) {
 			formatDay = "осталось " + days + " дней";
@@ -41,6 +41,7 @@ const formatDate = () => {
 		last_num = days % 10;
 		days = Math.abs(days);
 		if (days > 10 && [11, 12, 13, 14].includes(days % 100)) {
+		// if (days > 10 && (days % 100 >= 11 && days % 100 <= 14)) {
 			formatDay = "прошло " + days + " дней";
 		} else if (last_num === 1) {
 			formatDay = "прошел " + days + " день";
