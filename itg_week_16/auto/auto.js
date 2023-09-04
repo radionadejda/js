@@ -1,3 +1,7 @@
+// Кот, привет! При условии, что функция расчета стоимости должна запускаться при изменении любого поля, также при изменении любого поля отображаются требования заполнить все остальные поля. Это не очень хорошо, если пользователь только начал заполнять форму - еще не все ввел, а сайт уже ругается.  Мне пришло в голову только установить значения выбранными по умолчанию сразу, чтобы не получать сообщение об ошибке. Подскажи пожалуйста, есть ли возможность сделать это другим способом?
+
+// поле с количеством владельцев не скрывается, а выключается, потому что иначе страница некрасиво прыгает.
+
 // change model options depending on car make
 const brand = document.getElementById("brand");
 const model = document.getElementById("model");
@@ -179,16 +183,23 @@ let ownersFieldset = document.getElementById("ownersFieldset");
 let conditionUsed = document.getElementById("conditionUsed");
 let conditionNew = document.getElementById("conditionNew");
 
-conditionUsed.addEventListener("change", function() {
-    ownersFieldset.disabled = false;
-	ownersFieldset.classList.remove("hidden");
-	ownersError.textContent = "";
-})
+if (conditionNew) {
+	ownersFieldset.disabled = true;
+    ownersFieldset.classList.add("hidden");
+    ownersError.textContent = "";
+};
+
 conditionNew.addEventListener("change", function() {
 	ownersFieldset.disabled = true;
     ownersFieldset.classList.add("hidden");
     ownersError.textContent = "";
-})
+});
+
+conditionUsed.addEventListener("change", function() {
+    ownersFieldset.disabled = false;
+	ownersFieldset.classList.remove("hidden");
+	ownersError.textContent = "";
+});
 
 conditionFieldset.addEventListener('change', function (event) {
     if (event.target && event.target.matches("input[type='radio']")) {
@@ -316,8 +327,8 @@ function calculatePrice() {
 }
 }
 
-const calculateButton = document.getElementById("calculateButton");
-calculateButton.addEventListener("click", calculatePrice);
+// const calculateButton = document.getElementById("calculateButton");
+// calculateButton.addEventListener("click", calculatePrice);
 
 const resetButton = document.getElementById("resetButton");
 resetButton.addEventListener("click", () => {

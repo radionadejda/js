@@ -30,7 +30,7 @@
 			<legend class="label">Тип топлива:</legend>
 			<p class="error" id="fuelError"></p>
 			<label for="fuelPetrol">
-				<input type="radio" id="fuelPetrol" name="fuel" value="petrol" class="inputradio"/>Бензин</label
+				<input type="radio" id="fuelPetrol" name="fuel" value="petrol" class="inputradio" checked/>Бензин</label
 			>
 			<label for="fuelDiesel">
 				<input type="radio" id="fuelDiesel" name="fuel" value="diesel" class="inputradio"/>Дизель</label
@@ -42,19 +42,19 @@
 		<!-- двигатель -->
 		<label for="engineVolume" class="label">Объем двигателя (литры):</label>
 		<p class="error" id="engineError"></p>
-		<input type="number" id="engineVolume" class="inputfield" min="1.1" max="3.5" step="0.1" />
+		<input type="number" id="engineVolume" class="inputfield" min="1.1" max="3.5" step="0.1" value = "1.1"/>
 		<!-- состояние -->
 		<fieldset class="fieldset" id="condition">
 			<legend class="label">Состояние автомобиля:</legend>
 			<p class="error" id="conditionError"></p>
-			<label for="conditionNew"> <input type="radio" id="conditionNew" name="condition" value="new" class="inputradio"/>Новый</label>
+			<label for="conditionNew"> <input type="radio" id="conditionNew" name="condition" value="new" class="inputradio" checked/>Новый</label>
 			<label for="conditionUsed"> <input type="radio" id="conditionUsed" name="condition" value="used" class="inputradio"/>Подержанный</label>
 		</fieldset>
 		<!-- владельцы -->
 		<fieldset class="fieldset hidden" id="ownersFieldset">
 			<legend class="label">Количество владельцев:</legend>
 			<p class="error" id="ownersError"></p>
-			<label for="fewOwners"> <input type="radio" id="fewOwners" name="owners" value="few" class="inputradio"/>1-2 владельца</label>
+			<label for="fewOwners"> <input type="radio" id="fewOwners" name="owners" value="few" class="inputradio" checked/>1-2 владельца</label>
 			<label for="manyOwners"> <input type="radio" id="manyOwners" name="owners" value="many" class="inputradio"/>Более 3 владельцев</label>
 		</fieldset>
 		<!-- оплата -->
@@ -62,7 +62,7 @@
 			<legend class="label">Способ оплаты:</legend>
 			<p class="error" id="paymentError"></p>
 			<label for="paymentCard"> <input type="radio" id="paymentCard" name="payment" value="card" class="inputradio"/>картой</label>
-			<label for="paymentCash"> <input type="radio" id="paymentCash" name="payment" value="cash" class="inputradio"/>наличными</label>
+			<label for="paymentCash"> <input type="radio" id="paymentCash" name="payment" value="cash" class="inputradio" checked/>наличными</label>
 			<label for="paymentInvoice"> <input type="radio" id="paymentInvoice" name="payment" value="invoice" class="inputradio"/>по счету</label>
 		</fieldset>
 		<!-- результат -->
