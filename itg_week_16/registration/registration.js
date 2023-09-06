@@ -207,11 +207,25 @@ function checkPasswordRepeat() {
 	}
 }
 
+const termsAgree = document.getElementById("terms__yes");
+const termsDeny = document.getElementById("terms__no");
+let uncheckDeny = () => {
+	if (termsAgree.checked) {
+		termsDeny.checked = false;
+	}
+	}
+
+let uncheckAgree = () => {
+	if (termsDeny.checked) {
+		termsAgree.checked = false;
+	}
+}
+
+termsAgree.addEventListener("change", uncheckDeny);
+termsDeny.addEventListener("change", uncheckAgree);
 
 
 const submit = document.getElementById("submit");
-const termsAgree = document.getElementById("terms__yes");
-const termsDeny = document.getElementById("terms__no");
 const messageDiv = document.getElementById("message");
 form.addEventListener("submit", function(event) {
 	event.preventDefault();
