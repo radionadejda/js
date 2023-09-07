@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  background-color: rgb(3, 5, 28);
+  color: rgb(237, 218, 194);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.catalogue {
+  width: 70vw;
+}
+
+.image {
+  width: 50vw;
+}/*# sourceMappingURL=transport.css.map */

@@ -39,90 +39,62 @@ const data = [
 ];
 
 class Transport {
-    constructor(type, price, brand) {
-        this.type = type,
-        this.price = price,
-        this.brand = brand
-    }
+	constructor(type, price, brand) {
+		(this.type = type), (this.price = price), (this.brand = brand);
+	}
 
-    getInfo() {
-        if (this.type = "car") {
-            this.type = "автомобиль"
-        } else if (this.type = "bike") {
-            this.type = "мотоцикл"
-        } else {
-            this.type = "транспортное средство"
-        }
-        let info = `${this.type} ${this.brand}`;
-        console.log(info);
-        return info
-    }
+	getInfo() {
+		let info = `${this.type} ${this.brand}`;
+		console.log(info);
+		return info;
+	}
 
-    getPrice() {
-        if (this.type = "car") {
-            this.type = "автомобиль"
-        } else if (this.type = "bike") {
-            this.type = "мотоцикл"
-        } else {
-            this.type = "транспортное средство"
-        }
-        let price = `${this.type} ${this.brand} стоит ${this.price}`;
-        console.log(price);
-        return this.price
-    }
+	getPrice() {
+		let price = `${this.type} ${this.brand} стоит ${this.price}`;
+		console.log(price);
+		return this.price;
+	}
 }
 
-class Car extends Transport{
-    constructor(type, price, brand, doors) {
-        super(type, price, brand, doors);
-        this.doors = doors;
-    }
-    getDoorsCount(){
-        let doors = `автомобиль ${this.brand} имеет ${this.doors} двери`;
-        console.log(doors);
-        return this.doors
-    }
+class Car extends Transport {
+	constructor(type, price, brand, doors) {
+		super(type, price, brand, doors);
+		this.doors = doors;
+	}
+	getDoorsCount() {
+		let doors = `автомобиль ${this.brand} имеет ${this.doors} двери`;
+		console.log(doors);
+		return this.doors;
+	}
 }
-class Bike extends Transport{
-    constructor(type, price, brand, maxSpeed) {
-        super(type, price, brand);
-        this.maxSpeed = maxSpeed;
-    }
+class Bike extends Transport {
+	constructor(type, price, brand, maxSpeed) {
+		super(type, price, brand);
+		this.maxSpeed = maxSpeed;
+	}
 
-    getMaxSpeed(){
-        let speed = `Максимальная скорость мотоцикла ${this.brand}: ${this.maxSpeed}`;
-        console.log(speed);
-        return this.maxSpeed
-    }
+	getMaxSpeed() {
+		let speed = `Максимальная скорость мотоцикла ${this.brand}: ${this.maxSpeed}`;
+		console.log(speed);
+		return this.maxSpeed;
+	}
 }
 
-// let car777 = new Car("car", 200, "BMW", 4);
-// console.log(car777);
-// car777.getDoorsCount();
-// car777.getPrice();
-
-// let bike23 = new Bike("bike", 100, "BMW", 200);
-// console.log(bike23);
-// bike23.getMaxSpeed();
-
-data.forEach((item) => {
-    if (item.type == "car") {
-        let newCar = new Car(item.type, item.price, item.brand, item.doors);
-        newCar.getInfo();
-        newCar.getDoorsCount();
-    } else if (item.type == "bike") {
-        let newBike = new Bike(item.type, item.price, item.brand, item.maxSpeed);
-        newBike.getInfo();
-        newBike.getMaxSpeed();
-    } else {}
-        console.log("транспортное средство");
-    });
-
-
-    if (this.type = "car") {
-        this.type = "автомобиль"
-    } else if (this.type = "bike") {
-        this.type = "мотоцикл"
-    } else {
-        this.type = "транспорт"
-    }
+data.forEach(item => {
+	if (item.type === "car") {
+		let newCar = new Car("автомобиль", item.price, item.brand, item.doors);
+		newCar.getInfo();
+		newCar.getDoorsCount();
+		newCar.getPrice();
+	} else if (item.type === "bike") {
+		let newBike = new Bike("мотоцикл", item.price, item.brand, item.maxSpeed);
+		newBike.getInfo();
+		newBike.getMaxSpeed();
+		newBike.getPrice();
+	} else {
+		// на тот случай, если в массиве появится неопределенный элемент
+        let newTransport = new Transport("транспортное средство", item.price, item.brand);
+		newTransport.getInfo();
+		newTransport.getPrice();
+	}
+});
