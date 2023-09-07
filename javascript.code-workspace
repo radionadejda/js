@@ -5,7 +5,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "javascript",
+		"liveServer.settings.multiRootWorkspaceName": "itg_week_2",
 		"liveServer.settings.CustomBrowser": "chrome:PrivateMode"
 	}
 }
