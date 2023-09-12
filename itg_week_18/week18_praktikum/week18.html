@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>JS 2.0. Практикум.</title>
+		<link rel="stylesheet" href="assets/style.css" />
+		<link rel="stylesheet" href="assets/skeleton.css" />
+		<link rel="stylesheet" href="assets/normalize.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<h2><a>Практикум</a></h2>
+			<h1>Неделя 18. Веб-хранилища и JSON-объект</h1>
+			<p class="text-orange">
+				<b>Внимание! Обязательно открой консоль (клавиша F12)</b>
+			</p>
+
+			<section>
+				<h4>Задание 1</h4>
+				<p>
+					Создайте функцию makeOne, которая сохраняет в Local Storage ключ games со значением 11.
+					Вызывается функция по кнопке Задание 1.
+				</p>
+				<button class="button-primary b-1">Задание 1</button>
+			</section>
+
+			<section>
+				<h4>Задание 2</h4>
+				<p>
+					Создайте функцию makeTwo, которая сохраняет в Local Storage строку "7,6,5". Ключ задайте
+					самостоятельно. Вызывается функция по кнопке Задание 2.
+				</p>
+				<button class="button-primary b-2">Задание 2</button>
+			</section>
+
+			<section>
+				<h4>Задание 3</h4>
+				<p>
+					Создайте функцию makeThree, которая сохраняет в Local Storage строку "name=John, age=25".
+					Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 3.
+				</p>
+				<button class="button-primary b-3">Задание 3</button>
+			</section>
+
+			<section>
+				<h4>Задание 4</h4>
+				<p>
+					Создайте функцию makeFour, которая сохраняет в Local Storage логическое значение true.
+					Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 4.
+				</p>
+				<button class="button-primary b-4">Задание 4</button>
+			</section>
+
+			<section>
+				<h4>Задание 5</h4>
+				<p>
+					Создайте функцию makeFive, которая сохраняет в Local Storage значение null. Ключ задайте
+					самостоятельно. Вызывается функция по кнопке Задание 5.
+				</p>
+				<button class="button-primary b-5">Задание 5</button>
+			</section>
+			<section>
+				<h4>Задание 6</h4>
+				<p>
+					Создайте функцию makeSix, которая сохраняет в Local Storage по ключу objectSix объект obj
+					= { name: "Алиса", age: 30 }. Вызывается функция по кнопке Задание 6.
+				</p>
+				<p class="hint">
+					Подсказка: Для преобразования объекта в строку используйте метод JSON.stringify()
+				</p>
+				<button class="button-primary b-6">Задание 6</button>
+			</section>
+
+			<section>
+				<h4>Задание 7</h4>
+				<p>
+					Создайте функцию makeSeven, которая сохраняет в Local Storage по ключу objectSeven объект
+					obj = { city: "Лондон", country: "Великобритания", population: 8900000, language:
+					"английский" }. Вызывается функция по кнопке Задание 7.
+				</p>
+				<p class="hint">
+					Подсказка: Для преобразования объекта в строку используйте метод JSON.stringify()
+				</p>
+				<button class="button-primary b-7">Задание 7</button>
+			</section>
+
+			<section>
+				<h4>Задание 8</h4>
+				<p>
+					Создайте функцию makeEight, которая сохраняет в Local Storage по ключу objectEight объект
+					obj = { fruit: "Яблоко", color: "красное", quantity: 10, price: 199 }. Вызывается функция
+					по кнопке Задание 8.
+				</p>
+				<p class="hint">
+					Подсказка: Для преобразования объекта в строку используйте метод JSON.stringify()
+				</p>
+				<button class="button-primary b-8">Задание 8</button>
+			</section>
+
+			<section>
+				<h4>Задание 9</h4>
+				<p>
+					Создайте функцию makeNine, которая сохраняет в Local Storage по ключу arrayNine массив arr
+					= [1, 2, 3, 4, 5]. Вызывается функция по кнопке Задание 9.
+				</p>
+				<p class="hint">
+					Подсказка: Для преобразования массива в строку используйте метод JSON.stringify()
+				</p>
+				<button class="button-primary b-9">Задание 9</button>
+			</section>
+
+			<section>
+				<h4>Задание 10</h4>
+				<p>
+					Создайте функцию makeTen, которая сохраняет в Local Storage по ключу arrayTen массив arr =
+					["яблоко", "банан", "апельсин"]. Вызывается функция по кнопке Задание 10.
+				</p>
+				<p class="hint">
+					Подсказка: Для преобразования массива в строку используйте метод JSON.stringify()
+				</p>
+				<button class="button-primary b-10">Задание 10</button>
+			</section>
+
+			<section>
+				<h4>Задание 11</h4>
+				<p>
+					Создайте функцию makeEleven, которая сохраняет в Local Storage по ключу arrayEleven массив
+					arr = [ { name: "Алиса", age: 30 }, { name: "Филин", age: 35 }, { name: "Кот", age: 40 }
+					]. Вызывается функция по кнопке Задание 11.
+				</p>
+				<p class="hint">
+					Подсказка: Для преобразования массива в строку используйте метод JSON.stringify()
+				</p>
+				<button class="button-primary b-11">Задание 11</button>
+			</section>
+
+			<section>
+				<h4>Задание 12</h4>
+				<p>
+					Создайте функцию showEleven, которая при нажатии кнопки Задание 12 получит из Local
+					Storage сохраннённый массив arrayEleven. Выведите в элемент с классом practicum12 в
+					формате ключ пробел значение. Вызывается функция по кнопке Задание 12.
+				</p>
+				<p class="hint">
+					Подсказка: Для преобразования строки в объект используйте метод JSON.parse()
+				</p>
+				<button class="button-primary b-12">Задание 12</button>
+				<div class="pr"><span class="practicum12"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 13</h4>
+				<p>
+					Создайте функцию showTen, которая при нажатии кнопки Задание 13 получит из Local Storage
+					сохраннённый массив arrayTen. Выведите в элемент с классом practicum13 в формате ключ
+					пробел значение перенос строки. Вызывается функция по кнопке Задание 13.
+				</p>
+				<p class="hint">
+					Подсказка: Для преобразования строки в объект используйте метод JSON.parse(). Для работы с
+					массивом используйте циклы.
+				</p>
+				<button class="button-primary b-13">Задание 13</button>
+				<div class="pr"><span class="practicum13"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 14</h4>
+				<p>
+					Создайте функцию showNine, которая при нажатии кнопки Задание 14 получит из Local Storage
+					сохраннённый массив arrayNine. Выведите в элемент с классом practicum14 в формате ключ
+					пробел значение перенос строки. Вызывается функция по кнопке Задание 14.
+				</p>
+				<p class="hint">
+					Подсказка: Для преобразования строки в объект используйте метод JSON.parse(). Для работы с
+					массивом используйте циклы.
+				</p>
+				<button class="button-primary b-14">Задание 14</button>
+				<div class="pr"><span class="practicum14"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 15</h4>
+				<p>
+					Создайте функцию showEight, которая при нажатии кнопки Задание 15 получит из Local Storage
+					сохраннённый объект objectEight. Выведите в элемент с классом practicum15 в формате
+					значение точка с запятой. Вызывается функция по кнопке Задание 15.
+				</p>
+				<button class="button-primary b-15">Задание 15</button>
+				<div class="pr"><span class="pr practicum15"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 16</h4>
+				<p>
+					Создайте функцию showSeven, которая при нажатии кнопки Задание 16 получит из Local Storage
+					сохраннённый объект objectSeven. Выведите в элемент с классом practicum16 строку: "В
+					Лондон живёт 8900000 человек", вместо названия города и числа жителей, используйте
+					значения по ключу city и population соответственно. Вызывается функция по кнопке Задание
+					16.
+				</p>
+				<button class="button-primary b-16">Задание 16</button>
+				<div class="pr"><span class="pr practicum16"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 17</h4>
+				<p>
+					Создайте функцию showSix, которая при нажатии кнопки Задание 17 получит из Local Storage
+					сохраннённый объект objectSix. Выведите в элемент с классом practicum17 строку: "Привет! Я
+					Алиса. Мне 30 лет.", вместо имени и возраста, используйте значения по ключу name и age
+					соответственно. Вызывается функция по кнопке Задание 17.
+				</p>
+				<button class="button-primary b-17">Задание 17</button>
+				<div class="pr"><span class="pr practicum17"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 18</h4>
+				<p>
+					Создайте функцию clearLocalStorage, которая очищает весь Local Storage. Вызывается функция
+					по кнопке Задание 18.
+				</p>
+				<button class="button-primary b-18">Задание 18</button>
+			</section>
+
+			<section>
+				<h4>Задание 19</h4>
+				<p>
+					Cоздана форма с одним поле ввода, в которое пользователь может вводить только числа.
+					Создайте массив numbers. Когда пользователь нажимает кнопке Задание 19 число должно
+					добавляться в массив. Массив должен сохраняться в Local Storage с ключем task19.
+					Вызывается функция по кнопке Задание 19. Что произойдёт, если нажать на кнопке три раза?
+				</p>
+				<form>
+					<input type="number" id="numberInput" placeholder="Введите число" />
+				</form>
+				<button class="button-primary b-19">Задание 19</button>
+			</section>
+
+			<section>
+				<h4>Задание 20</h4>
+				<p>
+					Создайте функцию removeLastElement, которая при вызове удаляет из массива numbers
+					последний элемент. После чего массив сохраняется в Local Storage с ключем task20
+					(используйте массив из задания 19). Вызывается функция по кнопке Задание 20.
+				</p>
+				<button class="button-primary b-20">Задание 20</button>
+			</section>
+
+			<section>
+				<h4>Задание 21</h4>
+				<p>
+					Создайте функцию addToCart, которая при нажатии кнопки Задание 21 получает из Local
+					Storage сохранённый массив cartItems. Затем добавляет новый элемент в массив,
+					представляющий товар, введённый вами в поле ввода. Массив cartItems должен сохраняться в
+					Local Storage с ключом cartItems. Вызывается функция по кнопке Задание 21.
+				</p>
+				<p class="hint">
+					Подсказка: необходимо проверить существует ли значение и не является пустым. Если значение
+					в хранилище есть, то оно преобразуется из JSON в массив. В противном случае,
+					устанавливается пустой массив.
+				</p>
+				<form>
+					<input type="text" id="productInput" placeholder="Введите товар" />
+				</form>
+				<button class="button-primary b-21">Задание 21</button>
+			</section>
+
+			<section>
+				<h4>Задание 22</h4>
+				<p>
+					Создайте функцию removeFromCart, которая при нажатии кнопки Задание 22 получает из Local
+					Storage сохранённый массив cartItems. Затем удаляет последний элемент из массива. Массив
+					cartItems должен сохраняться в Local Storage с ключом cartItems. Вызывается функция по
+					кнопке Задание 22.
+				</p>
+				<p class="hint">
+					Подсказка: необходимо проверить, существует ли значение и не является ли оно пустым. Это
+					может вызвать ошибку, если cartItems не существует в Local Storage или является пустым.
+				</p>
+				<button class="button-primary b-22">Задание 22</button>
+			</section>
+
+			<section>
+				<h4>Задание 23</h4>
+				<p>
+					Создайте функцию showCart, которая при нажатии кнопки Задание 23 получает из Local Storage
+					сохранённый массив cartItems. Выведите элементы массива в элемент с классом practicum23.
+					Вызывается функция по кнопке Задание 23.
+				</p>
+				<button class="button-primary b-23">Задание 23</button>
+				<div class="practicum23 pr"></div>
+			</section>
+
+			<section>
+				<h4>Задание 24</h4>
+				<p>
+					Создайте функцию updateCartCount, которая при нажатии кнопки Задание 24 обновляет
+					количество товаров в корзине. Получите из Local Storage сохранённый массив cartItems и
+					выведите количество товаров в элемент с классом practicum24 (например: "Количество товаров
+					в корзине 3"). Вызывается функция по кнопке Задание 24.
+				</p>
+				<button class="button-primary b-24">Задание 24</button>
+				<div class="practicum24 pr"></div>
+			</section>
+
+			<section>
+				<h4>Задание 25</h4>
+				<p>
+					Создайте функцию clearCart, которая при нажатии кнопки Задание 25 очищает весь массив
+					cartItems в Local Storage. Вызывается функция по кнопке Задание 25.
+				</p>
+				<button class="button-primary b-25">Задание 25</button>
+			</section>
+
+			<section>
+				<h4>Задание 26</h4>
+				<p>
+					При загрузке страницы установите cookie с именем "username" и значением "Кот Учёный".
+					Выведите сообщение в консоль, подтверждающее успешное создание cookie.
+				</p>
+			</section>
+
+			<section>
+				<h4>Задание 27</h4>
+				<p>
+					Допишите функцию getCookie, которая принимает имя cookie. Функция должна получать значение
+					cookie с указанным именем, возвращать его и записывать в элемент с классом practicum27.
+					Если cookie с указанным именем не найден, функция должна возвращать пустую строку.
+					Вызывается функция по кнопке Задание 27. Выведите куку с именем "username".
+				</p>
+				<button class="button-primary b-27">Задание 27</button>
+				<div class="practicum27 pr"></div>
+			</section>
+
+			<section>
+				<h4>Задание 28</h4>
+				<p>
+					Создайте функцию checkCookie, которая будет проверять, существует ли cookie с именем
+					"username". Если cookie существует, выведите его значение в консоль. В противном случае
+					выведите сообщение "Cookie с именем 'username' не найден." Вызывается функция по кнопке
+					Задание 28.
+				</p>
+				<p class="hint">Подсказка: используйте функцию getCookie</p>
+				<button class="button-primary b-28">Задание 28</button>
+			</section>
+
+			<section>
+				<h4>Задание 29</h4>
+				<p>
+					Создайте функцию setCookie, которая принимает имя и значение cookie. Функция должна
+					устанавливать cookie с указанным именем и значением. После установки cookie, выведите
+					сообщение в консоль. Вызывается функция по кнопке Задание 29.
+				</p>
+				<button class="button-primary b-29">Задание 29</button>
+			</section>
+
+			<section>
+				<h4>Задание 30</h4>
+				<p>
+					Создайте функцию deleteCookie, которая принимает имя cookie. Функция должна удалять cookie
+					с указанным именем. После удаления cookie, выведите сообщение в консоль. Вызывается
+					функция по кнопке Задание 30.
+				</p>
+				<button class="button-primary b-30">Задание 30</button>
+			</section>
+		</div>
+
+		<script src="./week18.js"></script>
+	</body>
+</html>
