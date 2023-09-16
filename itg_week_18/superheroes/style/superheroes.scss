@@ -1,8 +1,10 @@
-$bg: rgb(3, 5, 28);
-$text: rgb(237, 218, 194);
-$accent1: rgb(255, 132, 0);
-$accent2: rgb(128, 42, 171);
-$cardwidth: 60vw;
+$bg: rgb(1, 2, 9);
+$text: rgb(201, 200, 199);
+// $accent3: rgb(165, 115, 245);
+$accent2: rgb(240, 235, 230);
+$accent1: rgb(60, 41, 69);
+$rated: #8a0f69;
+$cardwidth: 25vw;
 
 *{
     padding: 0;
@@ -24,23 +26,28 @@ $cardwidth: 60vw;
     text-transform: uppercase;
     padding: 1vh;
     color: $accent2;
-    width: $cardwidth;
+    height: 8vh;
+    text-align: center;
 }
 
 .main {
-    color: $accent1;
+    color: $rated;
 }
 
 .catalogue {
-    width: $cardwidth+20vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 90vw;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($cardwidth, 1fr));
+    gap:1vw;
 }
 
 .hero {
     border: 2px solid transparent;
-    padding: 0 5vw 1vh 5vw;
+    width: $cardwidth+4vw;
+    padding: 0 1vw 1vh 1vw;
     margin: 1vh auto;
     border-radius: 20px;
     background: linear-gradient($bg, $bg) padding-box,
@@ -49,25 +56,25 @@ $cardwidth: 60vw;
 
 .image {
     margin: 2vw auto 0 auto;
-    width: $cardwidth;
+    width: $cardwidth - 2vw;
     border-radius: 1rem;
     flex-shrink: 0;
 }
 .description {
-    height: 22vh;
+    height: 18vh;
 }
 .text {
     width: $cardwidth;
 }
 .star {
-    font-size:2rem;
+    font-size:3rem;
     cursor: pointer;
-    color: #ccc;
+    color: rgba($text, 0.5);
 }
 .star.rated {
-    color: #d1129e;
+    color: $rated;
 }
 .star.hovered {
-    color: #f47019;
+    color: rgba($rated, 0.7);
 }
 
