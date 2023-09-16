@@ -18,6 +18,7 @@
   text-transform: uppercase;
   padding: 1vh;
   color: rgb(128, 42, 171);
+  width: 60vw;
 }
 
 .main {
@@ -31,17 +32,39 @@
   align-items: center;
 }
 
-.vehicle {
+.hero {
   border: 2px solid transparent;
-  padding: 2vh 10vw;
+  padding: 0 5vw 1vh 5vw;
   margin: 1vh auto;
   border-radius: 20px;
   background: linear-gradient(rgb(3, 5, 28), rgb(3, 5, 28)) padding-box, linear-gradient(to right, rgb(255, 132, 0), rgb(128, 42, 171)) border-box;
 }
 
 .image {
-  margin: 0 auto;
+  margin: 2vw auto 0 auto;
   width: 60vw;
-  border-radius: 20px;
+  border-radius: 1rem;
   flex-shrink: 0;
+}
+
+.description {
+  height: 22vh;
+}
+
+.text {
+  width: 60vw;
+}
+
+.star {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.star.rated {
+  color: #d1129e;
+}
+
+.star.hovered {
+  color: #f47019;
 }/*# sourceMappingURL=superheroes.css.map */
