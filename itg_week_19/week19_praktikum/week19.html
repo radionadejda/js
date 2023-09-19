@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>JS 2.0. Практикум.</title>
+		<link rel="stylesheet" href="assets/style.css" />
+		<link rel="stylesheet" href="assets/skeleton.css" />
+		<link rel="stylesheet" href="assets/normalize.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<h2><a>Практикум</a></h2>
+			<h1>Неделя 19. Асинхронность, работа с API, setTimeout, setInterval</h1>
+			<p class="text-orange">
+				<b>Внимание! Обязательно открой консоль (клавиша F12)</b>
+				<b>
+					Пожалуйста, обратите внимание, что при написании функции для запроса API добавьте
+					обработку ошибок. Используйте метод catch после метода then, чтобы отлавливать и
+					обрабатывать возможные ошибки, которые могут возникнуть в процессе выполнения запроса. Это
+					поможет предотвратить неожиданные проблемы и обеспечит более надёжную работу вашего кода.
+				</b>
+			</p>
+
+			<section>
+				<h4>Задание 1</h4>
+				<p>
+					Создайте функцию makeOne, которая выполняет GET-запрос по адресу
+					https://catfact.ninja/fact, используя функцию fetch(). Результат должен быть выведен в
+					консоль. Функция вызывается по нажатию кнопки "Задание 1".
+				</p>
+				<button class="button-primary b-1">Задание 1</button>
+			</section>
+
+			<section>
+				<h4>Задание 2</h4>
+				<p>Создайте функцию makeTwo, которая выполняет следующие действия:</p>
+				<ul>
+					<li>
+						Функция makeTwo должна сделать GET-запрос по адресу
+						https://emojihub.yurace.pro/api/random/group/face-positive с помощью функции fetch()
+					</li>
+					<li>
+						Полученный ответ должен быть преобразован в формат JSON с помощью метода response.json()
+					</li>
+					<li>
+						Затем из полученного JSON-объекта нужно извлечь свойство "htmlCode", которое содержит
+						HTML-код для вставки
+					</li>
+					<li>
+						Далее нужно создать элемент &lt;p&gt; и установить его содержимое равным значению из
+						свойства "htmlCode"
+					</li>
+					<li>
+						Созданный элемент &lt;p&gt; должен быть вставлен в элемент с id "result2" в DOM-дерево
+					</li>
+				</ul>
+				<button class="button-primary b-2">Задание 2</button>
+				<div class="pr" id="result2"></div>
+			</section>
+
+			<section>
+				<h4>Задание 3</h4>
+				<p>
+					Создайте функцию makeThree, которая выполняет GET-запрос по адресу
+					https://www.boredapi.com/api/activity, используя функцию fetch(). Выведите в консоль ответ
+					с сервера, чтобы убедиться, что получили данные.
+				</p>
+				<button class="button-primary b-3">Задание 3</button>
+			</section>
+
+			<section>
+				<h4>Задание 4</h4>
+				<p>Создайте функцию makeFour, которая выполняет следующие действия:</p>
+				<ul>
+					<li>
+						Функция makeFour должна сделать GET-запрос по адресу
+						https://www.boredapi.com/api/activity с помощью функции fetch()
+					</li>
+					<li>
+						Полученный ответ должен быть преобразован в формат JSON с помощью метода response.json()
+					</li>
+					<li>
+						Затем из полученного JSON-объекта нужно извлечь свойство "activity", которое содержит
+						описание активности
+					</li>
+					<li>Вывести полученную активность в формате 'Activity: описание активности' в консоль</li>
+				</ul>
+				<button class="button-primary b-4">Задание 4</button>
+			</section>
+
+			<section>
+				<h4>Задание 5</h4>
+				<p>Создайте функцию makeFive, которая выполняет следующие действия:</p>
+				<ul>
+					<li>
+						Функция makeFive должна сделать GET-запрос по адресу
+						https://www.boredapi.com/api/activity с помощью функции fetch()
+					</li>
+					<li>
+						Полученный ответ должен быть преобразован в формат JSON с помощью метода response.json()
+					</li>
+					<li>
+						Затем из полученного JSON-объекта нужно извлечь свойство "participants", которое
+						содержит количество участников для активности
+					</li>
+					<li>Вывести количество участников для активности в консоль</li>
+				</ul>
+				<button class="button-primary b-5">Задание 5</button>
+			</section>
+
+			<section>
+				<h4>Задание 6</h4>
+				<p>
+					Создайте функцию makeSix, которая выполняет GET-запрос по адресу
+					https://www.boredapi.com/api/activity, используя функцию fetch(). Выведите в консоль
+					свойства из полученного объекта, такие как activity, type, price и accessibility.
+				</p>
+				<button class="button-primary b-6">Задание 6</button>
+			</section>
+
+			<section>
+				<h4>Задание 7</h4>
+				<p>
+					Создайте функцию makeSeven, которая выполняет GET-запрос по адресу https://api.agify.io/,
+					используя функцию fetch(). Выведите в консоль ответ с сервера, чтобы убедиться, что
+					получили данные.
+				</p>
+				<button class="button-primary b-7">Задание 7</button>
+			</section>
+
+			<section>
+				<h4>Задание 8</h4>
+				<p>
+					Если вы сделали всё верно, в 7 задании вы получили ответ от сервера "Missing 'name'
+					parameter". Помните, что обработка ошибок является важной частью кода, и хорошая практика
+					- всегда предусматривать возможные ситуации, когда запрос может завершиться неудачно.
+				</p>
+				<p>
+					Создайте функцию makeEight, которая выполняет GET-запрос по адресу https://api.agify.io/,
+					используя функцию fetch(), с параметром '?name=alice' ("https://api.agify.io/параметр").
+				</p>
+				<button class="button-primary b-8">Задание 8</button>
+			</section>
+
+			<section>
+				<h4>Задание 9</h4>
+				<p>
+					Создайте функцию makeNine, которая выполняет GET-запрос по адресу `https://api.agify.io/`
+					с параметром ?name=vadim, используя функцию fetch(), и выведет полученные данные в элемент
+					с id result9.
+				</p>
+				<p class="hint">
+					Подсказка: использование JSON.stringify() позволит преобразовать объект в строку.
+				</p>
+				<button class="button-primary b-9">Задание 9</button>
+				<p class="pr" id="result9"></p>
+			</section>
+
+			<section>
+				<h4>Задание 10</h4>
+				<p>Создайте функцию makeTen, которая выполняет следующие действия:</p>
+				<ul>
+					<li>
+						Функция makeTen должна сделать GET-запрос по адресу
+						https://dog.ceo/api/breeds/image/random с помощью функции fetch()
+					</li>
+					<li>
+						Полученный ответ должен быть преобразован в формат JSON с помощью метода response.json()
+					</li>
+					<li>
+						Затем из полученного JSON-объекта нужно извлечь свойство "message", которое содержит
+						ссылку на случайное изображение собаки
+					</li>
+					<li>
+						Далее нужно создать элемент &lt;img&gt; и установить его атрибут "src" равным значению
+						из свойства "message" (ссылке на изображение)
+					</li>
+					<li>
+						Созданный элемент &lt;img&gt; должен быть вставлен после элемента с id "result10" в
+						DOM-структуре страницы
+					</li>
+				</ul>
+				<p>
+					После выполнения этих шагов, при нажатии на кнопку "Задание 10" будет загружено случайное
+					изображение собаки, которое будет отображено под элементом с id "result10".
+				</p>
+				<button class="button-primary b-10">Задание 10</button>
+				<div class="pr" id="result10"></div>
+			</section>
+
+			<section>
+				<h4>Задание 11</h4>
+				<p>Нужно создать функцию makeEleven, которая выполняет следующие действия:</p>
+				<ul>
+					<li>
+						Функция makeEleven должна сделать GET-запрос на адрес https://api.ipify.org?format=json
+						с помощью функции fetch()
+					</li>
+					<li>
+						Полученный ответ должен быть преобразован в формат JSON с помощью метода response.json()
+					</li>
+					<li>
+						Затем из полученного JSON-объекта нужно извлечь свойство "ip", которое содержит текущий
+						IP-адрес
+					</li>
+					<li>Полученный IP-адрес нужно вывести в элемент с id "result11"</li>
+				</ul>
+				<button class="button-primary b-11">Задание 11</button>
+				<div class="pr" id="result11"></div>
+			</section>
+
+			<section>
+				<h4>Задание 12</h4>
+				<p>
+					Введите в поле ввода IP-адрес из задания 11 в поле ниже и нажмите кнопку "Задание 12" для
+					получения его гео-позиции. Используйте функцию fetch() для выполнения GET-запроса по
+					адресу https://api.ipgeolocationapi.com/geolocate/{ipAddress}. Замените {ipAddress} на
+					фактический IP-адрес, который вы получите из текстового поля.
+				</p>
+				<p class="hint">
+					Подсказка: используйте свойство textContent для вывода данных о гео-позиции в виде строки.
+				</p>
+				<input type="text" id="ipAddress" placeholder="Введите IP-адрес" />
+				<button class="button-primary b-12">Задание 12</button>
+				<p class="pr" id="result12"></p>
+			</section>
+
+			<section>
+				<h4>Задание 13</h4>
+				<p>
+					Создайте функцию makeThirteen, которая выполняет GET-запрос по адресу
+					https://official-joke-api.appspot.com/random_joke, используя функцию fetch(). Выведите в
+					консоль ответ с сервера, чтобы посмотреть, какие поля есть в ответе.
+				</p>
+				<button class="button-primary b-13">Задание 13</button>
+			</section>
+
+			<section>
+				<h4>Задание 14</h4>
+				<p>
+					Создайте функцию makeFourteen, которая выполняет GET-запрос по адресу
+					https://official-joke-api.appspot.com/random_joke, используя функцию fetch(). Выведите на
+					страницу информацию о шутке, используя поля "setup" и "punchline" из ответа сервера.
+				</p>
+				<p class="hint">Подсказка: используйте свойство innerHTML и шаблонные строки</p>
+				<button class="button-primary b-14">Задание 14</button>
+				<div class="pr" id="result14"></div>
+			</section>
+
+			<section>
+				<h4>Задание 15</h4>
+				<p>Нужно создать функцию makeFifteen, которая делает следующие действия:</p>
+				<ul>
+					<li>
+						Функция makeFifteen должна сделать POST-запрос на адрес
+						https://jsonplaceholder.typicode.com/posts с помощью функции fetch()
+					</li>
+					<li>
+						В теле запроса отправьте JSON-объект с полями title и body, например:
+						<pre>{ "title": "Заголовок", "body": "Текст поста" }</pre>
+					</li>
+					<li>Укажите заголовок "Content-Type" как "application/json" для запроса</li>
+					<li>
+						Полученный ответ от сервера должен быть преобразован в формат JSON с помощью метода
+						response.json()
+					</li>
+					<li>Выведите ответ от сервера в консоль</li>
+				</ul>
+				<p class="hint">
+					Подсказка: использование JSON.stringify() позволит преобразовать объект в строку.
+				</p>
+				<button class="button-primary b-15">Задание 15</button>
+			</section>
+
+			<section>
+				<h4>Задание 16</h4>
+				<p>Создайте функцию makeSixteen, которая делает следующие действия:</p>
+				<ul>
+					<li>
+						Функция makeSixteen должна сделать PUT-запрос на адрес
+						https://jsonplaceholder.typicode.com/posts/1 с помощью функции fetch()
+					</li>
+					<li>Укажите заголовок "Content-Type" как "application/json" для запроса</li>
+					<li>
+						В теле запроса отправьте JSON-объект с полями title и body, например:
+						<pre>{ "title": "Новый заголовок", "body": "Новый текст поста" }</pre>
+					</li>
+					<li>
+						Полученный ответ с сервера должен быть преобразован в формат JSON с помощью метода
+						response.json()
+					</li>
+					<li>Выведите ответ с сервера в консоль</li>
+				</ul>
+				<p class="hint">
+					Подсказка: использование JSON.stringify() позволит преобразовать объект в строку.
+				</p>
+				<button class="button-primary b-16">Задание 16</button>
+			</section>
+
+			<section>
+				<h4>Задание 17</h4>
+				<p>Создайте функцию makeSeventeen, которая делает следующие действия:</p>
+				<ul>
+					<li>
+						Функция makeSeventeen должна сделать DELETE-запрос на адрес
+						https://jsonplaceholder.typicode.com/posts/1 с помощью функции fetch()
+					</li>
+					<li>Полученный ответ с сервера должен быть выведен в консоль</li>
+				</ul>
+				<button class="button-primary b-17">Задание 17</button>
+			</section>
+
+			<section>
+				<h4>Задание 18</h4>
+				<p>Создайте функцию makeEighteen, которая делает следующие действия:</p>
+				<ul>
+					<li>
+						Функция makeSeventeen должна сделать POST-запрос на адрес
+						https://jsonplaceholder.typicode.com/photos с помощью функции fetch()
+					</li>
+					<li>Укажите заголовок "Content-Type" как "application/json" для запроса</li>
+					<li>
+						В теле запроса отправьте JSON-объект с полями title и url, например:
+						<pre>{ "title": "Название изображения", "url": "https://example.com/image.jpg" }</pre>
+					</li>
+					<li>
+						Полученный ответ с сервера должен быть преобразован в формат JSON с помощью метода
+						response.json()
+					</li>
+					<li>Выведите ответ с сервера в консоль</li>
+				</ul>
+				<button class="button-primary b-18">Задание 18</button>
+			</section>
+
+			<section>
+				<h4>Задание 19</h4>
+				<p>Создайте функцию makeNineteen, которая делает следующие действия:</p>
+				<ul>
+					<li>
+						Функция makeNineteen должна сделать POST-запрос на адрес
+						https://jsonplaceholder.typicode.com/users с помощью функции fetch()
+					</li>
+					<li>
+						В теле запроса отправьте JSON-объект с полями name, username, email и phone, например:
+						<pre>
+{ "name": "Кот Учёный", "username": "kitty", "email": "kitty@example.com", "phone": "123-456-7890" }</pre
+						>
+					</li>
+					<li>Укажите заголовок "Content-Type" как "application/json" для запроса</li>
+					<li>
+						Полученный ответ с сервера должен быть преобразован в формат JSON с помощью метода
+						response.json()
+					</li>
+					<li>Выведите ответ с сервера в консоль</li>
+				</ul>
+				<button class="button-primary b-19">Задание 19</button>
+			</section>
+
+			<section>
+				<h4>Задание 20</h4>
+				<p>Создайте функцию makeTwenty, которая делает следующие действия:</p>
+				<ul>
+					<li>
+						Функция makeTwenty должна сделать POST-запрос на адрес
+						https://jsonplaceholder.typicode.com/comments с помощью функции fetch()
+					</li>
+					<li>Укажите заголовок "Content-Type" как "application/json" для запроса</li>
+					<li>
+						В теле запроса отправьте JSON-объект с полями name, email, body и postId, например:
+						<pre>
+{ "name": "Золотая рыбка", "email": "goldfish@example.com", "body": "Гав-гав!", "postId": 1 }</pre
+						>
+					</li>
+					<li>
+						Полученный ответ с сервера должен быть преобразован в формат JSON с помощью метода
+						response.json()
+					</li>
+					<li>Выведите ответ с сервера в консоль</li>
+				</ul>
+				<button class="button-primary b-20">Задание 20</button>
+			</section>
+
+			<section>
+				<h4>Задание 21</h4>
+				<p>Создайте функцию makeTwentyOne, которая делает следующие действия:</p>
+				<ul>
+					<li>
+						Функция makeTwenty должна сделать PUT-запрос на адрес
+						https://jsonplaceholder.typicode.com/comments/1 с помощью функции fetch()
+					</li>
+					<li>Укажите заголовок "Content-Type" как "application/json" для запроса</li>
+					<li>
+						В теле запроса отправьте JSON-объект с полями name, email, body и postId, например:
+						<pre>
+{ "name": "Золотая рыбка", "email": "goldfish@example.com", "body": "Буль-буль!", "postId": 1 }</pre
+						>
+					</li>
+					<li>
+						Полученный ответ с сервера должен быть преобразован в формат JSON с помощью метода
+						response.json()
+					</li>
+					<li>Выведите ответ с сервера в консоль</li>
+				</ul>
+				<button class="button-primary b-21">Задание 21</button>
+			</section>
+
+			<section>
+				<h4>Задание 22</h4>
+				<p>Создайте функцию makePromiseAllOne, которая делает следующие действия:</p>
+				<ul>
+					<li>
+						Функция makePromiseAllOne должна делать два GET-запроса на адреса:
+						<ul>
+							<li>https://jsonplaceholder.typicode.com/posts/1</li>
+							<li>https://jsonplaceholder.typicode.com/comments/1</li>
+						</ul>
+						Используйте `.then()` для обработки результатов.
+					</li>
+					<li>Выведите оба ответа с сервера в консоль</li>
+				</ul>
+				<button class="button-primary b-22">Задание 22</button>
+			</section>
+
+			<section>
+				<h4>Задание 23</h4>
+				<p>Создайте функцию makePromiseAllTwo, которая делает следующие действия:</p>
+				<ul>
+					<li>
+						Функция makePromiseAllTwo должна делать три GET-запроса на адреса:
+						<ul>
+							<li>https://jsonplaceholder.typicode.com/users/1</li>
+							<li>https://jsonplaceholder.typicode.com/posts/1</li>
+							<li>https://jsonplaceholder.typicode.com/comments/1</li>
+						</ul>
+						Используйте `async/await` для обработки результатов.
+					</li>
+					<li>Выведите все ответы с сервера в консоль</li>
+				</ul>
+				<button class="button-primary b-23">Задание 23</button>
+				<div class="practicum23 pr"></div>
+			</section>
+
+			<section>
+				<h4>Задание 24</h4>
+
+				<code>let name = "Вася";</code>
+				<br />
+				<code>function sayHi() {</code>
+				<br />
+				<code>console.log(name);</code>
+				<br />
+				<code>}</code>
+				<br />
+				<br />
+				<code>setTimeout(function() {</code>
+				<br />
+				<code>let name = "Петя";</code>
+				<br />
+				<code>sayHi();</code>
+				<br />
+				<code class="pr">}, 1000);</code>
+				<br />
+				<p class="pr">
+					Есть код, как думаете, какое имя выведется в консоль? Проверьте себя, нажмите на кнопку
+					Задание 24.
+				</p>
+				<button class="button-primary b-24 pr">Задание 24</button>
+				<div class="practicum24 pr"></div>
+			</section>
+
+			<section>
+				<h4>Задание 25</h4>
+
+				<code>console.log(1);</code>
+				<br />
+				<code>setTimeout(function () {</code>
+				<br />
+				<code>console.log(2);</code>
+				<br />
+				<code>}, 0);</code>
+				<br />
+				<code>console.log(3);</code>
+				<br />
+				<p class="pr">
+					В каком порядке числа выведутся в консоль? Вызывается функция по кнопке Задание 25.
+				</p>
+				<button class="button-primary b-25">Задание 25</button>
+			</section>
+
+			<section>
+				<h4>Задание 26</h4>
+				<p>
+					Создайте функцию makeTwentySix, должна использовать
+					<code>setTimeout</code>
+					для отображения в консоли сообщения "Прошло 5 секунд" через 5 секунд. Вызывается функция
+					по кнопке Задание 26.
+				</p>
+				<button class="button-primary b-26">Задание 26</button>
+			</section>
+
+			<section>
+				<h4>Задание 27</h4>
+				<p>
+					Создайте функцию makeTwentySeven, должна использовать
+					<code>setTimeout</code>
+					для отображения в консоли сообщения "Прошло 2 секунды" через 2 секунды. Вызывается функция
+					по кнопке Задание 27.
+				</p>
+				<button class="button-primary b-27">Задание 27</button>
+			</section>
+
+			<section>
+				<h4>Задание 28</h4>
+				<p>
+					Создайте функцию makeTwentyEight, которая использует
+					<code>setInterval</code>
+					для отображения в консоли сообщения "Прошло 3 секунды" каждые 3 секунды.
+				</p>
+				<button class="button-primary b-28">Задание 28</button>
+			</section>
+
+			<section>
+				<h4>Задание 29</h4>
+				<p>
+					Создайте функцию makeTwentyNine, которая использует
+					<code>setInterval</code>
+					для отображения в консоли сообщения "Прошло 2 секунды" каждые 2 секунды.
+				</p>
+				<button class="button-primary b-29">Задание 29</button>
+			</section>
+
+			<section>
+				<h4>Задание 30</h4>
+				<p>
+					Создайте функцию makeThirty, которая использует
+					<code>setInterval</code>
+					для отображения в консоли сообщения "Прошло 5 секунд" каждые 5 секунд.
+				</p>
+				<button class="button-primary b-30">Задание 30</button>
+			</section>
+		</div>
+
+		<script src="./week19.js"></script>
+	</body>
+</html>
