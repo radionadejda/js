@@ -1,4 +1,5 @@
 const form = document.getElementById("form");
+const users = [];
 
 // check first name
 const firstName = document.getElementById("firstname");
@@ -13,7 +14,7 @@ function checkName() {
 	// 	firstNameError.textContent = 'заполните поле "имя"'
 	// } else {
 	//     firstName.classList.remove("error");
-	//     console.log(firstNameValue);
+	    // console.log(firstNameValue);
 	//     return firstNameValue
 	// }
 
@@ -37,7 +38,7 @@ function checkName() {
 	} else {
 		firstNameError.textContent = "";
 		firstName.classList.remove("error");
-		console.log(firstNameValue);
+		// console.log(firstNameValue);
 		return firstNameValue;
 	}
 }
@@ -68,7 +69,7 @@ function checkLastName() {
 	} else {
 		lastNameError.textContent = "";
 		lastName.classList.remove("error");
-		console.log(lastNameValue);
+		// console.log(lastNameValue);
 		return lastNameValue;
 	}
 }
@@ -90,7 +91,7 @@ function checkEmail() {
 	} else {
 		emailError.textContent = "";
 		email.classList.remove("error");
-		console.log(emailValue);
+		// console.log(emailValue);
 		return emailValue;
 	}
 }
@@ -122,10 +123,24 @@ function checkAge() {
 	} else {
 		ageError.textContent = "";
 		age.classList.remove("error");
-		console.log(ageValue);
+		// console.log(ageValue);
 		return ageValue;
 	}
 }
+
+//check sex
+function checkSex() {
+	const sex = document.getElementById("sex");
+	const sexChoices = sex.querySelectorAll(".radio");
+	let sexChoice = ""
+	for (let choice of sexChoices) {
+		if (choice.checked) {
+			sexChoice = choice.value;
+			return sexChoice
+		}
+	};
+}
+
 //check phone
 const phone = document.getElementById("phone");
 const phoneError = document.getElementById("phoneError");
@@ -142,7 +157,7 @@ function checkPhone() {
 	} else {
 		phoneError.textContent = "";
 		phone.classList.remove("error");
-		console.log(phoneValue);
+		// console.log(phoneValue);
 		return phoneValue;
 	}
 }
@@ -158,7 +173,7 @@ function checkJob() {
 	} else {
 		jobError.textContent = "";
 		job.classList.remove("error");
-		console.log(jobValue);
+		// console.log(jobValue);
 		return jobValue;
 	}
 }
@@ -178,7 +193,7 @@ function checkPassword() {
 	} else {
 		passwordError.textContent = "";
 		password.classList.remove("error");
-		console.log(passwordValue);
+		// console.log(passwordValue);
 		return passwordValue;
 	}
 }
@@ -202,7 +217,7 @@ function checkPasswordRepeat() {
 	} else {
 		passwordRepeatError.textContent = "";
 		passwordRepeat.classList.remove("error");
-		console.log(passwordRepeatValue);
+		// console.log(passwordRepeatValue);
 		return passwordRepeatValue;
 	}
 }
@@ -224,33 +239,37 @@ let uncheckAgree = () => {
 termsAgree.addEventListener("change", uncheckDeny);
 termsDeny.addEventListener("change", uncheckAgree);
 
-
 const submit = document.getElementById("submit");
 const messageDiv = document.getElementById("message");
 form.addEventListener("submit", function(event) {
 	event.preventDefault();
+	checkSex();
 	checkName();
-	checkLastName();
-	checkEmail();
-	checkAge();
-	checkPhone();
-	checkJob();
-	checkPassword();
-	checkPasswordRepeat();
+	// checkLastName();
+	// checkEmail();
+	// checkAge();
+	// checkPhone();
+	// checkJob();
+	// checkPassword();
+	// checkPasswordRepeat();
 	if (
 	checkName()
-	&& checkLastName()
-	&& checkEmail()
-	&& checkAge()
-	&& checkPhone()
-	&& checkJob()
-	&& checkPassword()
-	&& checkPasswordRepeat()
+	// && checkLastName()
+	// && checkEmail()
+	// && checkAge()
+	// && checkPhone()
+	// && checkJob()
+	// && checkPassword()
+	// && checkPasswordRepeat()
 	&& termsAgree.checked) {
 		showMessage(`добро пожаловать, ${firstName.value}!`);
+		let newUser = {firstName: checkName(), lastName: checkLastName(), email: checkEmail(), age: checkAge(), phone: checkPhone(), sex: checkSex(), job: checkJob(), password: checkPasswordRepeat()};
+		users.push(newUser);
 		form.reset();
 		messageDiv.classList.remove("errormessage");
 		messageDiv.classList.add("label");
+		// pretend to send our array to server
+		console.log(users);
 	} else {
 		showMessage("Для регистрации требуется заполнить все обязательные поля и принять условия пользовательского соглашения");
 	}
