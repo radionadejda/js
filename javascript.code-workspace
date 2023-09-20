@@ -2,10 +2,13 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../notebook"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "itg_week_2",
+		"liveServer.settings.multiRootWorkspaceName": "javascript",
 		"liveServer.settings.CustomBrowser": "chrome:PrivateMode"
 	}
 }
