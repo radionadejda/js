@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <style>
+        .body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(3, 3, 39);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .h1 {
+            text-transform: uppercase;
+            margin: 0 auto;
+            color: rgb(194, 78, 194);
+            padding: 2vw;
+        }
+
+        #blog {
+            width: 80vw;
+            margin: 0 auto;
+        }
+
+        .post {
+            display: flex;
+            flex-direction: column;
+            border: 3px solid rgb(220, 118, 10);
+            border-radius: 1rem;
+            box-shadow: 0.2rem 0.2rem 0.2rem 0.1rem rgb(0, 0, 255);
+            padding: 2vw;
+            background-color:rgba(194, 78, 194, 0.821) ;
+            text-align: center;
+            margin: 2vw auto;
+        }
+
+        .h2 {
+            text-transform: uppercase;
+            margin: 1vw auto;
+        }
+        .post-text {
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body class="body">
+    <h1 class="h1">this is blog</h1>
+    <div id="create">
+        <h2>новый пост</h2>
+        <div>
+            <input type="text" required placeholder="Заголовоок" id="inputTitle">
+            <input type="text" required placeholder="текст поста" id="inputText">
+            <button id="button">пост!</button>
+        </div>
+    </div>
+    <div id="blog">
+    </div>
+    <script src="./json_post.js"></script>
+</body>
+</html>
