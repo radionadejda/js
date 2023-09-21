@@ -31,6 +31,9 @@
 //     - добавляет созданный пост в DOM.
 
 const blog = document.getElementById("blog");
+const inputTitle = document.getElementById("inputTitle");
+const inputText = document.getElementById("inputText");
+const button = document.getElementById("button");
 
 function addPost(post) {
     const newPost = document.createElement("div");
@@ -46,6 +49,28 @@ function addPost(post) {
     blog.appendChild(newPost);
 }
 
+function postPosts (){
+let inputTitleValue = document.getElementById("inputTitle").value;
+let inputTextValue = document.getElementById("inputText").value;
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+        title: inputTitleValue,
+        body: inputTextValue,
+        }),
+        headers: {
+        "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+    .then(response => response.json())
+    .then(json => console.log(json))
+    .catch((error) => {
+        console.error("Ошибка", error);
+    });
+}
+
+button.addEventListener('click', postPosts);
+
 function loadPosts() {
         fetch("https://jsonplaceholder.typicode.com/posts")
         .then((response) => response.json())
@@ -59,4 +84,4 @@ function loadPosts() {
         });
 }
 
-loadPosts();
+// loadPosts();

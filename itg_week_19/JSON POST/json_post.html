@@ -22,6 +22,13 @@
             padding: 2vw;
         }
 
+        #create {
+            color: rgb(194, 78, 194);
+            width: 80vw;
+            margin: 0 auto;
+            text-align: center;
+        }
+
         #blog {
             width: 80vw;
             margin: 0 auto;
@@ -39,10 +46,41 @@
             margin: 2vw auto;
         }
 
+        .input-container{
+            flex-direction: row;
+            padding: 3vw;
+            justify-content: space-around;
+        }
+
+        .input {
+            padding: 1vw;
+            border-radius: 0.5rem;
+            background-color: rgba(232, 161, 232, 0.9);
+            border: 1px solid rgb(220, 118, 10);
+        }
+
+        #inputTitle {
+            width: 30%;
+        }
+
+        #inputText {
+            width: 40%;
+        }
+
+        #button {
+            background-color: rgb(0, 0, 255);
+            width: 20%;
+            border-radius: 0.5rem;
+            color: rgb(220, 118, 10);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
         .h2 {
             text-transform: uppercase;
             margin: 1vw auto;
         }
+
         .post-text {
             margin: 0 auto;
         }
@@ -52,14 +90,18 @@
 <body class="body">
     <h1 class="h1">this is blog</h1>
     <div id="create">
-        <h2>новый пост</h2>
-        <div>
-            <input type="text" required placeholder="Заголовоок" id="inputTitle">
-            <input type="text" required placeholder="текст поста" id="inputText">
+        <h2 class="h2">новый пост</h2>
+        <div id="inputContainer" class="post input-container">
+            <input type="text" required placeholder="Заголовок" id="inputTitle" class="input">
+            <input type="text" required placeholder="текст поста" id="inputText" class="input">
             <button id="button">пост!</button>
         </div>
     </div>
     <div id="blog">
+        <div class="post">
+            <h2 class="h2">title</h2>
+            <p class="post-text">Lorem ipsum dolor sit amet.</p>
+        </div>
     </div>
     <script src="./json_post.js"></script>
 </body>
