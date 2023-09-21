@@ -7,12 +7,20 @@ const weather = document.querySelector('#weather');
 const maxTemperature = document.querySelector('#maxTemperature');
 const minTemperature = document.querySelector('#minTemperature');
 
+function isValidTemperature(temp){
+    // temp = prompt(`Введите температуру в городе ${city}:`).value;
+    return temp.trim()!==''&& temp !== null && !isNaN(temp)
+}
+
 for (const city of cities) {
     const temperature = prompt(`Введите температуру в городе ${city}:`);
-    if (temperature === '' || temperature === null) {
-        alert('Введите корректную температуру.');
-        break
-    } else if (isNaN(temperature)) {
+    // if (temperature === '' || temperature === null) {
+    //     alert('Введите корректную температуру.');
+    //     break
+    // } else if (isNaN(temperature)) {
+    //     alert('Введите корректную температуру.');
+    //     break
+    if (!isValidTemperature(temperature)) {
         alert('Введите корректную температуру.');
         break
     } else {

@@ -167,12 +167,12 @@ let n=0;
 
 // while (n < allNumbers.length) {
 //     allPositive = true;
-//     n++;
 //     if (allNumbers[n]<=0) {
 //         allPositive = false;
 //         console.log(allPositive);
 //         break;
 //     }
+//      n++;
 // };
 
 //Задание 20

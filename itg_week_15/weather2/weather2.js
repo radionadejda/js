@@ -39,8 +39,8 @@ let getTemp = () => {
 	let validCities = [];
 	//проверяем введенные данные на валидность, добавляем их в массив
 	for (let i = 0; i < cities.length; i++) {
-		if (temperatures[i] !== "" && temperatures[i] !== null && temperatures[i] !== undefined) {
-			validTemperatures.push(temperatures[i]);
+		if (temperatures[i] !== "" && temperatures[i] !== null && temperatures[i] !== undefined && !isNaN(temperatures[i])) {
+			validTemperatures.push(Number(temperatures[i]));
 			// добавляем в массив города, которым введены валидные температуры
 			validCities.push(cities[i]);
 			// выводим на станицу валидные города и температуры
@@ -63,7 +63,7 @@ let getTemp = () => {
 		minTemperature.textContent = `Минимальная температура не введена`;
 	}
 
-    for (temp of temperaturesCollection) {temp.value = ""};
+    for (let temp of temperaturesCollection) {temp.value = ""};
 };
 
 button.addEventListener("click", getTemp);
