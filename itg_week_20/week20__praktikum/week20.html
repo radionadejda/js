@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>JS 2.0. Практикум.</title>
+		<link rel="stylesheet" href="assets/style.css" />
+		<link rel="stylesheet" href="assets/skeleton.css" />
+		<link rel="stylesheet" href="assets/normalize.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<h2><a>Практикум</a></h2>
+			<h1>Неделя 20. Обработка ошибок.</h1>
+			<p class="text-orange">
+				<b>Внимание! Обязательно открой консоль (клавиша F12)</b>
+			</p>
+
+			<section>
+				<h4>Задание 1</h4>
+				<p>
+					Создайте функцию makeOne, которая пытается вызвать функцию functionWithErrors, и при этом
+					отлавливает ошибку с помощью блока try/catch.
+				</p>
+				<button class="button-primary b-1">Задание 1</button>
+				<p class="pr" id="result1"></p>
+			</section>
+
+			<section>
+				<h4>Задание 2</h4>
+				<p>
+					Cоздайте функцию makeTwo, которая используя блок try/catch, создайте код, который пытается
+					перезаписать константу
+					<code>e</code>
+					, и обрабатывает ошибку, если этот код не выполняется.
+				</p>
+				<button class="button-primary b-2">Задание 2</button>
+				<div class="pr" id="result2"></div>
+			</section>
+
+			<section>
+				<h4>Задание 3</h4>
+				<p>
+					Cоздайте функцию makeThree, которая используя блок try/catch, который пытается выполнить
+					код с оператором throw new Error, и обрабатывает ошибку, если происходит попытка выполнить
+					этот оператор.
+				</p>
+				<button class="button-primary b-3">Задание 3</button>
+				<div class="pr" id="result3"></div>
+			</section>
+
+			<section>
+				<h4>Задание 4</h4>
+				<p>
+					Cоздайте функцию makeFour, которая использует блок try/catch. Ошибка не должна выводиться
+					на экран, а должен быть выведен результат умножения в элемент с id "result4".
+				</p>
+				<button class="button-primary b-4">Задание 4</button>
+				<div class="pr" id="result4"></div>
+			</section>
+
+			<section>
+				<h4>Задание 5</h4>
+				<p>
+					Допишите функцю makeFive так, чтобы она использовала оператор throw для генерации
+					исключения в случае ошибки.
+				</p>
+				<button class="button-primary b-5">Задание 5</button>
+				<p class="pr" id="result5"></p>
+			</section>
+
+			<section>
+				<h4>Задание 6</h4>
+				<p>
+					Создайте функцию makeSix, которая дополнит код функции makeFive так, чтобы она
+					использовала оператор throw для генерации исключения в случае ошибки, а затем
+					перехватывала это исключение и выводила в консоль сообщение "Ошибка перехвачена".
+				</p>
+				<button class="button-primary b-6">Задание 6</button>
+				<p class="pr" id="result6"></p>
+			</section>
+
+			<section>
+				<h4>Задание 7</h4>
+				<p>
+					Допишите функцию makeSeven так, что если делитель равен нулю, бросьте исключение с
+					сообщением "Деление на ноль недопустимо".
+				</p>
+				<button class="button-primary b-7">Задание 7</button>
+				<p class="pr" id="result7"></p>
+			</section>
+
+			<section>
+				<h4>Задание 8</h4>
+				<p>Добавьте в блок функции makeSeven блок try/catch, создайте новую функцию makeEight</p>
+				<button class="button-primary b-8">Задание 8</button>
+				<p class="pr" id="result8"></p>
+			</section>
+
+			<section>
+				<h4>Задание 9</h4>
+				<p>
+					Добавьте в код функции makeNine блок try/catch так, чтобы вместо ошибки выводилось цифра 1
+					в элемент с id "result9"
+				</p>
+				<button class="button-primary b-9">Задание 9</button>
+				<p class="pr" id="result9"></p>
+			</section>
+
+			<section>
+				<h4>Задание 10</h4>
+				<p>
+					Добавьте в функцию makeTen блок try, в котором адрес будет проверяться на валидность и
+					пробрасываться ошибка, если адрес некорректен. Если проверка пройдена успешно, выведите
+					сообщение "Email-адрес корректен" на страницу. Если возникла ошибка (некорректный email),
+					перехватите исключение с помощью блока catch. В блоке catch выведите сообщение об ошибке
+					на страницу.
+				</p>
+				<button class="button-primary b-10">Задание 10</button>
+				<div class="pr" id="result10"></div>
+			</section>
+
+			<section>
+				<h4>Задание 11</h4>
+				<p>
+					Допишите проверку телефона пользователя, если длина телефона менее 10 символов бросьте
+					исключение throw new Error с сообщением "Некорректная длина телефонного номера"
+				</p>
+				<button class="button-primary b-11">Задание 11</button>
+				<div class="pr" id="result11"></div>
+			</section>
+
+			<section>
+				<h4>Задание 12</h4>
+				<p>
+					Создайте функцию makeTwelve, которая проверит возраст пользователя. Если возраст меньше 18
+					лет, необходимо бросить исключение типа Error с сообщением "Доступ запрещен для лиц младше
+					18 лет". В противном случае, выведите сообщение "Доступ разрешен".
+				</p>
+				<button class="button-primary b-12">Задание 12</button>
+				<p class="pr" id="result12"></p>
+			</section>
+
+			<section>
+				<h4>Задание 13</h4>
+				<p>Добавьте в функцию makeTwelve блок try/catch</p>
+				<button class="button-primary b-13">Задание 13</button>
+				<p class="pr" id="result13"></p>
+			</section>
+
+			<section>
+				<h4>Задание 14</h4>
+				<p>
+					Создайте функцию makeFourteen, которая будет подсчитывать размер скидки на товар. Однако
+					существует ограничение: скидка не может быть отрицательной и не может превышать 50%. В
+					случае нарушения этого ограничения, необходимо бросить исключение типа Error с сообщением
+					"Некорректное значение скидки". В противном случае, выведите сообщение с размером скидки.
+					Используйте блок try/catch.
+				</p>
+				<button class="button-primary b-14">Задание 14</button>
+				<p class="pr" id="result14"></p>
+			</section>
+
+			<section>
+				<h4>Задание 15</h4>
+				<p>
+					Есть функция makeFifteen в неё передаются два параметра: переменная
+					<code>a</code>
+					и некоторая функция
+					<code>func</code>
+					. Вам необходимо запустить функцию
+					<code>func</code>
+					, с переменной
+					<code>a</code>
+					в качестве аргумента. В блоке catch вывести имя (свойство "name") с возникающей ошибки в
+					элемент с id result15.
+				</p>
+				<button class="button-primary b-15">Задание 15</button>
+				<p class="pr" id="result15"></p>
+			</section>
+
+			<section>
+				<h4>Задание 16</h4>
+				<p>
+					Есть функция makeSixteen в неё передаются два параметра: число
+					<code>n</code>
+					и некоторая функция
+					<code>func</code>
+					. Вам необходимо запустить функцию
+					<code>func</code>
+					, с числом
+					<code>n</code>
+					в качестве аргумента. В блоке catch вывести сообщение с описанием ошибки в элемент с id
+					result16
+				</p>
+				<button class="button-primary b-16">Задание 16</button>
+				<p class="pr" id="result16"></p>
+			</section>
+
+			<section>
+				<h4>Задание 17</h4>
+				<p>
+					Есть функция makeSeventeen в неё передаются два параметра: строка
+					<code>str</code>
+					и некоторая функция
+					<code>func</code>
+					. Вам необходимо запустить функцию
+					<code>func</code>
+					, с строкой
+					<code>str</code>
+					в качестве аргумента. В блоке catch вывести сообщение с описанием ошибки в элемент с id
+					result17.
+				</p>
+				<button class="button-primary b-17">Задание 17</button>
+				<p class="pr" id="result17"></p>
+			</section>
+
+			<section>
+				<h4>Задание 18</h4>
+				<p>
+					Создайте функцию makeEighteen и добавьте try, catch, finnaly так, чтобы в элемент с id
+					result18 выводился 0 при ошибке. А в элемент с id result18a всегда выводилось слово
+					finnaly.
+				</p>
+				<button class="button-primary b-18">Задание 18</button>
+				<p class="pr" id="result18"></p>
+				<p class="pr" id="result18a"></p>
+			</section>
+
+			<section>
+				<h4>Задание 19</h4>
+				<p>
+					Создайте функцию makeNineteen и добавьте try, catch, finally так, чтобы в элемент с id
+					result19 выводилась сумма элементов массива при успешном выполнении функции и сообщение
+					"Ошибка" при ошибке. А в элемент с id result19a всегда выводилась строка "finally19".
+				</p>
+				<button class="button-primary b-19">Задание 19</button>
+				<p class="pr" id="result19"></p>
+			</section>
+
+			<section>
+				<h4>Задание 20</h4>
+				<p>
+					Создайте функцию makeTwenty и добавьте try, catch, finally так, чтобы в элемент с id
+					result20 выводилось значение, возвращаемое функцией calculateValue, при успешном
+					выполнении и сообщение "Ошибка" при ошибке. А в элемент с id result20a всегда выводилась
+					строка "finally20".
+				</p>
+				<button class="button-primary b-20">Задание 20</button>
+				<p class="pr" id="result20"></p>
+				<p class="pr" id="result20a"></p>
+			</section>
+
+			<section>
+				<h4>Задание 21</h4>
+				<p>
+					Создайте функцию makeTwentyOne и добавьте try, catch, finally так, чтобы в элемент с id
+					result21 выводилось значение, возвращаемое функцией fetchData, при успешном выполнении и
+					сообщение "Ошибка" при ошибке. А в элемент с id result21a всегда выводилась строка
+					"finally21".
+				</p>
+				<button class="button-primary b-21">Задание 21</button>
+				<p class="pr" id="result21"></p>
+				<p class="pr" id="result21a"></p>
+			</section>
+
+			<section>
+				<h4>Задание 22</h4>
+				<p>
+					Создайте функцию makeTwentyTwo, которая получает json файл, который некорректен. Чтобы
+					предотвратить ошибку, добавьте блок try/catch.
+				</p>
+				<button class="button-primary b-22">Задание 22</button>
+				<p class="pr" id="result22"></p>
+			</section>
+
+			<section>
+				<h4>Задание 23</h4>
+				<p>
+					Создайте функцию makeTwentyThree, которая получает JSON файл, который некорректен. Чтобы
+					предотвратить ошибку, добавьте блок try/catch.
+				</p>
+				<button class="button-primary b-23">Задание 23</button>
+				<p class="pr" id="result23"></p>
+			</section>
+
+			<section>
+				<h4>Задание 24</h4>
+				<p>
+					Создайте функцию makeTwentyFour, которая пытается выполнить некорректную операцию и
+					использует оператор throw, ошибка обрабатывается в блоке catch.
+				</p>
+				<button class="button-primary b-24">Задание 24</button>
+				<p class="pr" id="result24"></p>
+			</section>
+
+			<section>
+				<h4>Задание 25</h4>
+				<p>
+					Создайте функцию makeTwentyFive, которая с вероятностью 90% выбрасывает ошибку, и
+					обрабатывает эту ошибку в блоке catch.
+				</p>
+				<button class="button-primary b-25">Задание 25</button>
+				<p class="pr" id="result25"></p>
+			</section>
+
+			<section>
+				<h4>Задание 26</h4>
+				<p>
+					Создайте функцию makeTwentySix, которая использует setTimeout с блоком try/catch, чтобы
+					обработать ошибку, которая может возникнуть при асинхронном выполнении кода
+				</p>
+				<button class="button-primary b-26">Задание 26</button>
+				<p class="pr" id="result26"></p>
+			</section>
+
+			<section>
+				<h4>Задание 27</h4>
+				<p>
+					Cоздайте функцию makeTwentySeven, которая использует async/await для асинхронной операции
+					и блок try/catch, чтобы обработать ошибку, которая может возникнуть при этой асинхронной
+					операции
+				</p>
+				<button class="button-primary b-27">Задание 27</button>
+				<p class="pr" id="result27"></p>
+			</section>
+
+			<section>
+				<h4>Задание 28</h4>
+				<p>
+					Создайте функцию makeTwentyEight, которая содержит код с использованием Promise.reject и
+					setTimeout, демонстрирующий, что ошибки внутри этих операций не попадают в блок catch на
+					том же уровне.
+				</p>
+				<button class="button-primary b-28">Задание 28</button>
+				<p class="pr" id="result28"></p>
+			</section>
+
+			<section>
+				<h4>Задание 29</h4>
+				<p>
+					Создайте функцию handlePromise, которая содержит асинхронную операцию с использованием
+					async/await и блок try/catch для обработки ошибки.
+				</p>
+				<button class="button-primary b-29">Задание 29</button>
+				<p class="pr" id="result29"></p>
+			</section>
+
+			<section>
+				<h4>Задание 30</h4>
+				<p>Выполнение функции упадёт в блок catch?</p>
+				<code>function makeThirty() {</code>
+				<br />
+				<code>try {</code>
+				<br />
+				<code>while (true) {</code>
+				<br />
+				<code>1>2;</code>
+				<br />
+				<code>}</code>
+				<br />
+				<code>} catch (error) {</code>
+				<br />
+				<code>resultTwentyThirty.textContent = 'Произошла ошибка: ' + error.message;</code>
+				<br />
+				<code>console.error('Произошла ошибка:', error.message);</code>
+				<br />
+				<code>}</code>
+				<br />
+				<code>}</code>
+				<br class="pr" />
+				<button style="margin-top: 20px" class="button-primary b-30">Узнать ответ</button>
+				<p class="pr" id="result30"></p>
+			</section>
+		</div>
+		<script src="./constants.js"></script>
+		<script src="./week20.js"></script>
+	</body>
+</html>
