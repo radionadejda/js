@@ -23,7 +23,7 @@ const number = document.getElementById("number");
 async function getStarWars() {
 	const numberValue = number.value;
     const selectorValue = selector.value;
-    result.textContent = 'ждем ответа от сервера... здесь могла быть красивая анимация загрузки';
+    result.innerHTML = '<p>ждем ответа от сервера...</p><img src="./style/cat_roll.gif" alt="cat_roll" class="img">';
 	try {
         if (numberValue == "" || selectorValue =="") {
             throw new Error("empty");

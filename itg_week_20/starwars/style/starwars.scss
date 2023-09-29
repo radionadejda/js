@@ -65,6 +65,7 @@ $error: rgb(147, 40, 40);
 
 #result {
     display: flex;
+    flex-direction: column;
     margin: auto auto;
     padding: 0 5vw;
     background-color: rgba($bg, 0.6);
@@ -79,4 +80,8 @@ $error: rgb(147, 40, 40);
 .error {
     color: $error;
     border: 2px solid $error;
+}
+
+.img {
+    height: 20vh;
 }
