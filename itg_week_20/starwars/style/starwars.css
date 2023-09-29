@@ -1,0 +1,77 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: large;
+  color: rgb(226, 187, 78);
+}
+
+.body {
+  background-image: url(./jake-weirick-Q_RBVFFXR_g-unsplash.jpg);
+  background-size: cover;
+  background-position-x: 50%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  border: 2px solid rgb(226, 187, 78);
+  border-radius: 1rem;
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(35, 26, 72, 0.2);
+  padding: 2vw;
+}
+
+#input {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  background-color: rgba(35, 26, 72, 0.6);
+  width: 80%;
+  margin: 1vh auto;
+  padding: 1vw;
+  border-radius: 0.5rem;
+  border-color: rgb(226, 187, 78);
+  padding: 2vw;
+  display: flex;
+  text-align: center;
+}
+
+.field:focus {
+  outline: 2px solid rgb(230, 154, 55);
+  box-shadow: 0 0.3rem 0.5rem rgb(230, 154, 55);
+}
+
+#button {
+  background-color: rgb(226, 187, 78);
+  color: rgb(35, 26, 72);
+  display: flex;
+  justify-content: center;
+}
+
+#result {
+  display: flex;
+  margin: auto auto;
+  padding: 0 5vw;
+  background-color: rgba(35, 26, 72, 0.6);
+  width: 80%;
+  height: 60%;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.error {
+  color: rgb(147, 40, 40);
+  border: 2px solid rgb(147, 40, 40);
+}/*# sourceMappingURL=starwars.css.map */

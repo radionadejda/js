@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>star wars</title>
-</head>
-<body>
-
-    <!-- <select name="select">
-        <option value="right">Направо</option>
-        <option value="left">Налево</option>
-        <option value="forward">Прямо</option>
-      </select> -->
-    <script src="./starwars.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="./style/starwars.css" rel="stylesheet" />
+		<title>star wars</title>
+	</head>
+	<body class="body">
+		<div id="container">
+			<div id="input">
+				<select id="selector" class="field">
+					<option value="" id="empty" >Выберите категорию</option>
+					<option value="films" id="films">Фильм (всего 6)</option>
+					<option value="people" id="people">Персонаж (всего 83)</option>
+					<option value="planets" id="planets">Планета (всего 60)</option>
+					<option value="species" id="species">Раса (всего 37)</option>
+					<option value="starships" id="starships">Космический корабль (всего 17)</option>
+					<option value="vehicles" id="vehicles">Транспортное средство (всего 38)</option>
+				</select>
+				<input type="number" id="number" min="1" step="1" placeholder="Введите число" class="field"/>
+				<button id="button" class="field">Получить данные</button>
+			</div>
+			<div id="result">Результат</div>
+		</div>
+		<script src="./starwars.js"></script>
+	</body>
 </html>

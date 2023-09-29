@@ -1,36 +1,66 @@
-// 2. На этой неделе вы будете работать с ещё одним открытым API — Swapi. Вот его [документация](https://swapi.dev/documentation), ознакомьтесь с ней.
-    
-//     Swapi — это доступный источник данных для всех данных из канонической вселенной «Звездных войн». Можно запросить данные о персонажах, кораблях и не только!
-    
-//     Нам нужно создать приложение, которое будет делать запрос к API и полученную информацию показывать на экране. Пример запроса:
-    
-//     ```jsx
-//     https://swapi.nomoreparties.co/planets/1 — // планета с идентификатором 1
-//     ```
-    
-//     То есть в запросе нам нужно передать, какую сущность хотим получить (фильмы, людей, планет starships) и её числовой идентификатор. В API есть по 10 сущностей каждого вида, поэтому идентификатор должен быть от 1 до 10:
-    
-//     ```jsx
-//     // Attributes:
-//     films string -- The URL root for Film resources
-//     people string -- The URL root for People resources
-//     planets string -- The URL root for Planet resources
-//     species string -- The URL root for Species resources
-//     starships string -- The URL root for Starships resources
-//     vehicles string -- The URL root for Vehicles resources
-//     ```
-    
-//     И указать числовой идентификатор, он должен быть от 1 до 10 (так как для каждого списка в API всего по 10 сущностей):
-    
-//     ```jsx
-//     /people/  -- get all the people resources
-//       // Пример запроса: https://swapi.dev/api/people
-//     /people/:id/-- get a specific people resource 
-//     // Пример запроса: https://swapi.dev/api/people/1/
-//     ```
-    
-//     Запрос должен уходить на сервер при нажатии на кнопку (нужно добавить обработчик). В разметке HTML должно быть минимум два поля: в первое нужно выводить результат поиска, если данные пришли и всё хорошо, во втором — ошибку, если что-то пошло не так. (Добейтесь, чтобы ваше приложение выводило понятные пользователю сообщения в случае ошибки, например «Сервер не доступен»). Сообщения должны быть видны поочередно, если результат показан, ошибка должна быть сброшена. И наоборот. Обязательно добавьте обработчик ответа: если ответ успешный, следующий обработчик `then` получит объект ответа на вход, если с ответом что-то не так, отклоните промис (для этого верните `Promise.reject` с кодом статуса ответа). Блок `catch` и `finally` использовать обязательно.
-    
-//     Хороший интерфейс сообщает пользователю, что идёт загрузка надписью «Идёт загрузка» или крутящимся лоадером пока идёт запрос. Если хотите улучшить ваше приложение, то вы можете также реализовать этот функционал. 
-    
-//     Пример реализации (какие данные выводить решать вам, мы показываем только имя):
+//     ... указать числовой идентификатор, он должен быть от 1 до 10 (так как для каждого списка в API всего по 10 сущностей):
+// работает для всех сущностей в каждой категории
+// films: 6 titles
+// people: 83 names
+// planets: 60 names
+// species: 37 names
+// starships: 17 names
+// vehicles: 38 names
+
+// ... В разметке HTML должно быть минимум два поля: в первое нужно выводить результат поиска, если данные пришли и всё хорошо, во втором — ошибку, если что-то пошло не так. Сообщения должны быть видны поочередно, если результат показан, ошибка должна быть сброшена. И наоборот.
+// - ошибка или результат поиска выводятся в одном поле, перезаписываются
+
+//  Обязательно добавьте обработчик ответа: если ответ успешный, следующий обработчик `then` получит объект ответа на вход, если с ответом что-то не так, отклоните промис (для этого верните `Promise.reject` с кодом статуса ответа). Блок `catch` и `finally` использовать обязательно.
+// вот тут я нипоняль(( проверку ответа сделала, а отказ промиса не понимаю, где должен оказаться
+
+//     Хороший интерфейс сообщает пользователю, что идёт загрузка надписью «Идёт загрузка» или крутящимся лоадером пока идёт запрос. Если хотите улучшить ваше приложение, то вы можете также реализовать этот функционал.
+
+const button = document.getElementById("button");
+const selector = document.getElementById("selector");
+const result = document.getElementById("result");
+const number = document.getElementById("number");
+
+async function getStarWars() {
+	const numberValue = number.value;
+    const selectorValue = selector.value;
+    result.textContent = 'ждем ответа от сервера... здесь могла быть красивая анимация загрузки';
+	try {
+        if (numberValue == "" || selectorValue =="") {
+            throw new Error("empty");
+        }
+    const response = await fetch(`https://swapi.dev/api/${selectorValue}/${numberValue}/`);
+        if (!response.ok) {
+            throw new Error(`${response.status}`);
+        }
+        let data = await response.json();
+        result.classList.remove("error");
+        let text = "";
+        if (selectorValue == "films") {
+            text = JSON.stringify(data.title).replace(/['"]+/g, '')
+        } else {
+        text = JSON.stringify(data.name).replace(/['"]+/g, '')
+        }
+        result.textContent = text;
+} catch (error) {
+    let text = ""
+    if (error.message == "empty") {
+        text = "введите данные для поиска"
+    }
+    if (error.message == 401) {
+        text = `не авторизован (номер ошибки: ${error.message})`
+    }
+    if (error.message == 403) {
+        text = `доступ запрещен (номер ошибки: ${error.message})`
+    }
+    if (error.message == 404) {
+        text = `станица не найдена, попробуйте ввести другое число (номер ошибки: ${error.message})`
+    }
+    if (error.message == 500) {
+        text = `внутренняя ошибка сервера, (номер ошибки: ${error.message})`
+    }
+        result.classList.add("error");
+        result.textContent = `${text}`;
+};
+}
+
+button.addEventListener("click", getStarWars);

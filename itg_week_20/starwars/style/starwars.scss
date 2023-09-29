@@ -1,0 +1,82 @@
+$font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+$accent:  rgb(226, 187, 78);
+$accent2: rgb(230, 154, 55);
+$bg: rgb(35, 26, 72);
+$error: rgb(147, 40, 40);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font;
+    font-size: large;
+    color: $accent;
+}
+
+.body {
+    background-image: url(./jake-weirick-Q_RBVFFXR_g-unsplash.jpg);
+    background-size: cover;
+    background-position-x: 50%;
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container {
+    border: 2px solid $accent;
+    border-radius: 1rem;
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba($bg, 0.2);
+    padding: 2vw;
+}
+
+#input {
+    display: flex;
+    flex-direction: column;
+}
+
+.field {
+    background-color: rgba($bg, 0.6);
+    width: 80%;
+    margin: 1vh auto;
+    padding: 1vw;
+    border-radius: 0.5rem;
+    border-color: $accent;
+    padding: 2vw;
+    display: flex;
+    text-align: center;
+}
+
+.field:focus {
+    outline: 2px solid $accent2;
+    box-shadow: 0 0.3rem 0.5rem $accent2;
+}
+
+#button {
+    background-color: $accent;
+    color: $bg;
+    display: flex;
+    justify-content: center;
+}
+
+#result {
+    display: flex;
+    margin: auto auto;
+    padding: 0 5vw;
+    background-color: rgba($bg, 0.6);
+    width: 80%;
+    height: 60%;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.error {
+    color: $error;
+    border: 2px solid $error;
+}
