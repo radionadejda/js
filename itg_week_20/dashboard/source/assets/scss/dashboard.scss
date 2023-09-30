@@ -1,0 +1,40 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+$color1: rgba(221, 19, 227, 0.8);
+$color2: rgba(255, 138, 22, 0.8);
+$bg-color: rgb(243, 176, 243);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($bg-color, 0.4);
+}
+
+.navbar, .footer {
+background-color:  rgba($bg-color, 0.5);
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $color1;
+}
+
+.chart-container{
+    width:60vw;
+    height: 40vh;
+    margin: 0 auto;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+}
