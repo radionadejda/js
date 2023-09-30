@@ -245,22 +245,22 @@ form.addEventListener("submit", function(event) {
 	event.preventDefault();
 	checkSex();
 	checkName();
-	// checkLastName();
-	// checkEmail();
-	// checkAge();
-	// checkPhone();
-	// checkJob();
-	// checkPassword();
-	// checkPasswordRepeat();
+	checkLastName();
+	checkEmail();
+	checkAge();
+	checkPhone();
+	checkJob();
+	checkPassword();
+	checkPasswordRepeat();
 	if (
 	checkName()
-	// && checkLastName()
-	// && checkEmail()
-	// && checkAge()
-	// && checkPhone()
-	// && checkJob()
-	// && checkPassword()
-	// && checkPasswordRepeat()
+	&& checkLastName()
+	&& checkEmail()
+	&& checkAge()
+	&& checkPhone()
+	&& checkJob()
+	&& checkPassword()
+	&& checkPasswordRepeat()
 	&& termsAgree.checked) {
 		showMessage(`добро пожаловать, ${firstName.value}!`);
 		let newUser = {firstName: checkName(), lastName: checkLastName(), email: checkEmail(), age: checkAge(), phone: checkPhone(), sex: checkSex(), job: checkJob(), password: checkPasswordRepeat()};
