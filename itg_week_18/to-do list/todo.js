@@ -20,7 +20,6 @@ let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 const makeTask = function(taskText) {
 	const newTaskItem = document.createElement("label");
 	newTaskItem.classList.add("task");
-	// newTaskItem.setAttribute("onclick","buttonClearDoneEnable()")
 	newTaskItem.innerHTML = `
 	<p>${taskText}</p>
 	<input type="checkbox" name="task-checkbox"  unchecked class="checkbox"/>`;
@@ -69,9 +68,6 @@ const addTask = function() {
 	} else {
 		taskText = taskInput.value.trim();
 		makeTask(taskText);
-		// taskChildren = taskList.getElementsByClassName("task");
-		// 	const checkbox = newTaskItem.querySelector(".checkbox");
-		// checkbox.addEventListener("change", buttonClearDoneEnable);
 		tasks.push(taskText);
 		localStorage.setItem("tasks", JSON.stringify(tasks));
 		buttonClearAllEnable();
@@ -87,9 +83,9 @@ taskInput.addEventListener("input", function() {
 buttonAdd.addEventListener("click", addTask);
 
 taskInput.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
+	if (event.key === "Enter") {
     buttonAdd.click();
-  }
+	}
 });
 
 // удалить все задачи
