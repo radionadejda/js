@@ -20,6 +20,7 @@ let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 class Task {
 	constructor(taskText) {
 	this.taskText = taskText;
+	this.done = false;
 	this.printTask(); //Вызываем метод print при создании объекта
 	}
 
@@ -29,6 +30,11 @@ class Task {
 		newTaskItem.innerHTML = `
 		<p>${this.taskText}</p>
 		<input type="checkbox" name="task-checkbox"  unchecked class="checkbox"/>`;
+		const checkbox = newTaskItem.querySelector(".checkbox");
+		checkbox.addEventListener("change", () => {
+		this.done = checkbox.checked;
+		localStorage.setItem("tasks", JSON.stringify(tasks));
+		});
 		taskList.appendChild(newTaskItem);
 		taskInput.value = "";
 	}
@@ -36,7 +42,6 @@ class Task {
 
 const getTasks = function() {
 	for (let task of tasks) {
-		// console.log(task);
 		new Task(task.taskText);
 	};
 	buttonClearAllEnable();
