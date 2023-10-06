@@ -17,15 +17,30 @@ const success = document.querySelector("#success");
 let taskText = taskInput;
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-const printTask = function(taskText) {
-	const newTaskItem = document.createElement("label");
-	newTaskItem.classList.add("task");
-	newTaskItem.innerHTML = `
-	<p>${taskText}</p>
-	<input type="checkbox" name="task-checkbox"  unchecked class="checkbox"/>`;
-	taskList.appendChild(newTaskItem);
-	taskInput.value = "";
+class Task {
+	constructor(taskText) {
+	this.taskText = taskText;
+	this.printTask(); //Вызываем метод print при создании объекта
+	}
+
+	printTask() {
+		const newTaskItem = document.createElement("label");
+		newTaskItem.classList.add("task");
+		newTaskItem.innerHTML = `
+		<p>${this.taskText}</p>
+		<input type="checkbox" name="task-checkbox"  unchecked class="checkbox"/>`;
+		taskList.appendChild(newTaskItem);
+		taskInput.value = "";
+	}
 }
+
+const getTasks = function() {
+	for (let task of tasks) {
+		// console.log(task);
+		new Task(task.taskText);
+	};
+	buttonClearAllEnable();
+};
 
 let buttonClearAllEnable = function() {
 	if (tasks.length !== 0) {
@@ -37,6 +52,8 @@ let buttonClearAllEnable = function() {
 	}
 };
 
+
+
 const clearAll = function() {
 	let tasksOnPage = taskList.querySelectorAll(".task");
 	tasksOnPage.forEach(task => task.remove());
@@ -44,14 +61,6 @@ const clearAll = function() {
 	window.localStorage.removeItem("tasks")
 	buttonClearAllEnable();
 }
-
-const getTasks = function() {
-	for (let task of tasks) {
-		console.log(task);
-		printTask(task);
-	};
-	buttonClearAllEnable();
-};
 
 if (tasks.length !== 0) {
 	getTasks()
@@ -67,8 +76,8 @@ const addTask = function() {
 		return;
 	} else {
 		taskText = taskInput.value.trim();
-		printTask(taskText);
-		tasks.push(taskText);
+		let newTask = new Task(taskText);
+		tasks.push(newTask);
 		localStorage.setItem("tasks", JSON.stringify(tasks));
 		buttonClearAllEnable();
 	}
