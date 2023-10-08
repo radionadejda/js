@@ -34,6 +34,7 @@ const blog = document.getElementById("blog");
 const inputTitle = document.getElementById("inputTitle");
 const inputText = document.getElementById("inputText");
 const button = document.getElementById("button");
+const error = document.getElementById("error");
 
 function addPost(post) {
     const newPost = document.createElement("div");
@@ -49,9 +50,23 @@ function addPost(post) {
     blog.appendChild(newPost);
 }
 
-function postPosts (){
+function checkPost() {
 let inputTitleValue = document.getElementById("inputTitle").value;
 let inputTextValue = document.getElementById("inputText").value;
+if (inputTitleValue == "" || inputTitleValue == undefined || inputTextValue == "" || inputTextValue == undefined) {
+    error.style.display = "flex";
+    return false;
+} else {
+    error.style.display = "none"
+    return true
+}
+}
+
+function postPosts(){
+let inputTitleValue = document.getElementById("inputTitle").value;
+let inputTextValue = document.getElementById("inputText").value;
+checkPost()
+if (!checkPost()) {return}
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         body: JSON.stringify({
@@ -68,8 +83,6 @@ let inputTextValue = document.getElementById("inputText").value;
         console.error("Ошибка", error);
     });
 }
-
-
 
 button.addEventListener('click', postPosts);
 

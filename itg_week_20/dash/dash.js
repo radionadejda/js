@@ -22,42 +22,84 @@
 const dashboard = document.getElementById("dashboard");
 const taskTitle = document.getElementById("taskTitle");
 const button = document.getElementById("button");
-const priority = document.getElementById("priority");
-const priorityHigh = document.getElementById("priorityHigh");
-const priorityMedium = document.getElementById("priorityMedium");
-const priorityLow = document.getElementById("priorityLow");
-const status = document.getElementById("status");
-const statusEmpty = document.getElementById("statusEmpty");
-const statusInProcess = document.getElementById("statusInProcess");
-const statusDone = document.getElementById("statusDone");
-const statusHold = document.getElementById("statusHold");
-const statusCancelled = document.getElementById("statusCancelled");
+const taskPriority = document.getElementById("priority");
+// const priorityHigh = document.getElementById("priorityHigh");
+// const priorityMedium = document.getElementById("priorityMedium");
+// const priorityLow = document.getElementById("priorityLow");
+const taskStatus = document.getElementById("status");
+// const statusEmpty = document.getElementById("statusEmpty");
+// const statusInProcess = document.getElementById("statusInProcess");
+// const statusDone = document.getElementById("statusDone");
+// const statusHold = document.getElementById("statusHold");
+// const statusCancelled = document.getElementById("statusCancelled");
+const startDate = document.getElementById("startDate");
+const endDate = document.getElementById("endDate");
 
 function addTask(task) {
     const newTask = document.createElement("div");
     newTask.classList.add("task")
-
     // заголовок задачи
     const taskText = document.createElement("h3");
     taskText.textContent = `задача: ${task.title}`;
     taskText.classList.add("task-text")
     newTask.appendChild(taskText);
+    // опции задачи
+    const taskOptions = document.createElement("div");
+    taskOptions.classList.add("task-options")
+    newTask.appendChild(taskOptions);
     // приоритет задачи
-
-    
+    const taskPriority = document.createElement("div");
+    taskPriority.textContent = `приоритет: ${task.priority}`;
+    taskPriority.classList.add("task-priority");
+    taskOptions.appendChild(taskPriority);
     // статус задачи
-
-
+    const taskStatus = document.createElement("div");
+    taskStatus.textContent = `статус: ${task.status}`;
+    taskStatus.classList.add("task-status");
+    taskOptions.appendChild(taskStatus);
+    // даты задачи
+    const taskDates = document.createElement("div");
+    taskOptions.classList.add("task-dates")
+    newTask.appendChild(taskDates);
+    // дата начала
+    const startDate = document.createElement("div");
+    startDate.textContent = `дата начала: ${task.startDate}`;
+    startDate.classList.add("task-date");
+    taskDates.appendChild(startDate);
+    // дата окончания
+    const endDate = document.createElement("div");
+    endDate.textContent = `дата окончания: ${task.endDate}`;
+    endDate.classList.add("task-date");
+    taskDates.appendChild(endDate);
     // добавляем всю задачу на страницу
     dashboard.appendChild(newTask);
 }
 
+//получить приоритет задачи с радиокнопки
+function checkPriority() {
+	const priorityOptionss = taskPriority.querySelectorAll(".radio");
+	for (let option of priorityOptionss) {
+		if (option.checked) {
+			priorityValue = option.value;
+			return priorityValue
+		}
+	};
+}
+
 function postTasks (){
-let taskTitleValue = document.getElementById("taskTitle").value;
+const taskTitleValue = taskTitle.value;
+const taskPriorityValue = checkPriority();
+const taskStatusValue = taskStatus.value;
+const taskStartDateValue = startDate.value;
+const taskEndDateValue = endDate.value;
     fetch('https://jsonplaceholder.typicode.com/todos', {
         method: 'POST',
         body: JSON.stringify({
         title: taskTitleValue,
+        priority: taskPriorityValue,
+        status: taskStatusValue,
+        startDate: taskStartDateValue,
+        endDate: taskEndDateValue
         }),
         headers: {
         "Content-type": "application/json; charset=UTF-8"
