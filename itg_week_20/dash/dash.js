@@ -34,7 +34,6 @@ const taskStatus = document.getElementById("status");
 // const statusCancelled = document.getElementById("statusCancelled");
 const startDate = document.getElementById("startDate");
 const endDate = document.getElementById("endDate");
-const error = document.getElementById("error");
 
 function addTask(task) {
     const newTask = document.createElement("div");
@@ -87,10 +86,12 @@ function checkPriority() {
 		}
 	};
     if (priorityValue == "" || priorityValue == undefined){
-        error.style.display = "flex";
+        const error = document.createElement("div")
+        error.classList.add("task");
+        error.textContent = "установите приоритет"
         return false;
     } else {
-        error.style.display = "none"
+        // error.style.display = "none"
         return true
     }
 }
@@ -99,10 +100,12 @@ function checkPriority() {
 function checkTitle() {
     const taskTitleValue = taskTitle.value;
     if (taskTitleValue == "" || taskTitleValue == undefined) {
-        error.style.display = "flex";
+        const error = document.createElement("div")
+        error.classList.add("task");
+        error.textContent = "введите тест задачи"
         return false;
     } else {
-        error.style.display = "none"
+        // error.style.display = "none"
         return true
     }
 }
