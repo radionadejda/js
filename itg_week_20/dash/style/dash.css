@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(3, 3, 39);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.h1 {
+  text-transform: uppercase;
+  margin: 0 auto;
+  color: rgb(194, 78, 194);
+  padding: 2vw;
+}
+
+#create {
+  color: rgb(194, 78, 194);
+  width: 80vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#dashboard {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid rgb(220, 118, 10);
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.1rem rgb(15, 15, 179);
+  padding: 2vw;
+  background-color: rgba(194, 78, 194, 0.5);
+  text-align: center;
+  margin: 2vw auto;
+  color: rgb(3, 3, 39);
+}
+
+.input {
+  padding: 1vw;
+  border-radius: 0.5rem;
+  background-color: rgba(232, 161, 232, 0.9);
+  border: 1px solid rgb(220, 118, 10);
+  color: rgb(3, 3, 39);
+}
+
+#inputTitle {
+  width: 30%;
+}
+
+#inputText {
+  width: 40%;
+}
+
+#button {
+  margin: 1vh auto;
+  background-color: rgb(15, 15, 179);
+  width: 40%;
+  height: 4vh;
+  border-radius: 0.5rem;
+  color: rgb(220, 118, 10);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.h2 {
+  text-transform: uppercase;
+  margin: 1vw auto;
+  color: rgb(220, 118, 10);
+}
+
+.task-text {
+  margin: 0 auto;
+}
+
+.fieldset {
+  border: none;
+  padding-top: 1vh;
+  padding-bottom: 0.5vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fieldset input {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 1px solid rgb(15, 15, 179);
+  background-color: rgba(220, 118, 10, 0.7);
+  width: 14px;
+  height: 14px;
+  margin: auto 1vh;
+  border-radius: 50px;
+}
+
+.fieldset input:checked {
+  background: rgb(15, 15, 179);
+}
+
+.label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: rgb(220, 118, 10);
+  padding-top: 1vh;
+}
+
+.status {
+  width: 100%;
+  background-color: rgba(194, 78, 194, 0.5);
+  border-radius: 0.3em;
+  border: 2px solid rgb(220, 118, 10);
+  outline-color: rgb(220, 118, 10);
+}
+
+.radiolabel {
+  font-size: 1rem;
+}
+
+.radio {
+  vertical-align: middle;
+}/*# sourceMappingURL=dash.css.map */

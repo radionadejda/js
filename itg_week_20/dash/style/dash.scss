@@ -1,0 +1,140 @@
+$font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+$checked: rgb(114, 101, 191);
+$bg: rgb(3, 3, 39);
+$bg-light: rgb(15, 15, 179);
+$accent: rgba(194, 78, 194);
+$accent-light: rgb(232, 161, 232);
+$accent2:  rgb(220, 118, 10);
+// $error: rgb(95, 22, 43);
+// $hint: rgb(35, 20, 88);
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+.body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: $bg;
+    font-family: $font;
+}
+
+.h1 {
+    text-transform: uppercase;
+    margin: 0 auto;
+    color: $accent;
+    padding: 2vw;
+}
+
+#create {
+    color: $accent;
+    width: 80vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#dashboard {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid $accent2;
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem 0.1rem $bg-light;
+    padding: 2vw;
+    background-color:rgba($accent, 0.5) ;
+    text-align: center;
+    margin: 2vw auto;
+    color: $bg;
+}
+
+.input {
+    padding: 1vw;
+    border-radius: 0.5rem;
+    background-color: rgba($accent-light, 0.9);
+    border: 1px solid $accent2;
+    color: $bg;
+}
+
+#inputTitle {
+    width: 30%;
+}
+
+#inputText {
+    width: 40%;
+}
+
+#button {
+    margin: 1vh auto;
+    background-color: $bg-light;
+    width: 40%;
+    height: 4vh;
+    border-radius: 0.5rem;
+    color: $accent2;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.h2 {
+    text-transform: uppercase;
+    margin: 1vw auto;
+    color: $accent2;
+}
+
+.task-text {
+    margin: 0 auto;
+}
+
+.fieldset {
+    border: none;
+    padding-top: 1vh;
+	padding-bottom: 0.5vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fieldset input {
+	box-sizing: border-box;
+	appearance: none;
+	outline: 1px solid $bg-light;
+	background-color: rgba($accent2, 0.7);
+	width: 14px;
+	height: 14px;
+	margin: auto 1vh;
+	border-radius: 50px;
+}
+.fieldset input:checked {
+	background: $bg-light;
+}
+
+.label {
+	font-weight: bold;
+	font-size: 1.1rem;
+    color: $accent2;
+    padding-top: 1vh;
+}
+
+.status {
+	width: 100%;
+	background-color: rgba($accent, 0.5);
+	border-radius: 0.3em;
+    border: 2px solid $accent2;
+    outline-color: $accent2;
+}
+
+.radiolabel{
+	font-size: 1rem;
+}
+
+.radio {
+	vertical-align: middle;
+}
