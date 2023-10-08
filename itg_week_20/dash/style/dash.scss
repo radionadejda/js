@@ -56,9 +56,9 @@ $accent:  rgb(11, 57, 134);
 .input {
     padding: 1vw;
     border-radius: 0.5rem;
-    background-color: rgba($accent-light, 0.9);
+    background-color: rgba($accent-light, 0.5);
     border: 1px solid $accent2;
-    color: $bg;
+    color: $accent;
 }
 
 #inputTitle {
@@ -71,7 +71,7 @@ $accent:  rgb(11, 57, 134);
 
 #button {
     margin: 1vh auto;
-    background-color: $accent-light;
+    background-color: rgba($accent-light, 0.5);
     width: 40%;
     height: 4vh;
     border-radius: 0.5rem;
@@ -94,7 +94,7 @@ $accent:  rgb(11, 57, 134);
     justify-content: space-around;
 }
 
-.fieldset input {
+.radiolabel input {
 	box-sizing: border-box;
 	appearance: none;
 	outline: 1px solid $bg-light;
@@ -104,7 +104,7 @@ $accent:  rgb(11, 57, 134);
 	margin: auto 1vh;
 	border-radius: 50px;
 }
-.fieldset input:checked {
+.radiolabel input:checked {
 	background: $accent;
 }
 
@@ -124,8 +124,12 @@ $accent:  rgb(11, 57, 134);
     padding: 1vw;
 }
 
-.radiolabel{
-	font-size: 1rem;
+.date {
+	background-color: rgba($accent-light, 0.5);
+	border-radius: 0.3em;
+    border: 2px solid $accent2;
+    outline-color: $accent2;
+    padding: 1vw;
 }
 
 .radio {
@@ -134,4 +138,9 @@ $accent:  rgb(11, 57, 134);
 
 .task-text {
     color: $accent2;
+}
+
+.task-options, .task-dates {
+display: flex;
+justify-content: space-around;
 }

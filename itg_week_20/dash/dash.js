@@ -42,6 +42,11 @@ function addTask(task) {
     taskText.textContent = `задача: ${task.title}`;
     taskText.classList.add("task-text")
     newTask.appendChild(taskText);
+    // приоритет задачи
+
+    
+    // статус задачи
+
 
     // добавляем всю задачу на страницу
     dashboard.appendChild(newTask);

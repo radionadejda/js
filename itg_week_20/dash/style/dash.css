@@ -45,9 +45,9 @@
 .input {
   padding: 1vw;
   border-radius: 0.5rem;
-  background-color: rgba(210, 170, 148, 0.9);
+  background-color: rgba(210, 170, 148, 0.5);
   border: 1px solid rgb(127, 71, 34);
-  color: rgb(244, 221, 193);
+  color: rgb(11, 57, 134);
 }
 
 #inputTitle {
@@ -60,7 +60,7 @@
 
 #button {
   margin: 1vh auto;
-  background-color: rgb(210, 170, 148);
+  background-color: rgba(210, 170, 148, 0.5);
   width: 40%;
   height: 4vh;
   border-radius: 0.5rem;
@@ -83,7 +83,7 @@
   justify-content: space-around;
 }
 
-.fieldset input {
+.radiolabel input {
   box-sizing: border-box;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -96,7 +96,7 @@
   border-radius: 50px;
 }
 
-.fieldset input:checked {
+.radiolabel input:checked {
   background: rgb(11, 57, 134);
 }
 
@@ -116,8 +116,12 @@
   padding: 1vw;
 }
 
-.radiolabel {
-  font-size: 1rem;
+.date {
+  background-color: rgba(210, 170, 148, 0.5);
+  border-radius: 0.3em;
+  border: 2px solid rgb(127, 71, 34);
+  outline-color: rgb(127, 71, 34);
+  padding: 1vw;
 }
 
 .radio {
@@ -126,4 +130,9 @@
 
 .task-text {
   color: rgb(127, 71, 34);
+}
+
+.task-options, .task-dates {
+  display: flex;
+  justify-content: space-around;
 }/*# sourceMappingURL=dash.css.map */
