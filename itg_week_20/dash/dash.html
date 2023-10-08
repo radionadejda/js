@@ -13,25 +13,27 @@
 			<input type="text" required placeholder="введите текст задачи" id="taskTitle" class="input" />
 			<fieldset id="priority" class="fieldset">
 				<legend class="label">приоритет:</legend>
-				<label class="radiolabel" for="priority__high"><input id="priority__high" type="radio" name="priority" value="high" class="radio" />высокий</label>
-				<label class="radiolabel" for="priority__medium"><input id="priority__medium" type="radio" name="priority" value="medium" class="radio" />средний</label>
-				<label class="radiolabel" for="priority__low"><input id="priority__low" type="radio" name="priority" value="low" class="radio" />низкий</label>
+				<label class="radiolabel" for="priority__high"><input id="priorityHigh" type="radio" name="priority" value="high" class="radio" />высокий</label>
+				<label class="radiolabel" for="priority__medium"><input id="priorityMedium" type="radio" name="priority" value="medium" class="radio" />средний</label>
+				<label class="radiolabel" for="priority__low"><input id="priorityLow" type="radio" name="priority" value="low" class="radio" />низкий</label>
 			</fieldset>
 			<fieldset id="st" class="fieldset">
 				<legend class="label">статус выполнения</legend>
-				<select id="status" class="status" required placeholder="в процессе">
-					<option value="" id="status__empty">Выберите статус</option>
-					<option value="process" id="status__process">в процессе</option>
-					<option value="done" id="status__done">выполнена</option>
-					<option value="hold" id="status__hold">отложена</option>
-					<option value="cancelled" id="status__cancelled">отменена</option>
+				<select id="status" class="status" required>
+					<option value="" id="statusEmpty">Выберите статус</option>
+					<option value="process" id="statusInProcess">в процессе</option>
+					<option value="done" id="statusDone">выполнена</option>
+					<option value="hold" id="statusHold">отложена</option>
+					<option value="cancelled" id="statusCancelled">отменена</option>
 				</select>
 			</fieldset>
 			<button id="button">добавить задачу!</button>
 		</div>
 		<div id="dashboard">
 			<div class="task">
-				<p class="task-text">Lorem ipsum dolor sit amet.</p>
+				<h3 class="task-text">Lorem ipsum dolor sit amet.</h3>
+				<div class="task-priority">приоритет: высокий</div>
+				<div class="task-status">статус: в процессе</div>
 			</div>
 		</div>
 		<script src="./dash.js"></script>

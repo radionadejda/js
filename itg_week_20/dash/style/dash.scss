@@ -1,10 +1,9 @@
 $font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-$checked: rgb(114, 101, 191);
-$bg: rgb(3, 3, 39);
-$bg-light: rgb(15, 15, 179);
-$accent: rgba(194, 78, 194);
-$accent-light: rgb(232, 161, 232);
-$accent2:  rgb(220, 118, 10);
+$bg: rgb(244, 221, 193);
+$bg-light:rgb(127, 71, 34);
+$accent2: rgb(127, 71, 34);
+$accent-light: rgb(210, 170, 148);
+$accent:  rgb(11, 57, 134);
 // $error: rgb(95, 22, 43);
 // $hint: rgb(35, 20, 88);
 
@@ -16,9 +15,6 @@ $accent2:  rgb(220, 118, 10);
 
 
 .body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     background-color: $bg;
@@ -47,9 +43,9 @@ $accent2:  rgb(220, 118, 10);
 .task {
     display: flex;
     flex-direction: column;
-    border: 3px solid $accent2;
+    border: 3px solid $accent;
     border-radius: 1rem;
-    box-shadow: 0.2rem 0.2rem 0.2rem 0.1rem $bg-light;
+    // box-shadow: 0.2rem 0.2rem 0.2rem 0.1rem $bg-light;
     padding: 2vw;
     background-color:rgba($accent, 0.5) ;
     text-align: center;
@@ -75,11 +71,11 @@ $accent2:  rgb(220, 118, 10);
 
 #button {
     margin: 1vh auto;
-    background-color: $bg-light;
+    background-color: $accent-light;
     width: 40%;
     height: 4vh;
     border-radius: 0.5rem;
-    color: $accent2;
+    color: $accent;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -88,10 +84,6 @@ $accent2:  rgb(220, 118, 10);
     text-transform: uppercase;
     margin: 1vw auto;
     color: $accent2;
-}
-
-.task-text {
-    margin: 0 auto;
 }
 
 .fieldset {
@@ -113,7 +105,7 @@ $accent2:  rgb(220, 118, 10);
 	border-radius: 50px;
 }
 .fieldset input:checked {
-	background: $bg-light;
+	background: $accent;
 }
 
 .label {
@@ -125,10 +117,11 @@ $accent2:  rgb(220, 118, 10);
 
 .status {
 	width: 100%;
-	background-color: rgba($accent, 0.5);
+	background-color: rgba($accent-light, 0.5);
 	border-radius: 0.3em;
     border: 2px solid $accent2;
     outline-color: $accent2;
+    padding: 1vw;
 }
 
 .radiolabel{
@@ -137,4 +130,8 @@ $accent2:  rgb(220, 118, 10);
 
 .radio {
 	vertical-align: middle;
+}
+
+.task-text {
+    color: $accent2;
 }

@@ -22,13 +22,23 @@
 const dashboard = document.getElementById("dashboard");
 const taskTitle = document.getElementById("taskTitle");
 const button = document.getElementById("button");
+const priority = document.getElementById("priority");
+const priorityHigh = document.getElementById("priorityHigh");
+const priorityMedium = document.getElementById("priorityMedium");
+const priorityLow = document.getElementById("priorityLow");
+const status = document.getElementById("status");
+const statusEmpty = document.getElementById("statusEmpty");
+const statusInProcess = document.getElementById("statusInProcess");
+const statusDone = document.getElementById("statusDone");
+const statusHold = document.getElementById("statusHold");
+const statusCancelled = document.getElementById("statusCancelled");
 
 function addTask(task) {
     const newTask = document.createElement("div");
     newTask.classList.add("task")
 
     // заголовок задачи
-    const taskText = document.createElement("p");
+    const taskText = document.createElement("h3");
     taskText.textContent = `задача: ${task.title}`;
     taskText.classList.add("task-text")
     newTask.appendChild(taskText);

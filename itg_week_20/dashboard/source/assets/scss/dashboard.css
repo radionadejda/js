@@ -11995,11 +11995,12 @@ textarea.form-control-lg {
 .title {
   text-transform: uppercase;
   font-weight: bold;
+  color: rgba(221, 19, 227, 0.8);
 }
 
 .chart-container {
-  width: 80vw;
-  height: 80vh;
+  width: 60vw;
+  height: 40vh;
   margin: 0 auto;
 }
 
