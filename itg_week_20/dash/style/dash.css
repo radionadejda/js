@@ -7,7 +7,7 @@
 .body {
   display: flex;
   flex-direction: column;
-  background-color: rgb(244, 221, 193);
+  background-color: rgb(255, 235, 224);
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
@@ -34,18 +34,18 @@
   display: flex;
   flex-direction: column;
   border: 3px solid rgb(11, 57, 134);
-  border-radius: 1rem;
+  border-radius: 0.3rem;
   padding: 2vw;
   background-color: rgba(11, 57, 134, 0.5);
   text-align: center;
   margin: 2vw auto;
-  color: rgb(244, 221, 193);
+  color: rgb(255, 235, 224);
 }
 
 .input {
   padding: 1vw;
-  border-radius: 0.5rem;
-  background-color: rgba(210, 170, 148, 0.5);
+  border-radius: 0.3rem;
+  background-color: rgba(210, 170, 148, 0.7);
   border: 1px solid rgb(127, 71, 34);
   color: rgb(11, 57, 134);
 }
@@ -60,11 +60,12 @@
 
 #button {
   margin: 1vh auto;
-  background-color: rgba(210, 170, 148, 0.5);
-  width: 40%;
+  background-color: rgba(11, 57, 134, 0.8);
+  width: 50%;
   height: 4vh;
-  border-radius: 0.5rem;
-  color: rgb(11, 57, 134);
+  border-radius: 0.3rem;
+  border-color: rgb(11, 57, 134);
+  color: rgb(210, 170, 148);
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -93,7 +94,7 @@
   width: 14px;
   height: 14px;
   margin: auto 1vh;
-  border-radius: 50px;
+  border-radius: 50%;
 }
 
 .radiolabel input:checked {
@@ -107,21 +108,15 @@
   padding-top: 1vh;
 }
 
-.status {
-  width: 100%;
+.status, .date {
   background-color: rgba(210, 170, 148, 0.5);
-  border-radius: 0.3em;
-  border: 2px solid rgb(127, 71, 34);
-  outline-color: rgb(127, 71, 34);
+  border-radius: 0.3rem;
+  border-color: rgb(127, 71, 34);
   padding: 1vw;
 }
 
-.date {
-  background-color: rgba(210, 170, 148, 0.5);
-  border-radius: 0.3em;
-  border: 2px solid rgb(127, 71, 34);
-  outline-color: rgb(127, 71, 34);
-  padding: 1vw;
+.status {
+  width: 100%;
 }
 
 .radio {
@@ -135,4 +130,8 @@
 .task-options, .task-dates {
   display: flex;
   justify-content: space-around;
+}
+
+#error {
+  display: none;
 }/*# sourceMappingURL=dash.css.map */

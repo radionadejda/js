@@ -1,9 +1,9 @@
 $font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-$bg: rgb(244, 221, 193);
-$bg-light:rgb(127, 71, 34);
+$bg: rgb(255, 235, 224);
 $accent2: rgb(127, 71, 34);
-$accent-light: rgb(210, 170, 148);
-$accent:  rgb(11, 57, 134);
+$accent3: rgb(210, 170, 148);
+$accent1:  rgb(11, 57, 134);
+$border-radius: 0.3rem;
 // $error: rgb(95, 22, 43);
 // $hint: rgb(35, 20, 88);
 
@@ -24,12 +24,12 @@ $accent:  rgb(11, 57, 134);
 .h1 {
     text-transform: uppercase;
     margin: 0 auto;
-    color: $accent;
+    color: $accent1;
     padding: 2vw;
 }
 
 #create {
-    color: $accent;
+    color: $accent1;
     width: 80vw;
     margin: 0 auto;
     text-align: center;
@@ -43,11 +43,11 @@ $accent:  rgb(11, 57, 134);
 .task {
     display: flex;
     flex-direction: column;
-    border: 3px solid $accent;
-    border-radius: 1rem;
-    // box-shadow: 0.2rem 0.2rem 0.2rem 0.1rem $bg-light;
+    border: 3px solid $accent1;
+    border-radius: $border-radius;
+    // box-shadow: 0.2rem 0.2rem 0.2rem 0.1rem $accent2;
     padding: 2vw;
-    background-color:rgba($accent, 0.5) ;
+    background-color: rgba($accent1, 0.5) ;
     text-align: center;
     margin: 2vw auto;
     color: $bg;
@@ -55,10 +55,10 @@ $accent:  rgb(11, 57, 134);
 
 .input {
     padding: 1vw;
-    border-radius: 0.5rem;
-    background-color: rgba($accent-light, 0.5);
+    border-radius: $border-radius;
+    background-color: rgba($accent3, 0.7);
     border: 1px solid $accent2;
-    color: $accent;
+    color: $accent1;
 }
 
 #inputTitle {
@@ -71,11 +71,12 @@ $accent:  rgb(11, 57, 134);
 
 #button {
     margin: 1vh auto;
-    background-color: rgba($accent-light, 0.5);
-    width: 40%;
+    background-color: rgba($accent1, 0.8);
+    width: 50%;
     height: 4vh;
-    border-radius: 0.5rem;
-    color: $accent;
+    border-radius: $border-radius;
+    border-color: $accent1;
+    color: $accent3;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -97,15 +98,15 @@ $accent:  rgb(11, 57, 134);
 .radiolabel input {
 	box-sizing: border-box;
 	appearance: none;
-	outline: 1px solid $bg-light;
+	outline: 1px solid $accent2;
 	background-color: rgba($accent2, 0.7);
 	width: 14px;
 	height: 14px;
 	margin: auto 1vh;
-	border-radius: 50px;
+	border-radius: 50%;
 }
 .radiolabel input:checked {
-	background: $accent;
+	background: $accent1;
 }
 
 .label {
@@ -115,21 +116,15 @@ $accent:  rgb(11, 57, 134);
     padding-top: 1vh;
 }
 
-.status {
-	width: 100%;
-	background-color: rgba($accent-light, 0.5);
-	border-radius: 0.3em;
-    border: 2px solid $accent2;
-    outline-color: $accent2;
+.status, .date {
+	background-color: rgba($accent3, 0.5);
+	border-radius: $border-radius;
+    border-color: $accent2;
     padding: 1vw;
 }
 
-.date {
-	background-color: rgba($accent-light, 0.5);
-	border-radius: 0.3em;
-    border: 2px solid $accent2;
-    outline-color: $accent2;
-    padding: 1vw;
+.status {
+    width: 100%;
 }
 
 .radio {
@@ -143,4 +138,8 @@ $accent:  rgb(11, 57, 134);
 .task-options, .task-dates {
 display: flex;
 justify-content: space-around;
+}
+
+#error {
+    display: none;
 }

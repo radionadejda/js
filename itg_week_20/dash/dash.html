@@ -31,9 +31,13 @@
 				<label for="startDate" class="label">дата начала<input type="date" name="startDate" id="startDate" class="date" /></label>
 				<label for="endDate" class="label">дата окончания<input type="date" name="endDate" id="endDate" class="date" /></label>
 			</fieldset>
-			<button id="button">добавить задачу!</button>
+			<button id="button">добавить задачу</button>
 		</div>
 		<div id="dashboard">
+			<div id="error" class="task">
+				<h3 class="task-text">ошибка</h3>
+				<p>введите текст</p>
+			</div>
 			<div class="task">
 				<h3 class="task-text">Lorem ipsum dolor sit amet.</h3>
 				<div class="task-options">

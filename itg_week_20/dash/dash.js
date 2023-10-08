@@ -34,6 +34,7 @@ const taskStatus = document.getElementById("status");
 // const statusCancelled = document.getElementById("statusCancelled");
 const startDate = document.getElementById("startDate");
 const endDate = document.getElementById("endDate");
+const error = document.getElementById("error");
 
 function addTask(task) {
     const newTask = document.createElement("div");
@@ -77,14 +78,36 @@ function addTask(task) {
 
 //получить приоритет задачи с радиокнопки
 function checkPriority() {
-	const priorityOptionss = taskPriority.querySelectorAll(".radio");
-	for (let option of priorityOptionss) {
+    let priorityValue = ""
+	const priorityOptions = taskPriority.querySelectorAll(".radio");
+	for (let option of priorityOptions) {
 		if (option.checked) {
 			priorityValue = option.value;
 			return priorityValue
 		}
 	};
+    if (priorityValue == "" || priorityValue == undefined){
+        error.style.display = "flex";
+        return false;
+    } else {
+        error.style.display = "none"
+        return true
+    }
 }
+
+// проверить заголовок
+function checkTitle() {
+    const taskTitleValue = taskTitle.value;
+    if (taskTitleValue == "" || taskTitleValue == undefined) {
+        error.style.display = "flex";
+        return false;
+    } else {
+        error.style.display = "none"
+        return true
+    }
+}
+
+
 
 function postTasks (){
 const taskTitleValue = taskTitle.value;
@@ -92,6 +115,9 @@ const taskPriorityValue = checkPriority();
 const taskStatusValue = taskStatus.value;
 const taskStartDateValue = startDate.value;
 const taskEndDateValue = endDate.value;
+checkTitle()
+if (!checkTitle()) {return}
+if (!checkPriority()) {return}
     fetch('https://jsonplaceholder.typicode.com/todos', {
         method: 'POST',
         body: JSON.stringify({
