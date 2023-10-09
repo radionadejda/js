@@ -10,7 +10,7 @@
 		<header>
 			<nav class="navbar navbar-expand-lg">
 				<div class="container-fluid">
-					<a class="navbar-brand title" href="#">Hello dashboard</a>
+					<a class="navbar-brand" href="#">Hello dashboard</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -31,32 +31,43 @@
 									<li><a class="dropdown-item" href="#">Something else here</a></li>
 								</ul>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" aria-disabled="true">Disabled</a>
-							</li>
 						</ul>
-						<form class="d-flex" role="search">
-							<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-							<button class="btn btn-outline-success" type="submit">Search</button>
-						</form>
 					</div>
 				</div>
 			</nav>
 		</header>
 		<main class="main">
-			<div class="chart-container">
-				<canvas id="chart">
-				</canvas>
+			<div class="row flex-nowrap">
+				<div class="col-5" id="tasks">
+					<h2 class="h2">список задач</h2>
+					<div class="task">
+						<h3 class="h3">Lorem ipsum dolor sit amet.</h3>
+						<div class="task-options ">
+						<div class="task-priority">приоритет: высокий</div>
+						<div class="task-status">статус: в процессе</div>
+						</div>
+					<div class="task-dates">
+						<div class="task-date">дата начала: _</div>
+						<div class="task-date">дата окончания: _</div>
+					</div>
+					</div>
+				</div>
+				<div class="col grow">
+					<div class="chart-container">
+						<h2 class="h2">схема задач</h2>
+						<canvas id="chart">
+						</canvas>
+					</div>
+				</div>
 			</div>
 		</main>
 		<footer class="footer d-flex flex-wrap justify-content-between align-items-center py-3 px-2">
+			<p class="col-md-4 mb-0 text-body-secondary">а часики-то тикают!</p>
 			<p class="col-md-4 mb-0 text-body-secondary" id="date">date goes here</p>
 			<ul class="nav col-md-4 justify-content-end">
 				<li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
 				<li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Link</a></li>
 				<li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Dropdown</a></li>
-				<li class="nav-item"><a href="#" class="nav-link disabled px-2 text-body-secondary">Disabled</a></li>
-				<li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
 			</ul>
 		</footer>
 		<script type="module" src="./assets/js/dashboard.js"></script>

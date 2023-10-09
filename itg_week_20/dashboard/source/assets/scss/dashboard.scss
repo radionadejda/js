@@ -2,7 +2,7 @@
 
 $color1: rgba(221, 19, 227, 0.8);
 $color2: rgba(255, 138, 22, 0.8);
-$bg-color: rgb(243, 176, 243);
+$bg: rgb(243, 176, 243);
 
 *{
     padding: 0;
@@ -13,23 +13,59 @@ $bg-color: rgb(243, 176, 243);
 .body {
     width: 100vw;
     height: 100vh;
-    background-color: rgba($bg-color, 0.4);
+    background-color: rgba($bg, 0.4);
+}
+
+.row {
+    width: 100%;
+}
+
+.main {
+    padding: 1vw;
 }
 
 .navbar, .footer {
-background-color:  rgba($bg-color, 0.5);
+background-color:  rgba($bg, 0.5);
 }
 
-.title {
+.navbar-brand {
     text-transform: uppercase;
     font-weight: bold;
     color: $color1;
+    font-size: 1.5rem;
 }
 
-.chart-container{
-    width:60vw;
-    height: 40vh;
-    margin: 0 auto;
+.h2 {
+    color: $color1;
+}
+
+.h3 {
+    color: $color1;
+    font-size: 1.1rem;
+}
+
+
+.task {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid $color2;
+    border-radius: $border-radius;
+    padding: 1vw;
+    background-color: rgba($color2, 0.1) ;
+    text-align: center;
+    margin: 2vw auto;
+    color: $color1;
+    font-size: 1rem;
+}
+
+.task-options, .task-dates {
+display: flex;
+justify-content: space-around;
+}
+
+.chart-container {
+    height: 30vh;
+    margin: 0 1vw;
 }
 
 .footer {
