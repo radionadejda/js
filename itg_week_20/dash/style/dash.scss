@@ -1,3 +1,5 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 $font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 $bg: rgb(255, 235, 224);
 $accent2: rgb(127, 71, 34);
@@ -102,7 +104,7 @@ $border-radius: 0.3rem;
 	background-color: rgba($accent2, 0.7);
 	width: 14px;
 	height: 14px;
-	margin: auto 1vh;
+	margin: auto 5vw;
 	border-radius: 50%;
 }
 .radiolabel input:checked {

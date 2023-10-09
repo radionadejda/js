@@ -4,6 +4,7 @@ import moment from "moment";
 import ru from "moment/locale/ru.js";
 import Chart from "chart.js/auto";
 
+// сделать массив с задачами, который в JSON должен быть, мне можно просто придумать самой? я понимаю, что правильно было бы реализовать возможность добавления и изменения задач пользователем, но еще мне что-то кажется это очень много для одной недели)) там же потянется обработка некорректного ввода, вывод ошибок, обновление массива и обновление вывода на страницу.
 
 // making chart
 const context = document.getElementById("chart").getContext("2d");
@@ -15,6 +16,7 @@ const tasksChart = new Chart(context, {
 	data: {
 		labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
 		datasets: [
+			// здесь данные задач
 			{
 				label: "project1",
 				data: [1, 3, 5, 1, 2, 0, 0],

@@ -19,6 +19,9 @@
 // JavaScript (dashboard.js):
 // Здесь будет код, который загрузит данные из JSON, обработает их и отобразит в таблице и графиках. Тебе нужно будет сделать Fetch или AJAX-запрос к JSON (можешь использовать сервис типа jsonplaceholder для имитации сервера) и затем обработать данные для ChartJS.
 
+const bootstrap = require('bootstrap')
+
+
 const dashboard = document.getElementById("dashboard");
 const taskTitle = document.getElementById("taskTitle");
 const button = document.getElementById("button");
@@ -88,10 +91,13 @@ function checkPriority() {
     if (priorityValue == "" || priorityValue == undefined){
         const error = document.createElement("div")
         error.classList.add("task");
+        error.setAttribute("id", "priorityError")
         error.textContent = "установите приоритет"
+        dashboard.appendChild(error);
         return false;
     } else {
-        // error.style.display = "none"
+        const error = document.getElementById("priorityError");
+        dashboard.removeChild(error);
         return true
     }
 }
@@ -102,15 +108,16 @@ function checkTitle() {
     if (taskTitleValue == "" || taskTitleValue == undefined) {
         const error = document.createElement("div")
         error.classList.add("task");
-        error.textContent = "введите тест задачи"
+        error.setAttribute("id", "titleError");
+        error.textContent = "введите текст задачи"
+        dashboard.appendChild(error);
         return false;
     } else {
-        // error.style.display = "none"
+        const error = document.getElementById("titleError");
+        dashboard.removeChild(error);
         return true
     }
 }
-
-
 
 function postTasks (){
 const taskTitleValue = taskTitle.value;
@@ -118,7 +125,6 @@ const taskPriorityValue = checkPriority();
 const taskStatusValue = taskStatus.value;
 const taskStartDateValue = startDate.value;
 const taskEndDateValue = endDate.value;
-checkTitle()
 if (!checkTitle()) {return}
 if (!checkPriority()) {return}
     fetch('https://jsonplaceholder.typicode.com/todos', {
