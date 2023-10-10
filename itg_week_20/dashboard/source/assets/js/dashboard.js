@@ -97,7 +97,7 @@ const getTasks = function() {
 		const newTask = new Task(task.title, task.status, task.priority, task.startDate, task.endDate);
 	}
 };
-getTasks();
+// getTasks();
 
 // get canvas for status chart
 let taskStatusChart = document.getElementById("taskStatusChart").getContext("2d");
