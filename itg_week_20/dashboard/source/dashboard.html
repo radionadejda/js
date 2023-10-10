@@ -37,14 +37,19 @@
 			</nav>
 		</header>
 		<main class="main">
-			<div class="row flex-nowrap">
+			<div class="row">
 				<div class="col-5" id="taskList">
 					<h2 class="h2">список задач</h2>
 				</div>
 				<div class="col grow">
+					<h2 class="h2">схема задач по статусу</h2>
+						<div class="chart-container">
+						<canvas id="taskStatusChart">
+						</canvas>
+					</div>
+					<h2 class="h2">схема задач по приоритету</h2>
 					<div class="chart-container">
-						<h2 class="h2">схема задач</h2>
-						<canvas id="chart">
+						<canvas id="taskPriorityChart">
 						</canvas>
 					</div>
 				</div>

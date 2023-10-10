@@ -11983,8 +11983,6 @@ textarea.form-control-lg {
 }
 
 .body {
-  width: 100vw;
-  height: 100vh;
   background-color: rgba(243, 176, 243, 0.4);
 }
 
@@ -11994,6 +11992,7 @@ textarea.form-control-lg {
 
 .main {
   padding: 1vw;
+  height: 100%;
 }
 
 .navbar, .footer {
@@ -12003,7 +12002,7 @@ textarea.form-control-lg {
 .navbar-brand {
   text-transform: uppercase;
   font-weight: bold;
-  color: rgba(221, 19, 227, 0.8);
+  color: rgba(22, 255, 154, 0.8);
   font-size: 1.5rem;
 }
 
@@ -12024,7 +12023,7 @@ textarea.form-control-lg {
   padding: 1vw;
   background-color: rgba(255, 138, 22, 0.1);
   text-align: center;
-  margin: 2vw auto;
+  margin: 1vw auto;
   color: rgba(221, 19, 227, 0.8);
   font-size: 1rem;
 }
@@ -12039,9 +12038,6 @@ textarea.form-control-lg {
   margin: 0 1vw;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin-bottom: 0;
+.taskStatusChart {
+  height: 80%;
 }/*# sourceMappingURL=dashboard.css.map */

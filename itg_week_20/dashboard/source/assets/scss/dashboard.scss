@@ -2,6 +2,7 @@
 
 $color1: rgba(221, 19, 227, 0.8);
 $color2: rgba(255, 138, 22, 0.8);
+$color3: rgba(54, 220, 187, 0.8);
 $bg: rgb(243, 176, 243);
 
 *{
@@ -30,7 +31,7 @@ background-color:  rgba($bg, 0.5);
 .navbar-brand {
     text-transform: uppercase;
     font-weight: bold;
-    color: $color1;
+    color: $color3;
     font-size: 1.5rem;
 }
 
@@ -65,4 +66,8 @@ justify-content: space-around;
 .chart-container {
     height: 30vh;
     margin: 0 1vw;
+}
+
+.taskStatusChart {
+    height: 80%;
 }
