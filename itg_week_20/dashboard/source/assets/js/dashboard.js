@@ -1,9 +1,10 @@
+// задание собрано с помощью parcel, не browserify (он у меня почему-то ругался на запрет скриптов)
+
 import * as bootstrap from "bootstrap";
 import moment from "moment";
 import ru from "moment/locale/ru.js";
 import Chart from "chart.js/auto";
 
-// сделать массив с задачами, который в JSON должен быть
 let tasks = [
 	{
 		title: "задача 1",
@@ -58,7 +59,7 @@ class Task {
 	printTask() {
 		const newTask = document.createElement("div");
 		newTask.classList.add("task");
-		// заголовок задачи
+		// task title
 		const title = document.createElement("h3");
 		title.textContent = `Заголовок: ${this.title}`;
 		title.classList.add("h3");
@@ -219,6 +220,7 @@ function updateClock() {
 setInterval(updateClock, 1000);
 
 // making time counter in footer
+
 // making proper endings for hours, minutes and seconds
 function makeEnding (number, titles) {
 	let cases = [2, 0, 1, 1, 1, 2];
@@ -227,21 +229,21 @@ function makeEnding (number, titles) {
 
 const counter = document.getElementById("counter");
 const start = moment();
+
 function calculateTime() {
 	const end = moment();
 	let seconds = Math.round((end - start) / 1000);
 	let minutes = 0;
 	let hours = 0;
-
 	// pass to minutes when seconds>60
 	if (seconds > 60) {
-		minutes = Math.round(seconds / 60);
+		minutes = Math.floor(seconds / 60);
 		seconds = seconds % 60;
 	}
 	// pass to hours when minutes>60
 	if (minutes > 60) {
-		hours = Math.round(minutes / 60);
-		minutes = Math.round(seconds / 60);
+		hours = Math.floor(minutes / 60);
+		minutes = minutes % 60;
 		seconds = seconds % 60;
 	}
 		// format hours ending
