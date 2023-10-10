@@ -6,7 +6,7 @@
 		<title>Dashboard</title>
 		<link rel="stylesheet" href="./assets/scss/dashboard.scss" />
 	</head>
-	<body class="body">
+	<body class="body d-flex flex-column min-vh-100">
 		<header>
 			<nav class="navbar navbar-expand-lg">
 				<div class="container-fluid">
@@ -38,19 +38,8 @@
 		</header>
 		<main class="main">
 			<div class="row flex-nowrap">
-				<div class="col-5" id="tasks">
+				<div class="col-5" id="taskList">
 					<h2 class="h2">список задач</h2>
-					<div class="task">
-						<h3 class="h3">Lorem ipsum dolor sit amet.</h3>
-						<div class="task-options ">
-						<div class="task-priority">приоритет: высокий</div>
-						<div class="task-status">статус: в процессе</div>
-						</div>
-					<div class="task-dates">
-						<div class="task-date">дата начала: _</div>
-						<div class="task-date">дата окончания: _</div>
-					</div>
-					</div>
 				</div>
 				<div class="col grow">
 					<div class="chart-container">
@@ -61,9 +50,9 @@
 				</div>
 			</div>
 		</main>
-		<footer class="footer d-flex flex-wrap justify-content-between align-items-center py-3 px-2">
-			<p class="col-md-4 mb-0 text-body-secondary">а часики-то тикают!</p>
-			<p class="col-md-4 mb-0 text-body-secondary" id="date">date goes here</p>
+		<footer class="footer mt-auto d-flex flex-wrap justify-content-between align-items-center py-3 px-2">
+			<div class="col-md-4 mb-0 text-body-secondary">а часики-то тикают!<p id="date">date goes here</p></div>
+			<div class="col-md-4 mb-0 text-body-secondary">вы на странице<p id="counter">time goes here</p></div>
 			<ul class="nav col-md-4 justify-content-end">
 				<li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
 				<li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Link</a></li>
