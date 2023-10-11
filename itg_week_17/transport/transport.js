@@ -48,9 +48,9 @@ const data = [
 
 class Transport {
 	constructor(type, price, brand, image) {
-		this.type = type,
-		this.price = price,
-		this.brand = brand,
+		this.type = type;
+		this.price = price;
+		this.brand = brand;
 		this.image = image
 	}
 
@@ -69,7 +69,7 @@ class Transport {
 
 class Car extends Transport {
 	constructor(type, price, brand, image, doors) {
-		super(type, price, brand, image, doors);
+		super(type, price, brand, image);
 		this.doors = doors;
 	}
 	getDoorsCount() {
