@@ -39,7 +39,6 @@ class Task {
 		localStorage.setItem("tasks", JSON.stringify(tasks));
 		enableButtonClearDone();
 	});
-	console.log(`i made task ${this.taskText}`);
 	taskList.appendChild(newTaskItem);
 		taskInput.value = "";
 	}
