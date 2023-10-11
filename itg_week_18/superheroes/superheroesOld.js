@@ -118,19 +118,13 @@ const heroes = [
 
 class Hero {
 	constructor(name, universe, alterego, occupation, friends, superpowers, url) {
-		this.name = name;
-        this.universe = universe;
-        this.alterego = alterego;
-        this.occupation = occupation;
-        this.friends = friends;
-        this.superpowers = superpowers;
-        this.image = url;
-        this.printHero();
-
+		(this.name = name), (this.universe = universe), (this.alterego = alterego), (this.occupation = occupation), (this.friends = friends), (this.superpowers = superpowers), (this.image = url);
 	}
+}
 
-    printHero() {
-        const catalogue = document.getElementById("catalogue");
+const addHero = () => {
+	heroes.forEach(item => {
+		const catalogue = document.getElementById("catalogue");
 		const newHero = document.createElement("div");
 		newHero.classList.add("hero");
 		catalogue.appendChild(newHero);
@@ -142,28 +136,22 @@ class Hero {
 		newDescription.classList.add("description");
 		const newRank = document.createElement("div");
 		newRank.classList.add("rank");
-		newRank.innerHTML =
-        `<span class="star" data-value="1">&#9733;</span>
-        <span class="star" data-value="2">&#9733;</span>
-        <span class="star" data-value="3">&#9733;</span>
-        <span class="star" data-value="4">&#9733;</span>
-        <span class="star" data-value="5">&#9733;</span>`;
+		newRank.innerHTML = `<span class="star" data-value="1">&#9733;</span>
+<span class="star" data-value="2">&#9733;</span>
+<span class="star" data-value="3">&#9733;</span>
+<span class="star" data-value="4">&#9733;</span>
+<span class="star" data-value="5">&#9733;</span>`;
 		newHero.append(newTitle, newDescription, newImage, newRank);
-		newImage.src = this.image;
-		newImage.setAttribute("alt", this.name);
-		newTitle.textContent = this.name;
-		newDescription.innerHTML =
-        `<div class="text">Вселенная: ${this.universe}</div>
-        <div class="text">Альтер-эго: ${this.alterego}</div>
-        <div class="text">Род деятельности: ${this.occupation}</div>
-        <div class="text">Друзья: ${this.friends}</div>
-        <div class="text">Суперсилы: ${this.superpowers}</div>`;
-    }
-}
 
-const addHero = () => {
-	heroes.forEach(item => {
-		const hero = new Hero(item.name, item.universe, item.alterego, item.occupation, item.friends, item.superpowers, item.url);
+		let hero = new Hero(item.name, item.universe, item.alterego, item.occupation, item.friends, item.superpowers, item.url);
+		newImage.src = hero.image;
+		newImage.setAttribute("alt", item.name);
+		newTitle.textContent = item.name;
+		newDescription.innerHTML = `<div class="text">Вселенная: ${item.universe}</div>
+      <div class="text">Альтер-эго: ${item.alterego}</div>
+      <div class="text">Род деятельности: ${item.occupation}</div>
+      <div class="text">Друзья: ${item.friends}</div>
+      <div class="text">Суперсилы: ${item.superpowers}</div>`;
 	});
 };
 addHero();
