@@ -24,6 +24,7 @@ async function getStarWars() {
 	const numberValue = number.value;
     const selectorValue = selector.value;
     result.innerHTML = '<p>ждем ответа от сервера...</p><img src="./style/cat_roll.gif" alt="cat_roll" class="img">';
+    result.classList.remove("error");
 	try {
         if (numberValue == "" || selectorValue =="") {
             throw new Error("empty");
@@ -33,7 +34,6 @@ async function getStarWars() {
             throw new Error(`${response.status}`);
         }
         let data = await response.json();
-        result.classList.remove("error");
         let text = "";
         if (selectorValue == "films") {
             text = JSON.stringify(data.title).replace(/['"]+/g, '')
