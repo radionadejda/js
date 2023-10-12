@@ -30,9 +30,9 @@ class Task {
 	printTask() {
 		const newTaskItem = document.createElement("label");
 		newTaskItem.classList.add("task");
-		newTaskItem.innerHTML = `
-		<p>${this.taskText}</p>
+		const taskTemplate = `<p>${this.taskText}</p>
 		<input type="checkbox" name="task-checkbox"  ${this.done ? "checked" : ""} class="checkbox"/>`;
+		newTaskItem.insertAdjacentHTML('beforeend', taskTemplate);
 		const checkbox = newTaskItem.querySelector(".checkbox");
 		checkbox.addEventListener("change", () => {
 		this.done = checkbox.checked;

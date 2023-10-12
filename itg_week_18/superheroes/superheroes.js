@@ -142,22 +142,23 @@ class Hero {
 		newDescription.classList.add("description");
 		const newRank = document.createElement("div");
 		newRank.classList.add("rank");
-		newRank.innerHTML =
-        `<span class="star" data-value="1">&#9733;</span>
+		const rankTemplate = `<span class="star" data-value="1">&#9733;</span>
         <span class="star" data-value="2">&#9733;</span>
         <span class="star" data-value="3">&#9733;</span>
         <span class="star" data-value="4">&#9733;</span>
         <span class="star" data-value="5">&#9733;</span>`;
+		newRank.insertAdjacentHTML('beforeend', rankTemplate);
 		newHero.append(newTitle, newDescription, newImage, newRank);
 		newImage.src = this.image;
 		newImage.setAttribute("alt", this.name);
 		newTitle.textContent = this.name;
-		newDescription.innerHTML =
+		const descriptionTemplate =
         `<div class="text">Вселенная: ${this.universe}</div>
         <div class="text">Альтер-эго: ${this.alterego}</div>
         <div class="text">Род деятельности: ${this.occupation}</div>
         <div class="text">Друзья: ${this.friends}</div>
         <div class="text">Суперсилы: ${this.superpowers}</div>`;
+		newDescription.insertAdjacentHTML('beforeend', descriptionTemplate);
     }
 }
 
@@ -172,9 +173,7 @@ addHero();
 const allHeroes = document.getElementsByClassName("hero");
 let allHeroesArray = [];
 
-console.log(allHeroesArray);
 let ratingsArray = JSON.parse(localStorage.getItem("rating")) || [];
-console.log(ratingsArray);
 
 const getRating = function() {
 	for (let hero of allHeroes) {
@@ -186,7 +185,7 @@ const getRating = function() {
 			for (let i = 0; i < stars.length; i++) {
 				if (i < item.rating) {
 					stars[i].classList.add("rated");
-					console.log(item.rating);
+					// console.log(item.rating);
 				}
 		}
 	}}}}
@@ -219,7 +218,7 @@ for (let hero of allHeroes) {
 			};
 			localStorage.setItem("rating", JSON.stringify(ratingsArray));
 			getRating();
-			console.log(ratingsArray);
+			// console.log(ratingsArray);
 			for (let i = 0; i < stars.length; i++) {
 				if (i < selected) {
 					stars[i].classList.add("rated");
