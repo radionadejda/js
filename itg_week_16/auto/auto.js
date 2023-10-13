@@ -10,17 +10,25 @@ function updateModels() {
 	let selectedBrand = brand.value;
 	model.innerHTML = "";
 	switch (selectedBrand) {
+		case "" :
+			EmptyModelsTemplate = `<option value="">выберите марку машины</option>`;
+			model.insertAdjacentHTML('afterbegin', EmptyModelsTemplate);
+			break;
 		case "Renault":
-			model.innerHTML = '<option value="">выберите марку машины</option><option value="Clio">Clio</option><option value="Megane">Megane</option>';
+			RenaultModelsTemplate = `<option value="">выберите модель машины</option><option value="Clio">Clio</option><option value="Megane">Megane</option>`;
+			model.insertAdjacentHTML('afterbegin', RenaultModelsTemplate);
 			break;
 		case "Opel":
-			model.innerHTML = '<option value="">выберите марку машины</option><option value="Astra">Astra</option><option value="Corsa">Corsa</option>';
+			OpelModelsTemplate = `<option value="">выберите модель машины</option><option value="Astra">Astra</option><option value="Corsa">Corsa</option>`;
+			model.insertAdjacentHTML('afterbegin', OpelModelsTemplate);
 			break;
 		case "Mazda":
-			model.innerHTML = '<option value="">выберите марку машины</option><option value="CX-5">CX-5</option><option value="Mazda3">Mazda3</option>';
+			MazdaModelsTemplate = `<option value="">выберите модель машины</option><option value="CX-5">CX-5</option><option value="Mazda3">Mazda3</option>`;
+			model.insertAdjacentHTML('afterbegin', MazdaModelsTemplate);
 			break;
 		case "Jaguar":
-			model.innerHTML = '<option value="">выберите марку машины</option><option value="XF">XF</option><option value="F-PACE">F-PACE</option>';
+			JaguarModelsTemplate = `<option value="">выберите модель машины</option><option value="XF">XF</option><option value="F-PACE">F-PACE</option>`;
+			model.insertAdjacentHTML('afterbegin', JaguarModelsTemplate);
 			break;
 		default:
 			break;
@@ -46,7 +54,7 @@ selectedBrand = brand.value;
     } else {
         brandPrice = 0;
 		// brandError.textContent = "Выберите марку";
-		selectedBrand.textContent = "Выберите марку";
+		selectedBrand.textContent = "Выберите марку машины";
 		brand.classList.add("errorhighlight");
 	}
     brand.addEventListener("change", function() {
@@ -85,7 +93,7 @@ function getModel () {
         } else if (selectedModel === ""){
             modelMultiplier = 0;
             // modelError.textContent = "Выберите модель";
-			selectedModel.textContent = "Выберите модель";
+			selectedModel.textContent = "Выберите модель машины";
 			model.classList.add("errorhighlight");
         }
         model.addEventListener("change", function() {
