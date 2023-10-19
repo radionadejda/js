@@ -16,7 +16,6 @@ const buttonClearAll = document.querySelector("#buttonClearAll");
 const buttonClearDone = document.querySelector("#buttonClearDone");
 const taskList = document.querySelector("#tasks");
 const success = document.querySelector("#success");
-let taskText = taskInput;
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 // класс для создания задач
@@ -50,10 +49,6 @@ const getTasks = function() {
 	for (let task of tasks) {
 		const newTask = new Task(task.taskText, task.done);
 		const newTaskItem = taskList.lastChild;
-    if (task.done) {
-		const checkbox = newTaskItem.querySelector(".checkbox");
-		checkbox.checked = true;
-    }
 	}
 	applyCheckboxes();
 	enableButtonClearAll();
@@ -85,7 +80,7 @@ buttonClearAll.addEventListener("click", clearAll);
 
 // проверяет ввод пользователя и добавляет задачу
 const addTask = function() {
-	taskText = taskInput.value.trim();
+	let taskText = taskInput.value.trim();
 	if (taskText === "") {
 		taskInput.classList.add("error");
 		return;
