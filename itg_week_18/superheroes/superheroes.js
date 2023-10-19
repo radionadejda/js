@@ -141,6 +141,7 @@ class Hero {
 		const newDescription = document.createElement("div");
 		newDescription.classList.add("description");
 		const newRank = document.createElement("div");
+		// could have created an id=${this.name} for every div container which is parent of star spans
 		newRank.classList.add("rank");
 		const rankTemplate = `<span class="star" data-value="1">&#9733;</span>
         <span class="star" data-value="2">&#9733;</span>
