@@ -192,6 +192,10 @@ const getRating = function() {
 
 	getRating();
 
+
+// mouseenter and mouseleave are needed to make hover-unhover effect.
+// could have used event delegation - add event listener on parent to determent which star was clicked
+// same logic for adding and removing class on stars - disagree, bc one is for hovering, the other is for actual rating.
 for (let hero of allHeroes) {
 	const rank = hero.querySelector(".rank");
 	const stars = rank.querySelectorAll(".star");
