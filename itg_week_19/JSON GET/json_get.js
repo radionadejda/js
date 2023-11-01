@@ -15,7 +15,7 @@ function addPost(post) {
     newPost.classList.add("post")
     const title = document.createElement("h2");
     title.textContent = `Заголовок: ${post.title}`;
-    title.classList.add("h2");
+    title.classList.add("post-title");
     newPost.appendChild(title);
     const postText = document.createElement("p");
     postText.textContent = `Статья: ${post.body}`;

@@ -51,9 +51,9 @@ function addPost(post) {
 }
 
 function checkPost() {
-let inputTitleValue = document.getElementById("inputTitle").value;
-let inputTextValue = document.getElementById("inputText").value;
-if (inputTitleValue == "" || inputTitleValue == undefined || inputTextValue == "" || inputTextValue == undefined) {
+let inputTitleValue = inputTitle.value;
+let inputTextValue = inputText.value;
+if (!inputTitleValue.trim() || !inputTextValue.trim()) {
     error.style.display = "flex";
     return false;
 } else {
@@ -63,10 +63,10 @@ if (inputTitleValue == "" || inputTitleValue == undefined || inputTextValue == "
 }
 
 function postPosts(){
-let inputTitleValue = document.getElementById("inputTitle").value;
-let inputTextValue = document.getElementById("inputText").value;
+let inputTitleValue = inputTitle.value;
+let inputTextValue = inputText.value;
 checkPost()
-if (!checkPost()) {return}
+if (!checkPost) {return}
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         body: JSON.stringify({
